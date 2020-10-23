@@ -30,14 +30,36 @@ import {
 } from '../../legacy/Rinkeby/0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f/index';
 
 import {
-  WhatOptionYouPreferView2,
-} from '../../legacy/Rinkeby/0xCCB4Ea50F4e4C3f5db8457B575E5Eb498ed7F242/index';
+  DatingDapp,
+} from '../../legacy/Rinkeby/dating-dapp/index';
+
+import {
+  CrowdFunding,
+} from '../../legacy/Rinkeby/crowdfunding-dapp/index';
+
+import {
+  DonationsDapp,
+} from '../../legacy/Rinkeby/donation-dapp/index';
+
+import {
+  FreelanceDapp,
+} from '../../legacy/Rinkeby/freelance-dapp/index';
+
+import {
+  GiftCardDapp,
+} from '../../legacy/Rinkeby/giftcard-dapp/index';
+
+import {
+  LotteryDapp,
+} from '../../legacy/Rinkeby/lottery-dapp/index';
+
+import {
+  PasswordDapp,
+} from '../../legacy/Rinkeby/password-dapp/index';
 
 import {
   ElectionFactory,
 } from '../../legacy/Rinkeby/0x351dCAbdfCae2360682a69Fe7296687E13d6a460/index';
-
-
 
 function LegacyDapp(props) {
   const user = useContext(SnowflakeContext);
@@ -62,15 +84,10 @@ function LegacyDapp(props) {
       return <Oxide ein={ein} />;
     }
 
-    
-	  if (id === '0xCCB4Ea50F4e4C3f5db8457B575E5Eb498ed7F242') {
-      return <WhatOptionYouPreferView2 ein={ein} />;
-    }
-
     if (id === '0x351dCAbdfCae2360682a69Fe7296687E13d6a460') {
       return <ElectionFactory ein={ein} />;
     }
-    
+
     return <Status ein={ein} />;
   }
 

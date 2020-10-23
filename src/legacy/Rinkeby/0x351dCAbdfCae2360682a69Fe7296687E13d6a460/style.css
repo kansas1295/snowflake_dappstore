@@ -37,20 +37,17 @@
 .electionCard{
 
     color:rgb(245, 242, 237);
-   
     border: 1px solid rgba(202, 202, 202, 0.993);
     border-radius:5px;
     font-size:20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
     text-align: center;
-  
     margin-top:20px;
     margin-bottom:15px;
     overflow:hidden;
-    height:185px!important;
-    max-height:215px!important;
+    height:175px!important;
+    max-height:175px!important;
     cursor:pointer;
-    background: #061b2f;
     background:linear-gradient(to bottom,#083863,rgb(0, 0, 5));
 
   }

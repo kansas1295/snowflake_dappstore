@@ -27,6 +27,7 @@ export default class ElectionFactory extends Component {
 	  this._isMounted = true;
       this.loadBlockchain();
 	}
+
     //Dynamically loads the Smart Contract ABI using etherscan & loads the blockchain data.
     async loadBlockchain(){
     

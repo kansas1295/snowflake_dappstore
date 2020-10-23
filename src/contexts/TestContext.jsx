@@ -30,7 +30,7 @@ function TestContext() {
     dispatch({
       type: 'set',
       target: 'hydroBalance',
-      value: hydroBalance.add(toBN(toWei('100000'))),
+      value: hydroBalance.add(toBN(toWei('10000'))),
     });
   }
 

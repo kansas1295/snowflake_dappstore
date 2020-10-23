@@ -10,7 +10,7 @@ import NewElection from './NewElection';
 import ElectionCards from './ElectionCards';
 import JwPagination from 'jw-react-pagination';
 
-
+//Style of Pagination
 const customStyles = {
     ul: {
         border:'rgb(10, 53, 88)',
@@ -72,6 +72,9 @@ export default class ElectionFactory extends Component {
             console.log()
         })
 
+
+
+
         const network = await web3.eth.net.getNetworkType();
         const accounts = await web3.eth.getAccounts();
         const blockNumber = await web3.eth.getBlockNumber();
@@ -112,7 +115,8 @@ export default class ElectionFactory extends Component {
         },7000))
 
         }
-    /*Pginate Election Cards in 6 items*/    
+    
+    /*Paginate Election Cards in 6 items*/  
     onChangePage(pageOfItems) {
         this.setState({loading:false})
         this.setState({ pageOfItems,loading:true});
@@ -120,44 +124,47 @@ export default class ElectionFactory extends Component {
 	}
     
 
-    /*NAVIGATE Factory Page*/
+    /*Go to FACTORY PAGE*/
     factoryPage=()=>{
         this.setState({page:1,subPage:1},()=>console.log())
     }
-
-    pollPage=()=>{
-        this.setState({page:2,subPage:1},()=>console.log())
-    }
-
-    /*NAVIGATE Between Factory Page & Election Page*/
+    
+    /*NAVIGATE TO THE ELECTION LIST PAGE*/
     electionList=()=>{
-        this.setState({subPage:1},()=>console.log())
+    this.setState({subPage:1},()=>console.log())
     }
 
-
+    /*NAVIGATE TO THE CREATE ELECTION PAGE*/
     createElectionPage=()=>{
         this.setState({subPage:2},()=>console.log())
     }
-
-
-    /*NAVIGATE Election Page*/
+    
+    
+    
+    /*Go to ELECTION PAGE*/
+    pollPage=()=>{
+        this.setState({page:2,subPage:1},()=>console.log())
+    }
+ 
+    /*NAVIGATE REGISTRATION PAGE*/
     subPageRegistration=()=>{
         this.setState({subPage:1},()=>console.log())
     }
 
-
+    /*NAVIGATE VERIFICATION PAGE*/
     subPageVerification=()=>{
         this.setState({subPage:2},()=>console.log())
     }
 
+    /*NAVIGATE VOTING PAGE*/
     subPageVoting=()=>{
         this.setState({subPage:3},()=>console.log())
     }
 
+    /*NAVIGATE PROFILE PAGE*/
     subPageProfile=()=>{
         this.setState({subPage:4},()=>console.log())
     }
-
 
     /*Sets the Election Contract according to what user selected*/
     setPage=(address,id,ein,subPage)=>{

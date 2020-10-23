@@ -19,7 +19,7 @@
   },
   {
     "title": "Gift Cards",
-    "description": "Allows a business to create gift cards for their services and for a user to redeem these gift cards, with unique characteristics.",
+    "description": "Allows a business to create gift cards for their services and for a user to redeem these gift cards.",
     "icon": "../../img/smart_contract_icon.png",
     "link": "https://github.com/kdmukai/hydro-gift-card"
   },

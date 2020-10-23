@@ -6,11 +6,14 @@
 }
 
 .dapp-preview__body {
+  background: rgb(7, 34, 59)!important;
+  color: #2ac0d5;
   padding-left: 0;
   padding-right: 0;
 }
 
 .dapp-preview__title {
+  color: #b2f0f9 !important;
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 3px;
@@ -18,7 +21,7 @@
 
 .dapp-preview__category {
   font-size: 13px;
-  color: #777777;
+  color: #2f5d71;
 }
 
 .dapp-preview__purchases {
@@ -65,19 +68,22 @@
 }
 
 .dapp-preview .btn-outlined {
-  border: 1px solid #1e4eff;
+  background: #051a2b;
+  padding: 5px;
+  border: none;
+  color: #547d8a;
 }
 
 .dapp-preview .btn-outlined:hover {
-  border: 1px solid #1e4eff;
-  background-color: #1e4eff;
-  color: #fff;
+  border: none;
+  background-color: #031838 !important;
+  color: #7cefff;
 }
 
 .dapp-preview__body button:hover {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  border: none;
+  background-color: #031838 !important;
+  color: #7cefff;
 }
 
 .dapp-preview__overlay-wrapper {
@@ -87,7 +93,8 @@
 }
 
 .card-deck .card {
-  margin-right: -5px;
+  // margin-right: -5px;
+  background: none!important;
 }
 
 .dapp-preview__image {

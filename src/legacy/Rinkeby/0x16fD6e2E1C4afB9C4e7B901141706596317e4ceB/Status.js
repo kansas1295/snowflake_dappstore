@@ -21,7 +21,7 @@ export default function Status ( props ) {
   const clientRaindropContract = useNamedContract('clientRaindrop')
   const statusContract = useGenericContract('0x16fD6e2E1C4afB9C4e7B901141706596317e4ceB', ABI)
   useAccountEffect(() => {
-    statusContract.methods.getStatus(props.ein).call().then(status => setCurrentStatus(status));
+    statusContract.methods.getStatus(props.ein).call().then(status => setCurrentStatus(status))
   })
 
   function checkStatus () {
