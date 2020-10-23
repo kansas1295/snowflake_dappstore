@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Hydro Vault",
+    "image": "hydrovault-top-slider.jpg",
+    "link": "https://projecthydro.org/blog/hydro-vault-coming-soon/"
+  },
+  {
+    "title": "Hydro Pay",
+    "image": "hydropay-top-slider.jpg",
+    "link": "https://projecthydro.org/hydro-pay/"
+  },
+  {
+    "title": "Hydro X",
+    "image": "hydrox-top-slider.jpg",
+    "link": "https://projecthydro.org/product-roadmap/"
+  },
+  {
+    "title": "dApp Contest",
+    "image": "dapp-november.jpg",
+    "link": "https://github.com/HydroBlockchain/hcdp/issues/228"
+  },
+  {
+    "title": "dApp Contest",
+    "image": "dapp-november-2.jpg",
+    "link": "https://github.com/HydroBlockchain/hcdp/issues/228"
+  }
+]

@@ -1,0 +1,57 @@
+/* @define identity */
+
+.identity {
+  background-color: #2452fe !important;
+  border: none;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 0;
+  border-radius: 0.25rem;
+  min-height: 300px;
+}
+
+.identity__title {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.72;
+  margin-bottom: 0;
+}
+
+.identity__help {
+  font-size: 2rem;
+  opacity: 0.72;
+}
+
+.identity__hydro-id {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.identity__ein {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.identity__linked-wallets {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.identity__user-image {
+  margin: 0;
+  text-align: center;
+}
+
+.identity__link {
+  color: #2452fe;
+  font-size: 4rem;
+}
+
+.identity__connected-wallet-title {
+  font-size: 19px;
+}

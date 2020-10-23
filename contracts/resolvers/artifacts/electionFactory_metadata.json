@@ -1,0 +1,175 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_snowflake",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_deployedAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "newElectionCreated",
+				"type": "event"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_electionID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_days",
+						"type": "uint256"
+					}
+				],
+				"name": "createNewElection",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "newContract",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "electionIds",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/VoteDapp/contracts/resolvers/electionFactory.sol": "electionFactory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/VoteDapp/contracts/SnowflakeResolver.sol": {
+			"keccak256": "0x47767c5bf5606300e05d8a37ac8696101621cc182a608fcd5b44f7581904991f",
+			"urls": [
+				"bzz-raw://772a6c8f6129ece514c7b22f1f923f068568bc54480a75e2ac441d87cc18d084",
+				"dweb:/ipfs/QmdVzXNzAaQbVfR2KNd41U6dV2XQnndJGoRM4wX5Rgcbah"
+			]
+		},
+		"localhost/VoteDapp/contracts/interfaces/HydroInterface.sol": {
+			"keccak256": "0x3f0b755561062d9912aca9a46d728918404fe17a09cfbadfcdd498bdd6fd0b6e",
+			"urls": [
+				"bzz-raw://2c7728a242939831b961ce3846dcf948053a6d97e84d62d7de15fa04e050f4ed",
+				"dweb:/ipfs/QmTb87xRzJoTjn6Zqxwn4pobLaRwoKd5PTVXeJ79L59MSW"
+			]
+		},
+		"localhost/VoteDapp/contracts/interfaces/IdentityRegistryInterface.sol": {
+			"keccak256": "0xb559191dbd30da97a8b5759a895d7f4eff420eedc55b0786ae7206fbe384dc15",
+			"urls": [
+				"bzz-raw://4ca73a9731d9a2dd9603593b2d847af126e20af8d4242edb91d5bfba5107149d",
+				"dweb:/ipfs/QmdJ5oW52QuXipANPCy8sJPwULkdXmVWjAPEWgPoy9oudk"
+			]
+		},
+		"localhost/VoteDapp/contracts/interfaces/SnowflakeInterface.sol": {
+			"keccak256": "0xb34e22de661c32131d4d5bbd8f8dbf1794e5d944736ccb31870b6f75bdd322e5",
+			"urls": [
+				"bzz-raw://0bd699804c3fba3c2806fcc0d1f5e6ec10151a701b491ef00c8583c81747143d",
+				"dweb:/ipfs/QmU47iRzq9bEFcuS7uS65pJS4HgczwZEvQwgDvdNPDDpWT"
+			]
+		},
+		"localhost/VoteDapp/contracts/interfaces/SnowflakeResolverInterface.sol": {
+			"keccak256": "0x8a5595a41d86f78514dfcd6eaa0ec79482187b8ead1c8c129faab29aeb2aced1",
+			"urls": [
+				"bzz-raw://adce9474a5bdaf71df2dd13b274be5e133aea40a45ac477cff3affa7b36c04f2",
+				"dweb:/ipfs/QmPPUi5d3uqA8dgLkJY6NUJZXNkV2gHCCbgtUXdb1Q42D4"
+			]
+		},
+		"localhost/VoteDapp/contracts/resolvers/Voting.sol": {
+			"keccak256": "0xef6a41518a75c63847c3be0cc330bb21ec47d5053c01408da2f1d177dbac196f",
+			"urls": [
+				"bzz-raw://18a7fa4acf480d305ef99951805df5760c7b31410bed0f5bc9355808371e20ff",
+				"dweb:/ipfs/QmUPnacXoVEkU4kw2VPnL8hgQJtCX4f2PaK8BWVdhVLHhV"
+			]
+		},
+		"localhost/VoteDapp/contracts/resolvers/electionFactory.sol": {
+			"keccak256": "0x9d2fc6b2d3522f1778ac0255de9dfc1fd81e750ab74ba997bb652e81026ea6ef",
+			"urls": [
+				"bzz-raw://b828b93f7e6f4c166e82913b9c236ee7478e1163211960617a0228daea331220",
+				"dweb:/ipfs/QmQaYFJDkJfTkxfBkq8t2EPwqHN94wEThbE4aE6UR2jfor"
+			]
+		},
+		"localhost/VoteDapp/contracts/zeppelin/ownership/Ownable.sol": {
+			"keccak256": "0x1fbe7f67d6b8ac1f5aff86a9da41833273e073c47ce1e160f9addd9c64d9ff1d",
+			"urls": [
+				"bzz-raw://93d3790757d1984cef393a056010cc4269002c1aa93d635fabc8f169ef0707e8",
+				"dweb:/ipfs/QmdSDJUXB5vEXud6BJGc6TSQMBG8trJ4ZYH2onq39taBKa"
+			]
+		}
+	},
+	"version": 1
+}

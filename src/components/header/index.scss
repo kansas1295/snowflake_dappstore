@@ -1,0 +1,106 @@
+/* @define header */
+
+.navbar {
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  padding: 10px 0 0 20px;
+  margin: 0;
+  height: 85px;
+  width: 100%;
+}
+
+.navbar-brand {
+  padding-left: 15px;
+}
+
+.header__title {
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: -8px;
+  text-align: right;
+}
+
+.header__logo {
+  width: 100px;
+  margin-top: -20px;
+}
+
+.header__subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8c8c8c;
+  padding: 5px 0 0 0px;
+}
+
+.header__hydro {
+  color: $primary;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+}
+
+.navbar-light .navbar-toggler {
+  margin-right: 30px;
+  margin-top: -12px;
+}
+
+.navbar .onboardingButton {
+  margin-right: 30px;
+}
+
+.header__version {
+  font-size: 10px;
+  color: #333;
+  position: absolute;
+  top: 13px;
+  left: 140px;
+}
+
+.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .collapse {
+    position: absolute;
+    right: 0;
+    top: 50px;
+  }
+
+  .show .navbar-nav {
+    background-color: #fff;
+    padding: 15px;
+    text-align: right;
+    float: right;
+    width: 100%;
+    margin-top: 25px;
+    max-width: 300px;
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  }
+
+  .show .navbar-nav .header-account__wrapper {
+      margin-right: 30px;
+      margin-bottom: 30px;
+  }
+
+  .header-account__welcome {
+    font-size: 19px !important;
+  }
+
+  .header-account__ein {
+    font-size: 17px !important;
+  }
+
+  a.header__faq.nav-link {
+    padding-right: 28px;
+  }
+}
+
+.navbar-toggler {
+  outline: none;
+}

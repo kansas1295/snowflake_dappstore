@@ -1,0 +1,6 @@
+{
+  "walletHelp": "First get some Hydro to use by clicking the 'Get Hydro Tokens' button below.",
+  "getHydroHelp": "Once you get your Hydro tokens, deposit them into your Snowflake below. For instance, if you requested 5,000 tokens, enter 5,000 into the deposit box.",
+  "ethWalletHelp": "Link an Ethereum wallet to your Snowflake.",
+  "identityHelp": "This is your Snowflake EIN. Update your public Snowflake status below."
+}

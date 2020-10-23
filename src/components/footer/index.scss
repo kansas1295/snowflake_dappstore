@@ -1,0 +1,29 @@
+/* @define footer */
+
+.footer__powered-by {
+  font-family: "Nunito-Bold", sans-serif;
+  color: #adadad;
+  font-size: 14px;
+}
+
+.footer__powered-by svg {
+  width: 1.4em;
+  height: 1.4em;
+  font-size: 14px;
+  margin-right:30px;
+}
+
+a.footer__link.nav-link {
+  font-family: "Nunito-Bold", sans-serif;
+  font-size: 14px;
+  color: #adadad;
+}
+
+.builtOnEthereum {
+  width: 180px;
+  margin-left: 30px;
+}
+
+.maintainedAndHostedOn {
+  color: #adadad;
+}

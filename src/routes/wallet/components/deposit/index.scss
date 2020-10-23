@@ -1,0 +1,84 @@
+/* @define deposit */
+
+.deposit__subtitle {
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.deposit__from {
+  border-color: rgba(255, 255, 255, 0.5);
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  height: 66px;
+  padding-left: 15px !important;
+  padding-right: 22px !important;
+}
+
+.deposit__form-group {
+  margin: 0;
+}
+
+.deposit__input {
+  color: white;
+  background-color: #2452fe;
+  border: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  height: auto;
+}
+
+.deposit__input::placeholder {
+  color: white;
+}
+
+.deposit__input:focus {
+  background-color: #2452fe;
+  color: white;
+}
+
+.deposit__form-text {
+  color: white !important;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.deposit__max-button {
+
+}
+
+.deposit__arrow {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.deposit__to {
+  background-color: #3a64fe;
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 66px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.deposit__balance {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.6;
+}
+
+.deposit__to-small-text {
+  opacity: 0.6;
+  color: white;
+  font-size: 80%;
+  font-weight: 100;
+  margin: 0;
+}

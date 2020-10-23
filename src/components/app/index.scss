@@ -1,0 +1,25 @@
+/* @define app */
+
+.app {
+  padding-left: 0;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.app__content {
+  padding: 60px 30px 15px 50px;
+  min-height: 850px;
+}
+
+.app__content h1 {
+  font-family: 'Nunito-Regular', sans-serif;
+  font-size: 27.12px;
+}
+
+.app__content h2 {
+  font-weight: 600;
+}
+
+.app__content .container {
+  margin-left: 0;
+}

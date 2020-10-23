@@ -1,0 +1,30 @@
+/* @define header-account */
+
+.header-account__wrapper {
+  text-align: right;
+  margin-right: 60px;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.header-account__welcome {
+  font-family: "Nunito-Bold", sans-serif;
+  color: #5f5f5f;
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-left: 30px;
+}
+
+.header-account__ein {
+  font-family: "Nunito-Bold", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #d0d0d0;
+  text-transform: uppercase;
+}
+
+.header-account__identicon {
+  margin-right: 30px;
+  text-align: right;
+}

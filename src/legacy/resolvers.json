@@ -1,0 +1,27 @@
+{
+	"0x16fD6e2E1C4afB9C4e7B901141706596317e4ceB": {
+		"title": "Status",
+		"category": "Tools",
+		"price": "1"
+	},
+	"0x26098F10E1539a6b75998AfB1DA552B8fD0AE404": {
+		"title": "PetFriend",
+		"category": "Tools",
+		"price": "1"
+	},
+	"0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f": {
+		"title": "Oxide",
+		"category": "Fintech",
+		"price": "0"
+	},"0xCCB4Ea50F4e4C3f5db8457B575E5Eb498ed7F242": {
+		"title": "WhatOptionDoYouPrefer",
+		"category": "Entertainment",
+		"price": "10000000000000000000" 
+	},
+	"0x351dCAbdfCae2360682a69Fe7296687E13d6a460": {
+		"title": "Voteum",
+		"category": "Under Development",
+		"price": "2000"
+	}
+	
+}

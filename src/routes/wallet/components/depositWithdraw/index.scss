@@ -1,0 +1,45 @@
+/* @define deposit-withdraw */
+
+.deposit-withdraw {
+  background-color: #2452fe;
+  border: none;
+  color: $snow-white;
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+.deposit-withdraw__header {
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  align-items: center;
+}
+
+.deposit-withdraw__title {
+  font-size: 1rem;
+  font-weight: 100;
+  opacity: 0.72;
+}
+
+.deposit-withdraw__balance {
+  font-family: "Nunito-SemiBold", sans-serif;
+  font-size: 55px;
+}
+
+.deposit-withdraw__hydro {
+  opacity: 0.5;
+  font-size: 0.7rem;
+}
+
+.deposit-withdraw__usd {
+  opacity: 0.5;
+}
+
+.deposit-withdraw__deposit-button {
+
+}
+
+.deposit-withdraw__withdraw-button {
+
+}

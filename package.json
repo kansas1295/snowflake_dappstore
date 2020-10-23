@@ -1,0 +1,76 @@
+{
+  "name": "new-snowflake-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.1",
+    "@uniswap/sdk": "^1.0.0-beta.4",
+    "axios": "^0.18.0",
+    "bitcore-lib": "^8.3.4",
+    "bitski": "^0.10.0",
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.9.3",
+    "ethers": "^4.0.27",
+    "i18next": "^15.0.9",
+    "i18next-browser-languagedetector": "^3.0.1",
+    "jquery": "^3.4.0",
+    "jw-react-pagination": "^1.1.0",
+    "metamask-logo": "^2.2.0",
+    "node-sass": "^4.12.0",
+    "numeral": "^2.0.6",
+    "owl.carousel": "^2.3.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-chartjs-2": "^2.10.0",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-dom": "^16.8.6",
+    "react-i18next": "^10.8.1",
+    "react-icons": "^3.6.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-slick": "^0.24.0",
+    "react-syntax-highlighter": "^11.0.2",
+    "reactstrap": "^8.0.0",
+    "slick-carousel": "^1.8.1",
+    "storybook-react-router": "^1.0.5",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-declaration-strict-value": "^1.1.3",
+    "stylelint-selector-bem-pattern": "^2.1.0",
+    "typescript": "^3.5.2",
+    "web3": "^1.0.0-beta.36",
+    "web3-react": "^4.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build --max_old_space_size=4096 build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "env": {
+      "browser": true
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
+  }
+}

@@ -1,0 +1,563 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+.background{
+    color: white!important;
+    background:#061b2f;
+    font-size: 1.2rem;
+    border-radius: 5px!important;
+    height:560px;
+    overflow:hidden;
+}
+
+.rows {
+  margin: 0px 0px;
+  width:100%;
+
+}
+
+.hidden{
+  visibility: hidden!important;
+}
+
+
+/* Clear floats after the columns */
+.rows:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.columns {
+  float: left;
+  width: 50%;
+  padding: 0 30px;
+  margin-top:-5px;
+}
+
+.electionCard{
+
+    color:rgb(245, 242, 237);
+   
+    border: 1px solid rgba(202, 202, 202, 0.993);
+    border-radius:5px;
+    font-size:20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    text-align: center;
+  
+    margin-top:20px;
+    margin-bottom:15px;
+    overflow:hidden;
+    height:185px!important;
+    max-height:215px!important;
+    cursor:pointer;
+    background: #061b2f;
+    background:linear-gradient(to bottom,#083863,rgb(0, 0, 5));
+
+  }
+
+  .card-header{
+    margin-top:15px;
+    margin-left:15px;
+    margin-right:15px;
+    min-height:90px;
+    max-height:90px;
+    font-size:18px;
+    color:rgb(15, 15, 15)!important;
+    background:rgb(235, 235, 235);
+    overflow:hidden;
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 5px!important;
+    border-bottom: none;
+  }
+  .list-group-item{
+    background:linear-gradient(to right, rgba(7, 9, 19, 0.671), #0d213f98, rgba(7, 9, 19, 0.671));
+    background: transparent;
+    border:1px solid rgb(214, 217, 219);
+    color:rgb(239, 241, 243);
+    transition: all .36s ease-in-out;
+    font-size:14px;
+  }
+
+  .list-group-item-close{
+    background: transparent;
+    color:#d8a84f;
+    transition: all .36s ease-in-out;
+    font-size:14px;
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+  }
+
+.verificationWrapper{
+    color: white!important;
+    background:#061b2f;
+    font-size: 1.2rem;
+    border-radius: 5px!important;
+}
+
+
+.votingButton{
+    color:rgb(41, 73, 180)!important;
+    background:white!important;
+}
+
+.einStatus{
+    border:2px solid white;
+    border-top:none;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    width:20%;
+    margin-left:40%;
+    margin-right:40%;
+    font-size: 14px;
+    min-width:100px;
+    max-width:300px;
+    overflow: hidden;
+    justify-content: center;
+    
+}
+
+.einStatus p:hover{
+    cursor: pointer;
+    color:rgb(193, 230, 240);
+
+}
+
+.role{
+    margin-top:-10px;
+}
+
+.buttonLinks{
+    height:60px;
+    width:80px;
+    background:rgb(193, 230, 240);
+    border:1px solid white;
+}
+
+.linksButton{
+    height:60px;
+    width:80px;
+    background:rgb(193, 230, 240);
+    border:1px solid white;
+}
+
+.registrationWrapper{
+    display:flex;
+    margin-top:30px;
+
+}
+
+.registerAsVoter{
+    border:1px solid white;
+    background:white;
+    color:blue;
+    margin:20px;
+    border-radius:7px;
+    width:50%;
+    justify-content: center!important;
+    align-items: center!important;
+    padding:17px;
+    font-size:16px!important;
+    overflow:hidden;
+}
+
+.verifyAsVoter{
+    border:1px solid white;
+    background:#ffffff;
+    color:rgb(253, 253, 253);
+    margin:20px;
+    border-radius:7px;
+    width:50%;
+    justify-content: center!important;
+    align-items: center!important;
+    padding:17px;
+    font-size:16px!important;
+    overflow:hidden;
+}
+
+.registrationButton{
+  margin: 0;
+  color:#fff;
+  background:#061b2f;
+  height:40px;
+  border-radius: 5px;
+  border:1px solid rgb(151, 148, 148);
+  overflow:hidden;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  line-height: 1.75;
+  font-weight: 500;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.registrationButtonDisabled{
+    margin: 0;
+    color:rgba(255, 255, 255, 0.767);
+    border:1px solid rgba(82, 82, 82, 0.671);
+    border:none;
+    background:#0a438f3a;
+    height:40px;
+    border-radius: 5px;
+    overflow:hidden;
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    min-width: 64px;
+    box-sizing: border-box;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    line-height: 1.75;
+    font-weight: 500;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    cursor:pointer;
+  }
+
+.registrationButton:hover{
+    cursor: pointer;
+    color:white!important;
+    background:rgb(30, 73, 216);
+}
+
+.registrationImageWrapper{
+    position:relative;
+    margin-top:30px;
+    background:black;
+}
+
+.registrationImg{
+    width:40%;
+    margin-bottom:20px;
+    background:#061b2f;
+    border-radius:15px;
+}
+
+.dashboard-bar{
+    height:370px;
+}
+
+.votingOptions{
+font-size: 20px;
+}
+
+.pollInfo{
+    float:left;
+    position:absolute;
+    color:white;
+    font-size:15px!important;           
+}
+
+.deadlineInfo{
+  float:left;
+  position:absolute;
+  color:white;
+  font-size:12px!important;           
+}
+
+.selectOptions{
+    font-size: 20px;
+ 
+    color:rgb(94, 94, 94);
+    border-radius:7px;
+    height:35px!important;
+    margin-right:20px;
+    margin-top:30px;
+}
+
+.daysOptions{
+    font-size: 18px;
+    padding:5px;
+    color:rgb(238, 235, 235);
+    border-radius:5px;
+    min-width:130px!important;
+    height:35px!important;
+    margin-right:20px;
+    background:#061b2f;
+}
+
+.voting-navbar{
+display: inline-block;
+list-style-type: none;
+border-bottom:1px solid white;
+border-bottom-left-radius:2px;
+border-bottom-right-radius:2px;
+width:100%;
+padding:15px;
+text-transform: capitalize;
+text-align: center;
+font-weight: 700;
+}
+
+.voting-navbar li{
+    display: inline-block;
+    color:white;
+    cursor:pointer;
+    text-align: center;
+}
+
+.voting-navbar li:hover{
+    color:rgb(182, 224, 243);
+    cursor:pointer;
+    cdolor:rgb(47, 120, 180);
+    codlor:rgb(241, 217, 163);
+    color:rgb(210, 230, 240);
+}
+
+
+.divButtons{
+    display: inline-block;
+    list-style-type: none;
+    width:100%;
+    padding:15px;
+    text-align: center;
+}
+
+  
+  .registrationButton:hover{
+      cursor: pointer;
+      color:white!important;
+      background:rgb(30, 73, 216);
+  }
+
+  
+
+  .spinner{
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    vertical-align: text-bottom;
+    border:5px solid currentColor;
+    border-right-color:transparent;
+    border-radius: 60%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+    color:white;
+    margin-top:140px;
+    margin-bottom:140px;
+  }
+
+  .verify{
+      
+      width:100%;
+      padding:5px;
+      color:rgb(4, 3, 27);
+      background:#e6e7eb;
+      border-top-right-radius:5px;
+      border-bottom-right-radius:5px;
+      border:2px solid  rgb(133, 133, 134);
+      border-left:none;     
+      text-transform: capitalize;
+  }
+
+  .verify :active,.verify:focus{
+      outline:none!important;
+      color:rgb(15, 9, 97)!important;
+      
+  }
+
+  .notRegistered{
+    color:#ff1e3c!important;
+    font-weight:1000;
+  }
+
+  .registered{
+      color:#3ad854!important;
+  }
+
+  .verifyBox{
+      width:100%;
+
+      border-radius:10px;
+      padding:30px;
+      margin-bottom:13%;
+      overflow: hidden;
+      justify-content: center;
+      font-family: 'Anonymous Pro', monospace;
+      font-size:18px;
+      min-height:114px;  
+      text-transform: capitalize!important;
+      background:#061b2f;
+      border:1px solid rgba(209, 209, 209, 0.301);
+      -webkit-text-stroke:0.00001px #3433;
+        text-shadow:2px 2px 0 black,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              2px 1px 0 #000;
+  }
+
+  .group{
+    position: relative;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    margin-left:10px;
+    margin-right:10px;
+  }
+
+  .input-group-texts {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 1em;
+    min-width:130px;
+    margin-bottom: 0;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #eceff1;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #061b2f;
+    border: 1px solid rgb(110, 110, 112);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    letter-spacing: .5px;
+    -webkit-text-stroke:0.00001px #3433;
+     text-shadow:2px 2px 0 black,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              2px 1px 0 #000;
+  }
+
+  .verification-title{
+      font-weight:700;
+      color:#0b3257!important; 
+      
+  }
+
+  .newElectionLabel{
+    font-weight:700;
+    color:#0b3257!important; 
+    
+}
+
+  .verifyLabel{
+      font-size: .9em;
+      color:#0b3257;    
+  }
+
+  .newElectionLabel{
+    font-weight:700;
+    color:#d8a84f!important; 
+    
+}
+
+  .verifiedProfile{
+    border:1px solid white;
+    background:linear-gradient(40deg,rgb(16, 25, 54),#b6c6d4);
+    background:linear-gradient(40deg,#0b4980,rgb(150, 47, 141));
+    color:rgb(253, 253, 253);
+    margin:20px;
+    border-radius:7px;
+    width:60%;
+    justify-content: center!important;
+    align-items: center!important;
+    padding:17px;
+    font-size:16px!important;
+    overflow:hidden;
+    height:390px;
+}
+
+  .profileWrapper{
+    display:flex;
+    margin-top:30px;
+    justify-content: center;
+    font-family: 'Anonymous Pro', monospace;
+
+}
+
+  .profileBox{
+    width:50%;
+    border-radius:10px;
+    margin-left:55%;
+    margin-top:-20px;
+    overflow: hidden;
+    justify-content: center;
+    font-size:18px;
+    min-height:114px;  
+    text-transform: capitalize!important;
+
+}
+
+
+
+  .profileNumber{
+      list-style-type: none;
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 1.3em;
+      margin-top:5px;
+      letter-spacing: 0px;
+      display:flex;
+      cursor:pointer;
+      color: #a3cfe7;
+      -webkit-text-stroke:0.00001px #3433;
+      text-shadow:2px 2px 0 black,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              2px 1px 0 #000;
+               
+  }
+
+  .customNav{
+    padding:0;
+    }
+    
+  .profileNumber{
+   margin-top:10px;
+  }    
+
+  .profileNumber li:hover,.profileNumber a:hover{
+    color:rgb(78, 164, 185) !important;
+  }
+
+  .profileInfo{
+    margin-top:-30%;
+    margin-right:5px;
+    
+    
+  }
+
+  .profile-title{
+    font-weight:700;
+    color:#ffffff!important; 
+    -webkit-text-stroke:0.00001px #3433;
+      text-shadow:2px 2px 0 black,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              2px 1px 0 #000;
+    
+}
+
+  @media(max-width:610px){
+    .profileInfo{
+        margin-top:-80%;
+        margin-right:5px;
+        
+      }
+  }
+
+  .userName{
+      font-size: 40px!important;
+      font-family: 'Anonymous Pro', monospace!important;
+      color:#f5c263;
+      -webkit-text-stroke:0.00001px #3433;
+      text-shadow:2px 2px 0 black,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              1px 1px 0 #000,
+              2px 1px 0 #000;
+  }
+
+  .hydroImage{
+    height:20px;
+    padding:0;
+    margin-top:-2px;
+    margin-left:2px;
+  }
+
+ 
+

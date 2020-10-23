@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Entertainment",
+    "description": "Lorum ipsum dolor sit amet.",
+    "icon": "IoIosFilm"
+  },
+  {
+    "name": "Fintech",
+    "description": "Lorum ipsum dolor sit amet.",
+    "icon": "IoMdCard"
+  },
+  {
+    "name": "Business",
+    "description": "Lorum ipsum dolor sit amet.",
+    "icon": "IoIosGlobe"
+  },
+  {
+    "name": "Gaming",
+    "description": "",
+    "icon": "IoLogoGameControllerA"
+  },
+  {
+    "name": "Community",
+    "description": "Lorum ipsum dolor sit amet.",
+    "icon": "IoIosPeople"
+  },
+  {
+    "name": "Tools",
+    "description": "Lorum ipsum dolor sit amet.",
+    "icon": "IoIosCalculator"
+  },
+  {
+    "name": "Other",
+    "description": "Lorum ipsum dolor sit amet.",
+    "icon": "IoIosCog"
+  }
+]

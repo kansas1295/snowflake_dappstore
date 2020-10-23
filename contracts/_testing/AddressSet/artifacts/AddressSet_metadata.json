@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"author": "Noah Zinsmeister",
+			"details": "O(1) insertion, removal, contains, and length functions.",
+			"methods": {
+				"contains(AddressSet.Set storage,address)": {
+					"details": "Checks set membership.",
+					"params": {
+						"other": "The element to check membership of.",
+						"self": "The set to check membership in."
+					},
+					"return": "true if the element is in the set, false otherwise."
+				},
+				"insert(AddressSet.Set storage,address)": {
+					"details": "Inserts an element into a set. If the element already exists in the set, the function is a no-op.",
+					"params": {
+						"other": "The element to insert.",
+						"self": "The set to insert into."
+					}
+				},
+				"length(AddressSet.Set storage)": {
+					"details": "Returns the number of elements in a set.",
+					"params": {
+						"self": "The set to check the length of."
+					},
+					"return": "The number of elements in the set."
+				},
+				"remove(AddressSet.Set storage,address)": {
+					"details": "Removes an element from a set. If the element does not exist in the set, the function is a no-op.",
+					"params": {
+						"other": "The element to remove.",
+						"self": "The set to remove from."
+					}
+				}
+			},
+			"title": "An implementation of the set data structure for addresses."
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/Hydro/smart-contracts/snowflake/contracts/_testing/AddressSet/AddressSet.sol": "AddressSet"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/Hydro/smart-contracts/snowflake/contracts/_testing/AddressSet/AddressSet.sol": {
+			"keccak256": "0x3e00884e2275385e7f2fdee6d079edf4fa35f1fecf2f44083df5f49a736f94bc",
+			"urls": [
+				"bzz-raw://beae7034f1b886a759a2504a50ed42215679aee92873b7b15ae35e2ceed106f3",
+				"dweb:/ipfs/QmfU9LpDC83PWPpCpi8noLM8yYnRUtQHXJ2nWAgyEtppo1"
+			]
+		}
+	},
+	"version": 1
+}

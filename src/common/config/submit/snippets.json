@@ -1,0 +1,26 @@
+[
+   {
+    "title": "Pass parameters to resolver when adding new users",
+    "description": "See how It's possible to send additional parameters to your DApp contract when users get registered",
+    "category": "snippet",
+    "icon": "../../img/code_icon.png",
+    "snippet": "    \/\/ implement signup function\r\n    \/\/ in this case, extraData encodes two params: contactName and contactData of registered user\r\n    function onAddition(uint ein, uint, bytes memory extraData) \r\n    public \r\n    senderIsSnowflake() \r\n    returns (bool) {\r\n        SnowflakeInterface snowflake = SnowflakeInterface(snowflakeAddress);\r\n        snowflake.withdrawSnowflakeBalanceFrom(ein, owner(), signUpFee);\r\n\r\n      \t\/\/3. update the users mapping\r\n      \t (string memory contactName, string memory contactData) = abi.decode(extraData, (string, string));\r\n\t\t\/\/here you must store the decoded parameters, for example:\r\n\t\tusers[ein].contactName = contactName;\r\n\t\tusers[ein].contactData = contactData;\r\n\r\n       \/\/ emit StatusSignUp(ein);\r\n        return true;\r\n    }\r\n ",
+    "link": "https://github.com/jzafrap/smart-contracts/blob/master/snowflake/contracts/resolvers/SnowflakeSnippets.sol#L35-L52"
+  },
+  {
+    "title": "Basic escrow operation from SnowflakeId to Resolver contract",
+    "description": "This snippet shows the simplest method to escrow Hydro in your DApp smart contract.",
+    "category": "snippet",
+    "icon": "../../img/code_icon.png",
+    "snippet": "\/\/ move funds from snowflake balance to contract balance\r\nfunction doScrow(uint _snowflakeId, uint _totalHydro)\r\npublic{\r\n    SnowflakeInterface snowflake = SnowflakeInterface(snowflakeAddress);\r\n    \/\/1.preconditions for escrow\r\n    require(snowflake.resolverAllowances(_snowflakeId,address(this)) >= _totalHydro.mul(10**18),\"Users's allowance must be equal or greater than totalHydro\");\r\n    require(snowflake.deposits(_snowflakeId) >= _totalHydro.mul(10**18),\"User's funds must be equal or greater than totalHydro\");\r\n    \/\/2.escrow reward from snowflake to resolver\r\n    snowflake.withdrawSnowflakeBalanceFrom(_snowflakeId, address(this), _totalHydro.mul(10**18));\r\n} ",
+    "link": "https://github.com/jzafrap/smart-contracts/blob/master/snowflake/contracts/resolvers/SnowflakeSnippets.sol#L62-L74"
+  },
+  {
+    "title": "Basic transfer from resolver contract to snowflake Id",
+    "description": "This snippet shows the basic transfer of Hydro from contract to Snowflake ID.",
+    "category": "snippet",
+    "icon": "../../img/code_icon.png",
+    "snippet": "\/\/ move funds from contract balance to snowflake balance\r\nfunction doReward(uint _snowflakeId, uint _totalHydro)\r\npublic{\r\n     \/\/1. preconditions for transfer\r\n     require(address(this).balance >= _totalHydro.mul(10**18),\"User's funds must be equal or greater than totalHydro\");\r\n     \/\/2. make the transfer\r\n     transferHydroBalanceTo(_snowflakeId,_totalHydro.mul(10**18));\r\n}",
+    "link": "https://github.com/jzafrap/smart-contracts/blob/master/snowflake/contracts/resolvers/SnowflakeSnippets.sol#L76-L84"
+  }
+]

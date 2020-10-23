@@ -1,0 +1,48 @@
+/* @define status */
+
+.status {
+  background-color: #3a64fe;
+  border-radius: 10px;
+  padding: 15px;
+  min-height:50px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.status__title {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.status__current {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 200;
+  text-align: left;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.status__edit {
+  width: 70px;
+  height: auto;
+  background-color: #2d59fe;
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
+  right: 7px;
+  top: -8px;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+}
+
+.status .btn-secondary:hover,
+.status .btn-secondary:active,
+.status .btn-secondary:focus {
+  background-color: #1d4cff;
+  border-color: #1d4cff;
+}

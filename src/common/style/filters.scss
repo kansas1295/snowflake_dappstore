@@ -1,0 +1,35 @@
+.filters {
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.filters__nav-item {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 15px;
+  color: #9e9e9f;
+}
+
+.filters__link {
+  padding: 5px 30px;
+  color: #9e9e9f;
+  cursor: pointer;
+}
+
+.filters__link:hover {
+  background-color: #1e4eff;
+  color: #ffffff !important;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filters__link--active {
+  background-color: #1d4cff;
+  border-radius: 30px;
+  padding: 5px 30px;
+  color: #ffffff !important;
+}
+
+.filters__link--active:hover {
+  background-color: #1739bb;
+}

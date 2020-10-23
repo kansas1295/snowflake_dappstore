@@ -1,0 +1,37 @@
+/* @define buy */
+
+.buy {
+  background-color: $snow-light-gray;
+  color: #3c3c3c;
+  border: none;
+  height: 300px;
+}
+
+.buy__header {
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  align-items: center;
+}
+
+.buy__title {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.buy__amount {
+  font-size: 55px;
+  margin: 0;
+  font-family: "Nunito-SemiBold", sans-serif;
+}
+
+.buy__hydro {
+  opacity: 0.5;
+  font-size: 0.7rem;
+}
+
+.buy__test-tokens {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}

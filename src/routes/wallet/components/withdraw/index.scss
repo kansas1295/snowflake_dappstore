@@ -1,0 +1,83 @@
+/* @define withdraw */
+
+.withdraw__subtitle {
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.withdraw__from {
+  border-color: rgba(255, 255, 255, 0.5);
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  height: 66px;
+  padding-left: 15px !important;
+  padding-right: 22px !important;
+}
+
+.withdraw__form-group {
+  margin: 0;
+}
+
+.withdraw__input {
+  color: white;
+  background-color: #2452fe;
+  border: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  height: auto;
+}
+
+.withdraw__input::placeholder {
+  color: white;
+}
+
+.withdraw__input:focus {
+  background-color: #2452fe;
+  color: white;
+}
+
+.withdraw__form-text {
+  color: white !important;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.withdraw__max-button {
+}
+
+.withdraw__arrow {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.withdraw__to {
+  background-color: #3a64fe;
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 66px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.withdraw__balance {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.6;
+}
+
+.withdraw__to-small-text {
+  opacity: 0.6;
+  color: white;
+  font-size: 80%;
+  font-weight: 100;
+  margin: 0;
+}

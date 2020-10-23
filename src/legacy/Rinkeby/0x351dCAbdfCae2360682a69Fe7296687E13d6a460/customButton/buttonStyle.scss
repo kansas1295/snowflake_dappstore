@@ -1,0 +1,149 @@
+.customButton{
+   height:18px;
+   border-radius:6px!important;
+   font-size:13px!important;
+   color:#0971f5!important;
+   background:white!important;
+   border:2px solid rgb(197, 197, 197)!important;
+   position:absolute !important;
+   right:0!important;
+   margin-right:30px!important;
+   font-weight:600!important;
+   box-shadow: none!important;
+   outline:none!important;
+   
+}
+
+.customButton:hover{
+    background:#083e85!important;
+    color:rgb(210, 230, 240)!important;
+    
+ }
+
+
+ .customButton-pending{
+    height:18px;
+    border-radius:6px!important;
+    font-size:13px!important;
+    color:#0971f5!important;
+    background:white!important;
+    border:1px solid rgb(197, 197, 197)!important;
+    position:absolute !important;
+    right:0!important;
+    margin-right:30px!important;
+    font-weight: 750!important;
+    box-shadow: none!important;
+    outline:none!important;
+    
+ }
+ 
+ .customButton-pending:hover{
+     background:#0a5ecc!important;
+     color:rgb(210, 230, 240)!important;
+     background-color: #4caf50;
+  }
+
+  .customButton-success{
+   height:18px;
+   border-radius:6px!important;
+   font-size:13px!important;
+   color:#fff!important;
+   background:#4caf50!important;
+   border:1px solid white!important;
+   position:absolute !important;
+   right:0!important;
+   margin-right:30px!important;
+   font-weight: 750!important;
+   box-shadow: none!important;
+   outline:none!important;
+}
+
+.customButton-success:hover{
+    background:#378f3a!important;
+    color:rgb(210, 230, 240)!important;
+ }
+
+ 
+ .customButton-error{
+    height:18px;
+    border-radius:6px!important;
+    font-size:13px!important;
+    color:#fff!important;
+    background:#f44336!important;
+    border:1px solid white!important;
+    position:absolute !important;
+    right:0!important;
+    margin-right:30px!important;
+    font-weight: 750!important;
+    box-shadow: none!important;
+    outline:none!important;
+ }
+ 
+ .customButton-error:hover{
+     background:#b43229!important;
+     color:rgb(210, 230, 240)!important;
+  }
+
+
+  .voteButton{
+   color:#fff!important;
+   background:#083e85!important;
+   height:34px!important;
+   border-radius: 5px!important;
+   border:1px solid white!important;
+   overflow:hidden!important;
+   font-size: 0.875rem!important;
+   min-width: 64px!important;
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+   border-radius:7px!important;
+   margin-top:-5px!important;
+   outline:none!important;
+ }
+
+ 
+
+ .voteButton:hover{
+   background:#083e85!important;
+   color:rgb(217, 235, 229)!important;
+   border:1px solid rgb(245, 191, 76)!important;
+}
+
+.voteButton-pending{
+   color:#0971f5!important;
+   background:#fff!important;
+   margin-top:-5px!important;
+   border-radius: 5px!important;
+   border:1px solid white!important;
+   overflow:hidden!important;
+   font-size: 0.875rem!important;
+   min-width: 64px!important;
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+   border-radius:7px!important;
+   margin-top:12px!important;
+   outline:none!important;
+ }
+
+ .voteButton-pending:hover{
+   background: rgb(197, 196, 196)!important;
+   color:#0b64da!important;
+}
+
+.voteButton-error{
+   color:rgb(233, 233, 233)!important;
+   background:#f44336!important;
+   margin-top:-5px!important;
+   border-radius: 5px!important;
+   border:1px solid white!important;
+   overflow:hidden!important;
+   font-size: 0.875rem!important;
+   min-width: 64px!important;
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+   border-radius:7px!important;
+   margin-top:12px!important;
+   outline:none!important;
+ }
+
+ .voteButton-error:hover{
+   background:#b43229!important;
+   color:rgb(179, 180, 180)!important;
+}

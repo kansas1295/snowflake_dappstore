@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Hydro Snowflake",
+    "description": "Snowflake is an ERC-1484 Provider that provides on-/off-chain identity management.",
+    "icon": "../../img/smart_contract_icon.png",
+    "link": "https://github.com/HydroBlockchain/smart-contracts/tree/master/snowflake"
+  },
+  {
+    "title": "Charging Interest",
+    "description": "Smart contract to power charging interest in savings, lending, credit, and mortgage dApps.",
+    "icon": "../../img/smart_contract_icon.png",
+    "link": "https://github.com/ricktobacco/hydro-glacier"
+  },
+  {
+    "title": "Randomized Lottery Dynamics",
+    "description": "Allows randomly selected Snowflake IDs to distribute a defined or accruing amount of $hydro.",
+    "icon": "../../img/smart_contract_icon.png",
+    "link": "https://github.com/merlox/hydro-lottery"
+  },
+  {
+    "title": "Gift Cards",
+    "description": "Allows a business to create gift cards for their services and for a user to redeem these gift cards, with unique characteristics.",
+    "icon": "../../img/smart_contract_icon.png",
+    "link": "https://github.com/kdmukai/hydro-gift-card"
+  },
+  {
+    "title": "Product Orders",
+    "description": "Allows a business to create SKUs and inventory management on goods to be sold to customers.",
+    "icon": "../../img/smart_contract_icon.png",
+    "link": "https://github.com/merlox/ethereum-store"
+  },
+  {
+    "title": "Marketplace Coupons",
+    "description": "Allows a user or business to create coupons tied to Snowflake.",
+    "icon": "../../img/smart_contract_icon.png",
+    "link": "https://github.com/Luiserebii/HydroSnowflake-Marketplace-Coupons"
+  },
+  {
+    "title": "Finance Manager",
+    "description": "Allows a user or business to store user credit cards.",
+    "icon": "../../img/smart_contract_icon.png",
+    "link": "https://github.com/merlox/hydro-finance"
+  }
+]

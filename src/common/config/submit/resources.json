@@ -1,0 +1,44 @@
+[
+  {
+    "title": "dApp Store Walkthrough",
+    "description": "A video demonstration of the Hydro dApp Store showcasing its features and pages.",
+    "category": "how-to",
+    "icon": "../../img/video_icon.png",
+    "link": "https://www.youtube.com/watch?v=4JJbkT1mDlI&feature"
+  },
+  {
+    "title": "Getting Test Ethereum",
+    "description": "How to get test Ethereum on the Rinkeby network for interacting with the dApp Store.",
+    "category": "how-to",
+    "icon": "../../img/document_icon.png",
+    "link": "https://projecthydro.org/blog/how-to-get-test-ethereum/"
+  },
+  {
+    "title": "What is Hydro Snowflake?",
+    "description": "Snowflake is an Identity Protocol. We believe that by creating a modular, open framework...",
+    "category": "resource",
+    "icon": "../../img/document_icon.png",
+    "link": "https://projecthydro.org/developers/hydro-snowflake/"
+  },
+  {
+    "title": "The Anatomy of the dApp Store",
+    "description": "Learn how the dApp Store was built and get insight into the developers thought process on its architecture.",
+    "category": "how-to",
+    "icon": "../../img/document_icon.png",
+    "link": "https://projecthydro.org/anatomy-of-the-hydro-dappstore"
+  },
+  {
+    "title": "Hydro dApp Best Practices",
+    "description": "Best practices for designing and architecting your dApp.",
+    "category": "how-to",
+    "icon": "../../img/document_icon.png",
+    "link": "https://projecthydro.org/blog/hydro-dapp-development-best-practices"
+  },
+  {
+    "title": "ERC-1484",
+    "description": "Smart contract to power charging interest in savings, lending, credit, and mortgage dApps.",
+    "category": "resource",
+    "icon": "../../img/document_icon.png",
+    "link": "https://github.com/ethereum/EIPs/issues/1495"
+  }
+]

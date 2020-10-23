@@ -1,0 +1,26 @@
+/* @define linked-address */
+
+.linked-address {
+  background-color: $snow-light-gray;
+  border: none;
+}
+
+.linked-address__icon {
+  color: #2d59fe;
+  font-size: 3rem;
+}
+
+.linked-address__date {
+  opacity: 0.7;
+  font-size: 0.8rem;
+  margin: 0;
+  font-family: "Nunito-Regular", sans-serif;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.linked-address__linked-wallet-address {
+  font-family: "Nunito-SemiBold", sans-serif;
+  font-size: 14.12;
+  color: #6b6b6b;
+}

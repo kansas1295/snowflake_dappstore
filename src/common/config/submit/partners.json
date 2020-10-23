@@ -1,0 +1,66 @@
+[
+  {
+    "title": "3Box",
+    "description": "3Box provides developers with an easy-to-use toolkit for quickly building production-ready applications capable of scaling with increased usage.",
+    "category": "how-to",
+    "imageWidth": "150",
+    "icon": "https://3box.io/static/media/ThreeBoxLogoBlack.4e0a0543.svg",
+    "link": "https://docs.3box.io/"
+  },
+  {
+    "title": "BZX",
+    "description": "bZx is a financial primitive for shorting, leverage, borrowing, and lending that empowers decentralized, efficient, and rent-free blockchain applications.",
+    "category": "how-to",
+    "imageWidth": "150",
+    "icon": "../../img/partners/bzx.png",
+    "link": "https://docs.bzx.network/bzx.js/intro"
+  },
+  {
+    "title": "Carbon Money",
+    "description": "Use our REST JSON API to access Carbon endpoints, which can buy, sell and swap any cryptocurrency.",
+    "category": "how-to",
+    "imageWidth": "70",
+    "icon": "../../img/partners/carbon_money.svg",
+    "link": "https://docs.carbon.money/"
+  },
+  {
+    "title": "Colony",
+    "description": "colonyJS is a library to help developers build with Colony. Using the colonyJS, you can build applications and services that interact with the colonyNetwork.",
+    "category": "how-to",
+    "imageWidth": "140",
+    "icon": "../../img/partners/colony.png",
+    "link": "https://colony.io/dev/docs/colonyjs/intro-get-started"
+  },
+  {
+    "title": "Hydrogen",
+    "description": "Scale your fintech application in savings, investing, wealth, insurance, and financial wellness with Atom APIs - Nucleus, Proton and Electron.",
+    "category": "how-to",
+    "imageWidth": "150",
+    "icon": "../../img/partners/hydrogen.png",
+    "link": "https://www.hydrogenplatform.com/developers"
+  },
+  {
+    "title": "MESG",
+    "description": "MESG is a framework for developers to build applications efficiently. Use our Event and Marketplace SDKs to add powerful decentralized functionality.",
+    "category": "how-to",
+    "imageWidth": "180",
+    "icon": "../../img/partners/mesg.png",
+    "link": "https://docs.mesg.com/guide/"
+  },
+  {
+    "title": "Temporal",
+    "description": "Temporal is an enterprise-grade storage solution featuring an easy to use API that can be integrated into any existing application stack.",
+    "category": "how-to",
+    "imageWidth": "180",
+    "icon": "../../img/partners/temporal.png",
+    "link": "https://temporal.cloud/dev"
+  },
+  {
+    "title": "Totle",
+    "description": "Totle's API and Smart Contracts work together to compare prices and route orders across the world's leading decentralized exchanges.",
+    "category": "how-to",
+    "imageWidth": "150",
+    "icon": "../../img/partners/totle.png",
+    "link": "https://developers.totle.com/docs/getting-started"
+  }
+]

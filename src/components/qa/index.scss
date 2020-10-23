@@ -1,0 +1,26 @@
+/* @define qa */
+
+.qa {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.qa__header {
+  border-radius: 5px;
+}
+
+.qa__question {
+  padding: 2;
+  padding-left: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.qa__question :hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.qa__answer {
+  color: #333;
+}

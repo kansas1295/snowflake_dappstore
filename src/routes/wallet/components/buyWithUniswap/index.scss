@@ -1,0 +1,48 @@
+/* @define buy-uniswap */
+
+.buy-uniswap {
+  background-color: $snow-light-gray;
+  color: #3c3c3c;
+  border: none;
+  height: 300px;
+
+
+  &__header {
+    padding-top: 0.25rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &__amount {
+    font-size: 55px;
+    margin: 0;
+    font-family: "Nunito-SemiBold", sans-serif;
+    margin: auto;
+    width: 50%;
+    border: none;
+    display: inline-block;
+  }
+
+  &__hydro {
+    opacity: 0.5;
+    font-size: 0.7rem;
+    vertical-align: bottom;
+  }
+
+  &__test-tokens {
+    font-size: 0.7rem;
+    opacity: 0.7;
+  }
+
+  &__eth-required {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+}

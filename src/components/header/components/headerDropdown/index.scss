@@ -1,0 +1,30 @@
+/* @define header-dropdown */
+
+.popover {
+  z-index: 100001;
+}
+
+.header-dropdown__header {
+  background-color: #fff;
+}
+
+.header-dropdown__body {
+  background-color: #f7f7f7;
+}
+
+.header-dropdown__footer {
+  background-color: #fff;
+  padding: 18px;
+}
+
+.header-dropdown__title {
+  font-weight: bold;
+}
+
+.header-dropdown__address-prefix {
+  color: #000;
+}
+
+.header-dropdown__address {
+  color: #ccc;
+}

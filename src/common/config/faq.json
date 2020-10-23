@@ -1,0 +1,18 @@
+[
+  {
+    "question": "What is a dApp?",
+    "answer": "A dApp, or decentralized application is a computer application that runs on a distributed computing system. dApps have been mostly popularized by distributed ledger technologies, namely the Ethereum Blockchain, where dApps are often referred to as smart contracts."
+  },
+  {
+    "question": "What is the Hydro dApp Store?",
+    "answer": "The Hydro dApp Store is a marketplace for decentralized applications, built on Hydro Snowflake."
+  },
+  {
+    "question": "What is the dApp Store built on?",
+    "answer": "The dApp Store uses ReactJS, Web3, Solidity, HTML, CSS and other npm dependencies."
+  },
+  {
+    "question": "How do I become a dApp developer?",
+    "answer": "If you already know react and solidity, you get get a dap up and running pretty quick. Check out some tutorials in the submit a dApp section on the sidebar."
+  }
+]

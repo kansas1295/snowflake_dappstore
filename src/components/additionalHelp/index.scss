@@ -1,0 +1,25 @@
+/* @define additional-help */
+
+.additional-help {
+  background-color: rgba(0, 0, 0, 0.03);
+  margin: 0;
+  padding: 25px;
+}
+
+.additional-help__title {
+  margin: 0;
+  color: $snow-classic-blue;
+  font-size: 1.2rem;
+}
+
+.additional-help__subtitle {
+  color: #474747;
+  font-size: 19px;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.additional-help h4 {
+  font-size: 23.63px;
+  padding-bottom: 5px;
+}

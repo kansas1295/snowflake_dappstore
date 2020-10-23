@@ -1,0 +1,24 @@
+/* @define onboarding */
+
+.onboarding__modal {
+  background-color: #395fff; 
+}
+
+.img-fluid{
+  width:25rem;
+}
+
+.modal{
+  margin-top:20px;
+  max-height:85%;
+}
+
+@media only screen and (max-width: 600px) {
+.modal{
+  margin-top:20px;
+  max-height:85%;
+    
+  }
+}  
+
+
