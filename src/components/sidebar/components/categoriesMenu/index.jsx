@@ -17,6 +17,7 @@ import {
   IoIosPeople,
   IoIosCalculator,
   IoIosCog,
+  IoMdBuild
 } from 'react-icons/io';
 
 import categoriesJson from '../../../../common/config/categories.json';
@@ -30,6 +31,7 @@ function CategoriesMenu() {
     IoIosPeople,
     IoIosCalculator,
     IoIosCog,
+    IoMdBuild,
   };
 
   return (
@@ -38,15 +40,7 @@ function CategoriesMenu() {
         Categories
       </h2>
       <Nav vertical>
-        <NavItem key="all">
-          <NavLink tag={RouterNavLink} exact to="/category/All" className="sidebar__link" activeClassName="sidebar__link--active">
-            <IoIosFolder
-              className="sidebar__icon"
-            />
-            {' '}
-            All Categories
-          </NavLink>
-        </NavItem>
+
         {categoriesJson.map(Categorie => (
           <NavItem key={Categorie.name}>
             <NavLink tag={RouterNavLink} exact to={`/category/${Categorie.name}`} className="sidebar__link" activeClassName="sidebar__link--active">
@@ -64,3 +58,14 @@ function CategoriesMenu() {
 }
 
 export default CategoriesMenu;
+
+//snippet for all categorys
+// <NavItem key="all">
+//   <NavLink tag={RouterNavLink} exact to="/category/All" className="sidebar__link" activeClassName="sidebar__link--active">
+//     <IoIosFolder
+//       className="sidebar__icon"
+//     />
+//     {' '}
+//     All Categories
+//   </NavLink>
+// </NavItem>

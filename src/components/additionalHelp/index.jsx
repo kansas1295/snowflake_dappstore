@@ -16,7 +16,7 @@ function AdditionalHelp() {
           <Row className="additional-help align-items-center">
             <Col>
               <h4 className="additional-help__title">
-                Add A aApp
+                Add A dApp
               </h4>
               <p className="additional-help__subtitle">
                 You do not have any dApps. Add one from the dApp Store and it will show up here.

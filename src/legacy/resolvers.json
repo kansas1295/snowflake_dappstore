@@ -13,15 +13,45 @@
 		"title": "Oxide",
 		"category": "Fintech",
 		"price": "0"
-	},"0xCCB4Ea50F4e4C3f5db8457B575E5Eb498ed7F242": {
-		"title": "WhatOptionDoYouPrefer",
-		"category": "Entertainment",
-		"price": "10000000000000000000" 
+	},
+	"dating-dapp": {
+		"title": "dateME",
+		"category": "Under Development",
+		"price": "0"
 	},
 	"0x351dCAbdfCae2360682a69Fe7296687E13d6a460": {
 		"title": "Voteum",
 		"category": "Under Development",
 		"price": "2000"
+	},
+	"donation-dapp": {
+		"title": "Donations dApp",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"lottery-dapp": {
+		"title": "Lotteryx",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"crowdfunding-dapp": {
+		"title": "DCrowdFunding",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"password-dapp": {
+		"title": "dPasswords",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"giftcard-dapp": {
+		"title": "dGiftcards",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"freelance-dapp": {
+		"title": "dFreelanceJobs",
+		"category": "Under Development",
+		"price": "0"
 	}
-	
 }

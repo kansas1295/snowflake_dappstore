@@ -83,16 +83,14 @@ export default class ElectionCards extends Component {
             {this.state.title} 
             </strong>
             </h3>
-            <div className="card-list">
+                <div className="card-list">
 					
 					<ul className="list-group list-group-flush">
 						<Deadline deadline={this.state.deadline} unixTime={this.state.unixTime}/>
 						
 					</ul>
-                    
-					
-		
-					</div>          
+                    	
+				</div>          
         
             </div>
 		);

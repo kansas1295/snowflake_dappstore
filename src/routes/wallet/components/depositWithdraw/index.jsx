@@ -55,9 +55,6 @@ function DepositWithdraw() {
     getUsdPrice();
   }, [snowflakeBalance]);
 
-  const snowflakeBalanceForNumeral = formatAmount(fromWei(snowflakeBalance.toString()));
-  const numeralSnowflakeBalance = numeral(snowflakeBalanceForNumeral).format('0,0');
-
   function displayTab() {
     if (tab === 'deposit') {
       return (
@@ -82,7 +79,7 @@ function DepositWithdraw() {
         <Row>
           <Col className="text-center">
             <p className="deposit-withdraw__balance mb-0">
-              {numeralSnowflakeBalance}
+              {formatAmount(fromWei(snowflakeBalance.toString()))}
               <span className="deposit-withdraw__hydro">
                 Hydro
               </span>
@@ -93,19 +90,18 @@ function DepositWithdraw() {
           </Col>
         </Row>
         <Row className="justify-content-center align-items-center py-5">
-          <Col className="text-right center" sm="6" xs="6" med="6" lg="6" xl="6">
+          <Col className="text-right center" sm="12" xs="12" med="6" lg="6" xl="6">
             <Button className="btn-white deposit-withdraw__deposit-button" onClick={() => setTab('deposit')}>
               Deposit
             </Button>
           </Col>
-          <Col className="text-left center" sm="6" xs="6" med="6" lg="6" xl="6">
+          <Col className="text-left center" sm="12" xs="12" med="6" lg="6" xl="6">
             <Button color="success deposit-withdraw__withdraw-button" onClick={() => setTab('withdraw')}>
               Withdraw
             </Button>
           </Col>
         </Row>
       </div>
-
     );
   }
 

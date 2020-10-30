@@ -37,7 +37,7 @@ function HeaderAccount() {
   if (ein) {
     return (
       <Row className="justify-content-center align-items-center no-gutters">
-        <Col className="col-lg-8 col-md-8">
+        <Col className="col-md-auto">
           <div className="header-account__wrapper">
             <span className="header-account__welcome">
               {`Welcome, ${hydroId}`}
@@ -48,7 +48,7 @@ function HeaderAccount() {
             </span>
           </div>
         </Col>
-        <Col className="col-lg-4 col-md-2">
+        <Col>
           {identiconRef.current && (
             <HeaderDropdown
               target={identiconRef}

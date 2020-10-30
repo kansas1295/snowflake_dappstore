@@ -1,7 +1,8 @@
-# Snowflake Dashboard (Rinkeby Branch)
+# Snowflake dAppstore
+
 ## Introduction
 
-This repository contains the new version of the Snowflake Dashboard. This version is still a **work-in-progress** and **is not live yet**.
+This repository contains the new version of the Snowflake dAppstore. This version is still a **work-in-progress** and **is not live yet**.
 
 ## Rules and convention
 

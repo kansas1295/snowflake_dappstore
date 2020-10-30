@@ -289,17 +289,15 @@ function getPastDeposits(lib, account) {
 
   const deposits = [];
 
-  return getAccountEin(lib, account)
-    .then(ein => snowflakeContract.getPastEvents(
-      'SnowflakeDeposit', {
-        filter: {
-        // from: account,
-          einTo: ein,
-        },
-        fromBlock: 0,
-        toBlock: 'latest',
+  return snowflakeContract.getPastEvents(
+    'SnowflakeDeposit', {
+      filter: {
+        from: account,
       },
-    ))
+      fromBlock: 0,
+      toBlock: 'latest',
+    },
+  )
     .then((events) => {
       for (let i = 0; i < events.length; i += 1) {
         const deposit = {

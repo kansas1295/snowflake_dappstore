@@ -1,11 +1,12 @@
 /* @define header */
 
 .navbar {
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  padding: 10px 0 0 20px;
   margin: 0;
-  height: 85px;
+  height: 85px auto;
   width: 100%;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  background-color: rgb(6, 27, 47)!important;
 }
 
 .navbar-brand {
@@ -29,7 +30,7 @@
 .header__subtitle {
   font-size: 12px;
   font-weight: 600;
-  color: #8c8c8c;
+  color: #2ac0d5;
   padding: 5px 0 0 0px;
 }
 
@@ -43,8 +44,7 @@
 }
 
 .navbar-light .navbar-toggler {
-  margin-right: 30px;
-  margin-top: -12px;
+  color: #2ac0d5;
 }
 
 .navbar .onboardingButton {
@@ -53,54 +53,27 @@
 
 .header__version {
   font-size: 10px;
-  color: #333;
+  color: #2ac0d5;
   position: absolute;
   top: 13px;
   left: 140px;
 }
 
-.collapsing {
-  -webkit-transition: none;
-  transition: none;
-  display: none;
+.navbar-light .navbar-nav .nav-link {
+    color: #2ac0d5!important;
 }
 
-@media only screen and (max-width: 768px) {
-  .collapse {
-    position: absolute;
-    right: 0;
-    top: 50px;
-  }
-
-  .show .navbar-nav {
-    background-color: #fff;
-    padding: 15px;
-    text-align: right;
-    float: right;
-    width: 100%;
-    margin-top: 25px;
-    max-width: 300px;
-    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  }
-
-  .show .navbar-nav .header-account__wrapper {
-      margin-right: 30px;
-      margin-bottom: 30px;
-  }
-
-  .header-account__welcome {
-    font-size: 19px !important;
-  }
-
-  .header-account__ein {
-    font-size: 17px !important;
-  }
-
-  a.header__faq.nav-link {
-    padding-right: 28px;
-  }
-}
-
-.navbar-toggler {
-  outline: none;
-}
+// .navbar-collapse {
+//     /* flex-basis: 100%; */
+//     flex-grow: 1;
+//     /* align-items: center; */
+//     background: black;
+//     color: white;
+//     display: flex;
+//     /* align-items: center; */
+//     /* width: 100%; */
+//     padding: 1rem;
+//     margin: 1rem;
+//     padding-bottom: 10rem;
+//     /* align-content: center; */
+// }

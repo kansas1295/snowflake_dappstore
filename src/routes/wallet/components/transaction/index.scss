@@ -1,13 +1,13 @@
 /* @define transaction */
 
 .transaction {
-  background-color: $snow-light-gray;
+  background-color: rgb(11, 50, 87)!important;
   border: none;
 }
 
 .transaction__header {
   display: -webkit-box;
-  color: $snow-grey-dark;
+  color: white;
 }
 
 .transaction__header svg {
@@ -17,7 +17,7 @@
 .transaction__type {
   font-family: "Nunito-SemiBold", sans-serif;
   font-size: 16px;
-  color: #6b6b6b;
+  color: #fff;
   padding-left: 10px;
   margin: 0;
 }
@@ -30,7 +30,7 @@
 .transaction__date {
   font-family: "Nunito-Regular", sans-serif;
   font-size: 12px;
-  color: #6b6b6b;
+  color: #fff;
   opacity: 0.7;
   margin: 0;
 }
@@ -39,7 +39,6 @@
   font-family: "Nunito-SemiBold", sans-serif;
   font-size: 20px;
   margin: 0;
-  color: $snow-classic-blue;
   text-align: right;
 }
 

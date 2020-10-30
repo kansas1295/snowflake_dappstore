@@ -17,6 +17,8 @@ export default function NewElection({}) {
   const [title, electionTitle]  = useState('');
   const [description, electionDescription]  = useState('  ');
   const [deadline, electionDeadline]  = useState('  ');
+
+
   const dateTime = Date.now();
   const timestamp = Math.floor(dateTime / 1000);
   

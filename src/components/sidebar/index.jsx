@@ -51,7 +51,7 @@ function Sidebar() {
         <div>
           <NavItem>
             <NavLink tag={RouterNavLink} exact to="/" className="sidebar__link" activeClassName="sidebar__link--active">
-              Hydro dApp Store
+              Snowflake dAppstore
             </NavLink>
           </NavItem>
           <NavItem>
@@ -108,7 +108,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="sidebar sidebar__menu">
+    <div className="sidebar">
       <div className="py-4">
         <Nav vertical>
           {displayButton()}

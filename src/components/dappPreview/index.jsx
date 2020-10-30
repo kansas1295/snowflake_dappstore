@@ -67,7 +67,9 @@ function DappPreview(props) {
     details.category = resolversJson[id].category;
     details.price = resolversJson[id].price;
     details.logo = `${process.env.PUBLIC_URL}/legacy/${id}/logo.png`;
+    
   }
+
   function displayButton() {
     if (!hasIdentity) {
       return (<></>);
@@ -76,7 +78,7 @@ function DappPreview(props) {
     if (!isAdded) {
       return (
         <Button color="outlined" size="sm" onClick={() => setIsPurchaseModalOpen(true)}>
-          Get
+          Explore
         </Button>
       );
     }
