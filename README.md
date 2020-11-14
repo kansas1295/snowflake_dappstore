@@ -3,6 +3,7 @@
 ## Introduction
 
 This repository contains the new version of the Snowflake dAppstore. This version is still a **work-in-progress** and **is not live yet**.
+Install it with `yarn`
 
 ## Rules and convention
 
@@ -17,7 +18,7 @@ Plugins such as ESLint or Stylelint can be installed in your IDE to help you out
 
 This project was bootstrapped using `create-react-app`, all of the scripts are still available. However, we recommend you to use only the two following:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -25,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm run build`
+### `yarn run build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
