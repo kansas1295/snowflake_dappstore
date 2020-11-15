@@ -18,18 +18,11 @@ import {
   CardBody,
   Button,
 } from 'reactstrap';
-import {
-  useWeb3Context,
-} from 'web3-react';
 import SnowflakeContext from '../../contexts/snowflakeContext';
 
 import Purchase from '../purchase';
 import Remove from '../remove';
 import LegacyDapp from '../legacyDapp';
-
-import {
-  isResolverFor,
-} from '../../services/utilities';
 
 import imgPlaceholder from '../../common/img/placeholders/dapp.gif';
 import resolversJson from '../../legacy/resolvers.json';
@@ -52,8 +45,6 @@ function DappPreview(props) {
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
   const [isRemoveModalOpen, setIsRemoveModalOpen] = useState(false);
   const [isDappModalOpen, setIsDappModalOpen] = useState(false);
-
-  const web3 = useWeb3Context();
 
   const details = {
     title: 'Title',

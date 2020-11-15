@@ -13,7 +13,6 @@ import {
   Button,
   Card,
 } from 'reactstrap';
-import numeral from 'numeral';
 
 import SnowflakeContext from '../../../../contexts/snowflakeContext';
 

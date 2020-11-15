@@ -30,34 +30,6 @@ import {
 } from '../../legacy/Rinkeby/0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f/index';
 
 import {
-  DatingDapp,
-} from '../../legacy/Rinkeby/dating-dapp/index';
-
-import {
-  CrowdFunding,
-} from '../../legacy/Rinkeby/crowdfunding-dapp/index';
-
-import {
-  DonationsDapp,
-} from '../../legacy/Rinkeby/donation-dapp/index';
-
-import {
-  FreelanceDapp,
-} from '../../legacy/Rinkeby/freelance-dapp/index';
-
-import {
-  GiftCardDapp,
-} from '../../legacy/Rinkeby/giftcard-dapp/index';
-
-import {
-  LotteryDapp,
-} from '../../legacy/Rinkeby/lottery-dapp/index';
-
-import {
-  PasswordDapp,
-} from '../../legacy/Rinkeby/password-dapp/index';
-
-import {
   ElectionFactory,
 } from '../../legacy/Rinkeby/0x351dCAbdfCae2360682a69Fe7296687E13d6a460/index';
 

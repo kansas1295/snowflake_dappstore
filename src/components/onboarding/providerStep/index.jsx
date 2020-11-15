@@ -30,7 +30,7 @@ function ProviderStep() {
       renderLogo();
       setIsLogoPresent(true);
     }
-  });
+  }, [isLogoPresent]);
 
   return (
     <div>

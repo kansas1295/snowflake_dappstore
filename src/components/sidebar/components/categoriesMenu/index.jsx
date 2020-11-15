@@ -9,7 +9,6 @@ import {
 } from 'react-router-dom';
 
 import {
-  IoIosFolder,
   IoIosFilm,
   IoMdCard,
   IoIosGlobe,

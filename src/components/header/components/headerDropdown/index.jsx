@@ -11,7 +11,6 @@ import {
 import {
   NavLink,
 } from 'react-router-dom';
-import numeral from 'numeral';
 
 import HydroIcon from '../../../../common/img/hydro_grey_drop.png';
 import EthIcon from '../../../../common/img/eth_grey.png';
