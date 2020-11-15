@@ -1,12 +1,7 @@
-import React, {
-  useEffect,
-  useContext,
-} from 'react';
-import {
-  useWeb3Context,
-} from 'web3-react';
+import React, { useEffect, useContext } from "react";
+import { useWeb3Context } from "web3-react";
 
-import SnowflakeContext from './snowflakeContext';
+import SnowflakeContext from "./snowflakeContext";
 
 import {
   getAccountEin,
@@ -15,11 +10,11 @@ import {
   getAccountHydroBalance,
   getAccountEthBalance,
   getIdentity,
-} from '../services/utilities';
+} from "../services/utilities";
 
-import networkConfig from '../common/config/network.json';
+import networkConfig from "../common/config/network.json";
 
-import App from '../components/app';
+import App from "../components/app";
 
 function DataLoader() {
   const web3 = useWeb3Context();
@@ -30,67 +25,79 @@ function DataLoader() {
   useEffect(() => {
     async function getData() {
       dispatch({
-        type: 'set',
-        target: 'ethAddress',
+        type: "set",
+        target: "ethAddress",
         value: web3.account,
       });
 
       dispatch({
-        type: 'set',
-        target: 'networkId',
+        type: "set",
+        target: "networkId",
         value: web3.networkId,
       });
 
       if (web3.networkId === networkConfig.network) {
         const ein = await getAccountEin(web3.library, web3.account);
 
-        if (ein !== '') {
+        if (ein !== "") {
           dispatch({
-            type: 'set',
-            target: 'ein',
+            type: "set",
+            target: "ein",
             value: ein,
           });
 
           const details = await getAccountDetails(web3.library, ein);
           dispatch({
-            type: 'set',
-            target: 'hydroId',
+            type: "set",
+            target: "hydroId",
             value: details.casedHydroID,
           });
 
-          const ethBalance = await getAccountEthBalance(web3.library, web3.account);
+          const ethBalance = await getAccountEthBalance(
+            web3.library,
+            web3.account
+          );
           dispatch({
-            type: 'set',
-            target: 'ethBalance',
+            type: "set",
+            target: "ethBalance",
             value: ethBalance,
           });
 
-          const snowflakeBalance = await getSnowflakeBalance(web3.library, web3.account);
+          const snowflakeBalance = await getSnowflakeBalance(
+            web3.library,
+            web3.account
+          );
           dispatch({
-            type: 'set',
-            target: 'snowflakeBalance',
+            type: "set",
+            target: "snowflakeBalance",
             value: snowflakeBalance,
           });
 
-          const hydroBalance = await getAccountHydroBalance(web3.library, web3.account);
+          const hydroBalance = await getAccountHydroBalance(
+            web3.library,
+            web3.account
+          );
           dispatch({
-            type: 'set',
-            target: 'hydroBalance',
+            type: "set",
+            target: "hydroBalance",
             value: hydroBalance,
           });
 
-          const raindropContractAddress = '0x387Ce3020e13B0a334Bb3EB25DdCb73c133f1D7A';
+          const raindropContractAddress =
+            "0x387Ce3020e13B0a334Bb3EB25DdCb73c133f1D7A";
 
           const identity = await getIdentity(web3.library, web3.account);
           dispatch({
-            type: 'set',
-            target: 'dapps',
-            value: identity.resolvers.filter(resolver => resolver !== raindropContractAddress),
+            type: "set",
+            target: "dapps",
+            value: identity.resolvers.filter(
+              (resolver) => resolver !== raindropContractAddress
+            ),
           });
 
           dispatch({
-            type: 'set',
-            target: 'associatedAddresses',
+            type: "set",
+            target: "associatedAddresses",
             value: identity.associatedAddresses,
           });
         }
@@ -99,8 +106,8 @@ function DataLoader() {
 
     if (web3.active) {
       dispatch({
-        type: 'set',
-        target: 'hasProvider',
+        type: "set",
+        target: "hasProvider",
         value: true,
       });
 
@@ -108,15 +115,13 @@ function DataLoader() {
     }
 
     if (!web3.error && !web3.active) {
-      web3.setFirstValidConnector(['MetaMask']);
+      web3.setFirstValidConnector(["MetaMask"]);
     } else if (web3.error) {
       console.log(web3.error);
     }
-  }, [web3]);
+  }, [web3, dispatch]);
 
-  return (
-    <App />
-  );
+  return <App />;
 }
 
 export default DataLoader;

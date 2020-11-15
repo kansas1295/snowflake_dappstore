@@ -1,11 +1,9 @@
-import React, {
-  useReducer,
-} from 'react';
+import React, { useReducer } from "react";
 
-import Web3 from 'web3';
+import Web3 from "web3";
 
-import SnowflakeContext from './snowflakeContext';
-import DataLoader from './dataLoader';
+import SnowflakeContext from "./snowflakeContext";
+import DataLoader from "./dataLoader";
 
 const initialUser = {
   hasProvider: false,
@@ -15,14 +13,14 @@ const initialUser = {
   ein: null,
   hydroId: null,
   dapps: [],
-  ethBalance: Web3.utils.toBN('0'),
-  hydroBalance: Web3.utils.toBN('0'),
-  snowflakeBalance: Web3.utils.toBN('0'),
+  ethBalance: Web3.utils.toBN("0"),
+  hydroBalance: Web3.utils.toBN("0"),
+  snowflakeBalance: Web3.utils.toBN("0"),
 };
 
 function reduce(state, action) {
   switch (action.type) {
-    case 'set':
+    case "set":
       return {
         ...state,
         [action.target]: action.value,
