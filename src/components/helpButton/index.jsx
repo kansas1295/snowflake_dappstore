@@ -1,9 +1,3 @@
-/**
- * Displays a help button triggering a tooltip on hover
- * TODO: Help Button - Create a specific stylesheet for this component
- * TODO: Help Button - Add an active button design
- */
-
 import React, { useRef, useState } from "react";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import PropTypes from "prop-types";
