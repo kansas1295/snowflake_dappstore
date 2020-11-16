@@ -1,0 +1,49 @@
+/* @define transactions */
+
+#react-paginate {
+  margin: 16px auto;
+  text-align: center;
+  width: 650px;
+  min-width: 600px;
+}
+
+#react-paginate .pagination {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-between;
+}
+
+#react-paginate li {
+  min-width: 32px;
+  outline: none;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  border-color: transparent;
+}
+
+#react-paginate li:hover {
+  border-color: #e1e4e8;
+}
+
+#react-paginate li a {
+  outline: none;
+  color: white !important;
+}
+
+#react-paginate .active {
+  background-color: #0366d6;
+  border-color: transparent;
+  color: white;
+  min-width: 32px;
+}
+
+#react-paginate .break-me {
+  cursor: default;
+}
+
+#react-paginate .break-me:hover {
+  border-color: transparent;
+}
