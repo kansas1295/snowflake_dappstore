@@ -21,7 +21,7 @@ function HeaderAccount() {
     );
   }
 
-  if (ein) {
+  if (ein && typeof ein === "string") {
     return (
       <Row className="justify-content-center align-items-center no-gutters">
         <Col className="col-md-auto">

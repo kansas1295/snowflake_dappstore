@@ -3,7 +3,7 @@
  * FIXME: Scrolling up / down is triggering an update
  */
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -19,63 +19,43 @@ import { CURRENT_VERSION } from "../../settings";
 import HeaderAccount from "./components/headerAccount";
 import headerLogo from "../../common/img/hydro_dapp_store_logo.png";
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen((prev) => !prev);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  toggle() {
-    const { isOpen } = this.state;
-
-    this.setState({
-      isOpen: !isOpen,
-    });
-  }
-
-  render() {
-    const { isOpen } = this.state;
-
-    return (
-      <div>
-        <Navbar color="light" light expand="md" className="bg-white">
-          <NavbarBrand tag={RouterNavLink} exact to="/">
-            <h2 className="header__title">
-              <img
-                src={headerLogo}
-                alt="Powered by Hydro"
-                className="header__logo"
-              />
-            </h2>
-            <p className="header__version">{CURRENT_VERSION}</p>
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="ml-auto align-items-center" navbar>
-              <NavItem>
-                <NavLink
-                  tag={RouterNavLink}
-                  exact
-                  to="/faq"
-                  activeClassName="active"
-                  className="header__faq"
-                >
-                  <IoMdHelpCircle className="header__icon" />
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <HeaderAccount />
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-    );
-  }
-}
+  return (
+    <Navbar color="light" light expand="md" className="bg-white">
+      <NavbarBrand tag={RouterNavLink} exact to="/">
+        <h2 className="header__title">
+          <img
+            src={headerLogo}
+            alt="Powered by Hydro"
+            className="header__logo"
+          />
+        </h2>
+        <p className="header__version">{CURRENT_VERSION}</p>
+      </NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
+        <Nav className="ml-auto align-items-center" navbar>
+          <NavItem>
+            <NavLink
+              tag={RouterNavLink}
+              exact
+              to="/faq"
+              activeClassName="active"
+              className="header__faq"
+            >
+              <IoMdHelpCircle className="header__icon" />
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <HeaderAccount />
+          </NavItem>
+        </Nav>
+      </Collapse>
+    </Navbar>
+  );
+};
 
 export default Header;
