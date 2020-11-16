@@ -1,8 +1,3 @@
-/**
- * Displays a QA
- * TODO: QA - Make chevron clickable to toggle row.
- */
-
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Collapse, Button, CardBody, CardHeader, Card } from "reactstrap";
