@@ -5,58 +5,30 @@
  * Meanwhile, legacy dapps are still hosted here
  */
 
-import React, {
-  useContext,
-} from 'react';
-import PropTypes from 'prop-types';
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-} from 'reactstrap';
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
+import SnowflakeContext from "../../contexts/snowflakeContext";
 
-import SnowflakeContext from '../../contexts/snowflakeContext';
+import { Status } from "../../legacy/Rinkeby/0x16fD6e2E1C4afB9C4e7B901141706596317e4ceB/index";
+import { PetOwnerView } from "../../legacy/Rinkeby/0x26098F10E1539a6b75998AfB1DA552B8fD0AE404/index";
+import { Oxide } from "../../legacy/Rinkeby/0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f/index";
+import { ElectionFactory } from "../../legacy/Rinkeby/0x351dCAbdfCae2360682a69Fe7296687E13d6a460/index";
 
-import {
-  Status,
-} from '../../legacy/Rinkeby/0x16fD6e2E1C4afB9C4e7B901141706596317e4ceB/index';
-
-import {
-  PetOwnerView,
-} from '../../legacy/Rinkeby/0x26098F10E1539a6b75998AfB1DA552B8fD0AE404/index';
-
-import {
-  Oxide,
-} from '../../legacy/Rinkeby/0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f/index';
-
-import {
-  ElectionFactory,
-} from '../../legacy/Rinkeby/0x351dCAbdfCae2360682a69Fe7296687E13d6a460/index';
-
-function LegacyDapp(props) {
+function LegacyDapp({ id, title, isOpen, toggle }) {
   const user = useContext(SnowflakeContext);
-
-  const {
-    ein,
-  } = user;
-
-  const {
-    id,
-    title,
-    isOpen,
-    toggle,
-  } = props;
+  const { ein } = user;
 
   function displayDapp() {
-    if (id === '0x26098F10E1539a6b75998AfB1DA552B8fD0AE404') {
+    if (id === "0x26098F10E1539a6b75998AfB1DA552B8fD0AE404") {
       return <PetOwnerView ein={ein} />;
     }
 
-    if (id === '0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f') {
+    if (id === "0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f") {
       return <Oxide ein={ein} />;
     }
 
-    if (id === '0x351dCAbdfCae2360682a69Fe7296687E13d6a460') {
+    if (id === "0x351dCAbdfCae2360682a69Fe7296687E13d6a460") {
       return <ElectionFactory ein={ein} />;
     }
 
@@ -66,12 +38,8 @@ function LegacyDapp(props) {
   if (ein) {
     return (
       <Modal isOpen={isOpen} toggle={toggle} size="lg">
-        <ModalHeader toggle={toggle}>
-          {title}
-        </ModalHeader>
-        <ModalBody>
-          {displayDapp()}
-        </ModalBody>
+        <ModalHeader toggle={toggle}>{title}</ModalHeader>
+        <ModalBody>{displayDapp()}</ModalBody>
       </Modal>
     );
   }

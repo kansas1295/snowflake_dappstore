@@ -6,50 +6,30 @@
  * TODO: dApp Preview - When you click on the thumbnail image it should prompt you to open/get dApp
  */
 
-import React, {
-  useState,
-  useContext,
-} from 'react';
-import PropTypes from 'prop-types';
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  Button,
-} from 'reactstrap';
-import SnowflakeContext from '../../contexts/snowflakeContext';
+import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
+import { Row, Col, Card, CardBody, Button } from "reactstrap";
+import SnowflakeContext from "../../contexts/snowflakeContext";
 
-import Purchase from '../purchase';
-import Remove from '../remove';
-import LegacyDapp from '../legacyDapp';
+import Purchase from "../purchase";
+import Remove from "../remove";
+import LegacyDapp from "../legacyDapp";
 
-import imgPlaceholder from '../../common/img/placeholders/dapp.gif';
-import resolversJson from '../../legacy/resolvers.json';
+import imgPlaceholder from "../../common/img/placeholders/dapp.gif";
+import resolversJson from "../../legacy/resolvers.json";
 
 function DappPreview(props) {
-  const {
-    id,
-    hasIdentity,
-    legacy,
-    isAdded,
-  } = props;
-
+  const { id, hasIdentity, legacy, isAdded } = props;
   const snowflakeContext = useContext(SnowflakeContext);
-
-  const {
-    networkId,
-    ein,
-  } = snowflakeContext;
-
+  const { networkId, ein } = snowflakeContext;
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
   const [isRemoveModalOpen, setIsRemoveModalOpen] = useState(false);
   const [isDappModalOpen, setIsDappModalOpen] = useState(false);
 
   const details = {
-    title: 'Title',
-    category: 'Category',
-    price: '0',
+    title: "Title",
+    category: "Category",
+    price: "0",
     logo: imgPlaceholder,
   };
 
@@ -58,17 +38,20 @@ function DappPreview(props) {
     details.category = resolversJson[id].category;
     details.price = resolversJson[id].price;
     details.logo = `${process.env.PUBLIC_URL}/legacy/${id}/logo.png`;
-    
   }
 
   function displayButton() {
     if (!hasIdentity) {
-      return (<></>);
+      return <></>;
     }
 
     if (!isAdded) {
       return (
-        <Button color="outlined" size="sm" onClick={() => setIsPurchaseModalOpen(true)}>
+        <Button
+          color="outlined"
+          size="sm"
+          onClick={() => setIsPurchaseModalOpen(true)}
+        >
           Explore
         </Button>
       );
@@ -76,10 +59,18 @@ function DappPreview(props) {
 
     return (
       <>
-        <Button color="success" size="sm" onClick={() => setIsDappModalOpen(true)}>
+        <Button
+          color="success"
+          size="sm"
+          onClick={() => setIsDappModalOpen(true)}
+        >
           Open
         </Button>
-        <Button color="danger" size="sm" onClick={() => setIsRemoveModalOpen(true)}>
+        <Button
+          color="danger"
+          size="sm"
+          onClick={() => setIsRemoveModalOpen(true)}
+        >
           Remove
         </Button>
       </>
@@ -87,7 +78,7 @@ function DappPreview(props) {
   }
 
   function handleTap() {
-    if (networkId === 4 && ein !== '') {
+    if (networkId === 4 && ein !== "") {
       if (isAdded) {
         setIsDappModalOpen(true);
       } else {
@@ -120,7 +111,7 @@ function DappPreview(props) {
       <Card className="dapp-preview">
         <div
           className="dapp-preview__image"
-          style={{ backgroundImage: 'url(' + details.logo + ')' }}
+          style={{ backgroundImage: "url(" + details.logo + ")" }}
           onClick={() => handleTap()}
         >
           <div className="dapp-preview__overlay-wrapper none">
@@ -128,16 +119,10 @@ function DappPreview(props) {
           </div>
         </div>
         <CardBody className="dapp-preview__body">
-          <h4 className="dapp-preview__title">
-            {details.title}
-          </h4>
-          <h5 className="dapp-preview__category">
-            {details.category}
-          </h5>
+          <h4 className="dapp-preview__title">{details.title}</h4>
+          <h5 className="dapp-preview__category">{details.category}</h5>
           <Row className="justify-content-center align-items-center">
-            <Col>
-              {displayButton()}
-            </Col>
+            <Col>{displayButton()}</Col>
           </Row>
         </CardBody>
       </Card>

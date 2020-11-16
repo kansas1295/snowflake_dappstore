@@ -1,8 +1,5 @@
-import React from 'react';
-import {
-  Row,
-  Col,
-} from 'reactstrap';
+import React from "react";
+import { Row, Col } from "reactstrap";
 
 function WrongNetworkStep() {
   return (
@@ -14,9 +11,7 @@ function WrongNetworkStep() {
       </Row>
       <Row className="justify-content-center py-3">
         <Col xs="12" sm="8" className="text-center">
-          <p className="text-white">
-            Wrong Network!
-          </p>
+          <p className="text-white">Wrong Network!</p>
         </Col>
       </Row>
       <Row className="justify-content-center">

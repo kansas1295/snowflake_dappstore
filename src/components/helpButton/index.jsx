@@ -4,24 +4,13 @@
  * TODO: Help Button - Add an active button design
  */
 
-import React, {
-  useRef,
-  useState,
-} from 'react';
-import PropTypes from 'prop-types';
-import {
-  IoIosHelpCircleOutline,
-} from 'react-icons/io';
+import React, { useRef, useState } from "react";
+import { IoIosHelpCircleOutline } from "react-icons/io";
+import PropTypes from "prop-types";
+import Tooltip from "../tooltip";
 
-import Tooltip from '../tooltip';
-
-function HelpButton(props) {
-  const {
-    content,
-  } = props;
-
+function HelpButton({ content }) {
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
-
   const iconRef = useRef();
 
   return (

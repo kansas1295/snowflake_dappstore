@@ -4,7 +4,7 @@
  * FIXME: Scrolling up / down is triggering an update
  */
 
-import React from 'react';
+import React from "react";
 import {
   Collapse,
   Navbar,
@@ -13,16 +13,12 @@ import {
   Nav,
   NavItem,
   NavLink,
-} from 'reactstrap';
-import {
-  NavLink as RouterNavLink,
-} from 'react-router-dom';
-import {
-  IoMdHelpCircle,
-} from 'react-icons/io';
+} from "reactstrap";
+import { NavLink as RouterNavLink } from "react-router-dom";
+import { IoMdHelpCircle } from "react-icons/io";
 
-import HeaderAccount from './components/headerAccount';
-import headerLogo from '../../common/img/hydro_dapp_store_logo.png';
+import HeaderAccount from "./components/headerAccount";
+import headerLogo from "../../common/img/hydro_dapp_store_logo.png";
 
 class Header extends React.Component {
   constructor(props) {
@@ -35,9 +31,7 @@ class Header extends React.Component {
   }
 
   toggle() {
-    const {
-      isOpen,
-    } = this.state;
+    const { isOpen } = this.state;
 
     this.setState({
       isOpen: !isOpen,
@@ -45,16 +39,18 @@ class Header extends React.Component {
   }
 
   render() {
-    const {
-      isOpen,
-    } = this.state;
+    const { isOpen } = this.state;
 
     return (
       <div>
         <Navbar color="light" light expand="md" className="bg-white">
           <NavbarBrand tag={RouterNavLink} exact to="/">
             <h2 className="header__title">
-              <img src={headerLogo} alt="Powered by Hydro" className="header__logo" />
+              <img
+                src={headerLogo}
+                alt="Powered by Hydro"
+                className="header__logo"
+              />
             </h2>
             <p className="header__version">v0.1.0 BETA</p>
           </NavbarBrand>
@@ -62,7 +58,13 @@ class Header extends React.Component {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto align-items-center" navbar>
               <NavItem>
-                <NavLink tag={RouterNavLink} exact to="/faq" activeClassName="active" className="header__faq">
+                <NavLink
+                  tag={RouterNavLink}
+                  exact
+                  to="/faq"
+                  activeClassName="active"
+                  className="header__faq"
+                >
                   <IoMdHelpCircle className="header__icon" />
                 </NavLink>
               </NavItem>

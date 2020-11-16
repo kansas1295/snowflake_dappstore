@@ -1,8 +1,5 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import Footer from ".";
 
-import Footer from '.';
-
-storiesOf('Footer', module)
-  .add('Standard', () => <Footer />);
+storiesOf("Footer", module).add("Standard", () => <Footer />);

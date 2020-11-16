@@ -1,9 +1,7 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import DappPreview from ".";
 
-import DappPreview from '.';
-
-storiesOf('DappPreview', module)
-  .add('Not added', () => <DappPreview />)
-  .add('Added', () => <DappPreview added />);
+storiesOf("DappPreview", module)
+  .add("Not added", () => <DappPreview />)
+  .add("Added", () => <DappPreview added />);

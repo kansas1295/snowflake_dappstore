@@ -3,84 +3,56 @@
  * NOTE: Purchase - Minimum displayed price is currently 1 HYDRO
  */
 
-import React, {
-  useContext,
-} from 'react';
-import PropTypes from 'prop-types';
-import {
-  Row,
-  Col,
-  Alert,
-  Modal,
-  ModalHeader,
-  ModalBody,
-} from 'reactstrap';
-import {
-  useWeb3Context,
-} from 'web3-react';
-import {
-  IoIosCart,
-  IoIosClose,
-} from 'react-icons/io';
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
+import { Row, Col, Alert, Modal, ModalHeader, ModalBody } from "reactstrap";
+import { useWeb3Context } from "web3-react";
+import { IoIosCart, IoIosClose } from "react-icons/io";
 
-import {
-  addResolver,
-} from '../../services/utilities';
+import { addResolver } from "../../services/utilities";
 
-import TransactionButton from '../transactionButton';
-import hydroIcon from '../../common/img/hydro_blue_drop.png';
+import TransactionButton from "../transactionButton";
+import hydroIcon from "../../common/img/hydro_blue_drop.png";
 
-import SnowflakeContext from '../../contexts/snowflakeContext';
+import SnowflakeContext from "../../contexts/snowflakeContext";
 
-function Purchase(props) {
+function Purchase({ id, isOpen, title, price, toggle }) {
   const web3 = useWeb3Context();
-
   const user = useContext(SnowflakeContext);
-
-  const {
-    dapps,
-    dispatch,
-  } = user;
-
-  const {
-    id,
-    isOpen,
-    title,
-    price,
-    toggle,
-  } = props;
-
-  let normalizedPrice = '';
+  const { dapps, dispatch } = user;
+  let normalizedPrice = "";
 
   if (web3.active) {
     normalizedPrice = web3.library.utils.fromWei(price);
   }
 
-  const closeIcon = <IoIosClose className="purchase__close-icon" onClick={toggle} />;
+  const closeIcon = (
+    <IoIosClose className="purchase__close-icon" onClick={toggle} />
+  );
 
   function getReadablePrice() {
     if (web3.active) {
-      if (normalizedPrice === '0') {
-        return '0';
+      if (normalizedPrice === "0") {
+        return "0";
       }
 
-      const minimum = web3.library.utils.toWei('1');
+      const minimum = web3.library.utils.toWei("1");
       const minimumBn = web3.library.utils.toBN(minimum);
 
       if (web3.library.utils.toBN(price).gt(minimumBn)) {
         return normalizedPrice.substring(0, 5);
       }
 
-      return '< 1 ';
+      return "< 1 ";
     }
 
-    return '0';
+    return "0";
   }
 
   function onConfirmation() {
     dispatch({
-      type: 'set',
-      target: 'dapps',
+      type: "set",
+      target: "dapps",
       value: dapps.concat([id]),
     });
 
@@ -95,9 +67,7 @@ function Purchase(props) {
         close={closeIcon}
       >
         <IoIosCart className="purchase__icon" />
-        <span className="purchase__title">
-          Confirm Purchase
-        </span>
+        <span className="purchase__title">Confirm Purchase</span>
       </ModalHeader>
       <ModalBody className="purchase__body">
         <Row>
@@ -115,7 +85,12 @@ function Purchase(props) {
                 <Col sm="3" className="text-right">
                   <p className="purchase__price">
                     {getReadablePrice()}
-                    <img src={hydroIcon} width="16" className="purchase__hydro-icon" alt="preview" />
+                    <img
+                      src={hydroIcon}
+                      width="16"
+                      className="purchase__hydro-icon"
+                      alt="preview"
+                    />
                   </p>
                 </Col>
               </Row>
@@ -125,21 +100,25 @@ function Purchase(props) {
         <Row className="pb-4">
           <Col>
             <p>
-              This dApp costs
-              {' '}
+              This dApp costs{" "}
               <strong>
-                {normalizedPrice > 0 && normalizedPrice < 1 ? '< 1' : normalizedPrice}
-              </strong>
-              {' '}
-              Hydro. Your dApp store wallet balance will be used. Please confirm the dApp title above and finalize purchase below. Refunds are not available. Be sure to check MetaMask for the prompt to continue.
+                {normalizedPrice > 0 && normalizedPrice < 1
+                  ? "< 1"
+                  : normalizedPrice}
+              </strong>{" "}
+              Hydro. Your dApp store wallet balance will be used. Please confirm
+              the dApp title above and finalize purchase below. Refunds are not
+              available. Be sure to check MetaMask for the prompt to continue.
             </p>
             {normalizedPrice > 0 && normalizedPrice < 1 && (
               <p className="purchase__small-price">
-                Total cost:
-                {' '}
-                {normalizedPrice}
-                {' '}
-                <img src={hydroIcon} width="16" className="purchase__hydro-icon" alt="preview" />
+                Total cost: {normalizedPrice}{" "}
+                <img
+                  src={hydroIcon}
+                  width="16"
+                  className="purchase__hydro-icon"
+                  alt="preview"
+                />
               </p>
             )}
           </Col>
@@ -149,12 +128,9 @@ function Purchase(props) {
             <TransactionButton
               initialText="Purchase"
               confirmedText="Purchase confirmed!"
-              sendAction={() => addResolver(
-                web3.library,
-                web3.account,
-                id,
-                price,
-              )}
+              sendAction={() =>
+                addResolver(web3.library, web3.account, id, price)
+              }
               onConfirmationAction={() => onConfirmation()}
               block
             />
@@ -174,7 +150,7 @@ Purchase.propTypes = {
 };
 
 Purchase.defaultProps = {
-  price: '',
+  price: "",
 };
 
 export default Purchase;

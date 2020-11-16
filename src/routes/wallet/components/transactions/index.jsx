@@ -4,10 +4,7 @@
  * TODO: Wallet - Pagination on this page would be nice
  */
 
-import React, {
-  useState,
-  useEffect,
-} from 'react';
+import React, { useState, useEffect } from "react";
 import {
   Nav,
   NavItem,
@@ -16,21 +13,19 @@ import {
   Col,
   TabContent,
   TabPane,
-} from 'reactstrap';
-import {
-  useWeb3Context,
-} from 'web3-react';
+} from "reactstrap";
+import { useWeb3Context } from "web3-react";
 
 import {
   getPastDeposits,
   getPastPurchasedDapps,
   getPastWithdrawals,
-} from '../../../../services/utilities';
+} from "../../../../services/utilities";
 
-import Transaction from '../transaction';
+import Transaction from "../transaction";
 
 function Transactions() {
-  const [tab, setTab] = useState('all');
+  const [tab, setTab] = useState("all");
   const [deposits, setDeposits] = useState([]);
   const [withdrawals, setWithdrawals] = useState([]);
   const [purchasedDapps, setPurchasedDapps] = useState([]);
@@ -61,7 +56,7 @@ function Transactions() {
     }
 
     fetchTransactions();
-  }, [web3.active]);
+  }, [web3.active, web3.account, web3.library]);
 
   return (
     <div>
@@ -70,48 +65,44 @@ function Transactions() {
           <Nav className="filters fadeit">
             <NavItem className="filters__nav-item">
               <NavLink
-                onClick={() => setTab('all')}
-                className={tab === 'all' ? (
-                  'filters__link--active'
-                ) : (
-                  'filters__link'
-                )}
+                onClick={() => setTab("all")}
+                className={
+                  tab === "all" ? "filters__link--active" : "filters__link"
+                }
               >
                 All
               </NavLink>
             </NavItem>
             <NavItem className="filters__nav-item">
               <NavLink
-                onClick={() => setTab('deposits')}
-                className={tab === 'deposits' ? (
-                  'filters__link--active'
-                ) : (
-                  'filters__link'
-                )}
+                onClick={() => setTab("deposits")}
+                className={
+                  tab === "deposits" ? "filters__link--active" : "filters__link"
+                }
               >
                 Deposits
               </NavLink>
             </NavItem>
             <NavItem className="filters__nav-item">
               <NavLink
-                onClick={() => setTab('withdraws')}
-                className={tab === 'withdraws' ? (
-                  'filters__link--active'
-                ) : (
-                  'filters__link'
-                )}
+                onClick={() => setTab("withdraws")}
+                className={
+                  tab === "withdraws"
+                    ? "filters__link--active"
+                    : "filters__link"
+                }
               >
                 Withdrawals
               </NavLink>
             </NavItem>
             <NavItem className="filters__nav-item">
               <NavLink
-                onClick={() => setTab('purchasedDapps')}
-                className={tab === 'purchasedDapps' ? (
-                  'filters__link--active'
-                ) : (
-                  'filters__link'
-                )}
+                onClick={() => setTab("purchasedDapps")}
+                className={
+                  tab === "purchasedDapps"
+                    ? "filters__link--active"
+                    : "filters__link"
+                }
               >
                 Purchased dApps
               </NavLink>
@@ -119,7 +110,7 @@ function Transactions() {
           </Nav>
           <TabContent activeTab={tab} className="fadeit">
             <TabPane tabId="all">
-              {deposits.map(deposit => (
+              {deposits.map((deposit) => (
                 <Transaction
                   key={deposit.txHash}
                   blocknumber={deposit.blocknumber}
@@ -127,7 +118,7 @@ function Transactions() {
                   amount={deposit.amount}
                 />
               ))}
-              {withdrawals.map(withdrawal => (
+              {withdrawals.map((withdrawal) => (
                 <Transaction
                   blocknumber={withdrawal.blocknumber}
                   key={withdrawal.txHash}
@@ -135,7 +126,7 @@ function Transactions() {
                   amount={withdrawal.amount}
                 />
               ))}
-              {purchasedDapps.map(purchase => (
+              {purchasedDapps.map((purchase) => (
                 <Transaction
                   key={purchase.txHash}
                   blocknumber={purchase.blocknumber}
@@ -146,7 +137,7 @@ function Transactions() {
               ))}
             </TabPane>
             <TabPane tabId="deposits">
-              {deposits.map(deposit => (
+              {deposits.map((deposit) => (
                 <Transaction
                   key={deposit.txHash}
                   blocknumber={deposit.blocknumber}
@@ -156,7 +147,7 @@ function Transactions() {
               ))}
             </TabPane>
             <TabPane tabId="withdraws">
-              {withdrawals.map(withdrawal => (
+              {withdrawals.map((withdrawal) => (
                 <Transaction
                   blocknumber={withdrawal.blocknumber}
                   key={withdrawal.txHash}
@@ -166,7 +157,7 @@ function Transactions() {
               ))}
             </TabPane>
             <TabPane tabId="purchasedDapps">
-              {purchasedDapps.map(purchase => (
+              {purchasedDapps.map((purchase) => (
                 <Transaction
                   key={purchase.txHash}
                   blocknumber={purchase.blocknumber}

@@ -1,18 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  Popover,
-  PopoverBody,
-} from 'reactstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import { Popover, PopoverBody } from "reactstrap";
 
-function Tooltip(props) {
-  const {
-    isOpen,
-    toggle,
-    content,
-    target,
-  } = props;
-
+function Tooltip({ isOpen, toggle, content, target }) {
   return (
     <Popover
       target={target}
@@ -21,9 +11,7 @@ function Tooltip(props) {
       isOpen={isOpen}
       toggle={toggle}
     >
-      <PopoverBody>
-        {content}
-      </PopoverBody>
+      <PopoverBody>{content}</PopoverBody>
     </Popover>
   );
 }
@@ -31,7 +19,6 @@ function Tooltip(props) {
 Tooltip.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   toggle: PropTypes.func.isRequired,
-  /* eslint-disable-next-line react/forbid-prop-types */
   target: PropTypes.object.isRequired,
   content: PropTypes.string.isRequired,
 };

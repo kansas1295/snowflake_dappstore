@@ -1,6 +1,6 @@
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { initReactI18next } from 'react-i18next';
+import i18n from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import { initReactI18next } from "react-i18next";
 
 i18n
   .use(LanguageDetector)
@@ -9,26 +9,26 @@ i18n
     resources: {
       en: {
         translations: {
-          hello: 'Hello',
-          createAccount: 'Create Account',
-          faqBody: 'Welcome to the faq',
+          hello: "Hello",
+          createAccount: "Create Account",
+          faqBody: "Welcome to the faq",
         },
       },
       fr: {
         translations: {
-          hello: 'Bonjour',
-          createAccount: 'Créer un compte',
+          hello: "Bonjour",
+          createAccount: "Créer un compte",
         },
       },
     },
-    fallbackLng: 'en',
+    fallbackLng: "en",
     debug: false,
-    ns: ['translations'],
-    defaultNS: 'translations',
+    ns: ["translations"],
+    defaultNS: "translations",
     keySeparator: false,
     interpolation: {
       escapeValue: false,
-      formatSeparator: ',',
+      formatSeparator: ",",
     },
     react: {
       wait: true,

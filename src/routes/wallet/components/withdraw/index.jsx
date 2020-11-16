@@ -2,69 +2,41 @@
  * Displays a form to withdraw tokens from the current Snowflake balance
  */
 
-import React, {
-  useState,
-  useContext,
-} from 'react';
-import PropTypes from 'prop-types';
-import {
-  Row,
-  Col,
-  Button,
-  Input,
-  FormGroup,
-  FormText,
-} from 'reactstrap';
-import {
-  IoIosArrowRoundForward,
-} from 'react-icons/io';
-import {
-  useWeb3Context,
-} from 'web3-react';
+import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
+import { Row, Col, Button, Input, FormGroup, FormText } from "reactstrap";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { useWeb3Context } from "web3-react";
 
-import SnowflakeContext from '../../../../contexts/snowflakeContext';
+import SnowflakeContext from "../../../../contexts/snowflakeContext";
 
-import {
-  withdrawSnowflakeBalance,
-} from '../../../../services/utilities';
+import { withdrawSnowflakeBalance } from "../../../../services/utilities";
 
-import TransactionButton from '../../../../components/transactionButton';
+import TransactionButton from "../../../../components/transactionButton";
 
 import {
   fromWei,
   toBN,
   formatAmount,
   toWei,
-} from '../../../../services/format';
+} from "../../../../services/format";
 
-function Withdraw(props) {
+function Withdraw({ cancel }) {
   const user = useContext(SnowflakeContext);
-
-  const {
-    ethAddress,
-    hydroBalance,
-    snowflakeBalance,
-    dispatch,
-  } = user;
-
-  const {
-    cancel,
-  } = props;
-
-  const [amount, setAmount] = useState('');
-
+  const { ethAddress, hydroBalance, snowflakeBalance, dispatch } = user;
+  const [amount, setAmount] = useState("");
   const web3 = useWeb3Context();
 
   function onConfirmation() {
     dispatch({
-      type: 'set',
-      target: 'hydroBalance',
+      type: "set",
+      target: "hydroBalance",
       value: hydroBalance.add(toBN(toWei(amount.toString()))),
     });
 
     dispatch({
-      type: 'set',
-      target: 'snowflakeBalance',
+      type: "set",
+      target: "snowflakeBalance",
       value: snowflakeBalance.sub(toBN(toWei(amount.toString()))),
     });
 
@@ -75,15 +47,11 @@ function Withdraw(props) {
     <div>
       <Row className="mx-4 justify-content-center align-items-center no-gutters">
         <Col sm="5">
-          <p className="withdraw__subtitle">
-            From
-          </p>
+          <p className="withdraw__subtitle">From</p>
         </Col>
         <Col sm="2" />
         <Col sm="5">
-          <p className="withdraw__subtitle">
-            To
-          </p>
+          <p className="withdraw__subtitle">To</p>
         </Col>
       </Row>
       <Row className="mx-4 justify-content-center align-items-center no-gutters">
@@ -96,12 +64,10 @@ function Withdraw(props) {
                     type="number"
                     className="withdraw__input"
                     placeholder="0"
-                    onChange={e => setAmount(e.target.value)}
+                    onChange={(e) => setAmount(e.target.value)}
                     value={amount}
                   />
-                  <FormText
-                    className="withdraw__form-text"
-                  >
+                  <FormText className="withdraw__form-text">
                     dApp Store Wallet
                   </FormText>
                 </FormGroup>
@@ -136,19 +102,19 @@ function Withdraw(props) {
       </Row>
       <Row className="pt-5 mx-4 justify-content-center align-items-center no-gutters">
         <Col className="text-left">
-          <Button onClick={cancel}>
-            Cancel
-          </Button>
+          <Button onClick={cancel}>Cancel</Button>
         </Col>
         <Col className="text-right">
           <TransactionButton
             color="success"
             initialText="Confirm"
-            sendAction={() => withdrawSnowflakeBalance(
-              web3.library,
-              web3.account,
-              toWei(amount.toString()),
-            )}
+            sendAction={() =>
+              withdrawSnowflakeBalance(
+                web3.library,
+                web3.account,
+                toWei(amount.toString())
+              )
+            }
             onConfirmationAction={onConfirmation}
           />
         </Col>

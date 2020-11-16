@@ -1,7 +1,7 @@
 /* @define slider */
 
 .slider {
-  background-color: rgb(11, 50, 87)!important;
+  background-color: rgb(11, 50, 87) !important;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -48,7 +48,8 @@
   z-index: 9;
 }
 
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,
+.slick-next:before {
   font-size: 35px;
   color: #fff;
   opacity: 1;
@@ -71,12 +72,38 @@
   cursor: pointer;
   box-shadow: 5px 5px 12px rgba(57, 63, 72, 0.2);
   transition: 0.5s;
-  background: -moz-linear-gradient(top,  rgba(137,255,241,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(137,255,241,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(137,255,241,0) 50%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(137,255,241,0) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(137,255,241,0) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) -44%, black 30%);
+  background: -moz-linear-gradient(
+    top,
+    rgba(137, 255, 241, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* FF3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(50%, rgba(137, 255, 241, 0)),
+    color-stop(100%, rgba(0, 0, 0, 1))
+  ); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(137, 255, 241, 0) 50%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(
+    top,
+    rgba(137, 255, 241, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* Opera 11.10+ */
+  background: -ms-linear-gradient(
+    top,
+    rgba(137, 255, 241, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* IE10+ */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) -44%,
+    black 30%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0089fff1', endColorstr='#333',GradientType=0 );
   opacity: 1;
   background-clip: content-box, border-box;
@@ -102,5 +129,5 @@
 }
 
 .slick-next:before {
-  content: url('../../common/img/right_arrow.png')
+  content: url("../../common/img/right_arrow.png");
 }

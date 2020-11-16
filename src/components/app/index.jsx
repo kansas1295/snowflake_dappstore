@@ -1,31 +1,23 @@
-import React from 'react';
-import {
-  BrowserRouter,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import {
-  Container,
-  Row,
-  Col,
-} from 'reactstrap';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Container, Row, Col } from "reactstrap";
 
-import Header from '../header';
-import Footer from '../footer';
-import Sidebar from '../sidebar';
-import Slider from '../slider';
+import Header from "../header";
+import Footer from "../footer";
+import Sidebar from "../sidebar";
+import Slider from "../slider";
 
-import Wallet from '../../routes/wallet';
-import Home from '../../routes/home';
-import Faq from '../../routes/faq';
-import Contact from '../../routes/contact/contact';
-import Identity from '../../routes/identity';
-import About from '../../routes/about';
-import Category from '../../routes/category';
-import Manage from '../../routes/manage';
-import Privacy from '../../routes/privacy';
-import Submit from '../../routes/submit';
-import Terms from '../../routes/terms';
+import Wallet from "../../routes/wallet";
+import Home from "../../routes/home";
+import Faq from "../../routes/faq";
+import Contact from "../../routes/contact/contact";
+import Identity from "../../routes/identity";
+import About from "../../routes/about";
+import Category from "../../routes/category";
+import Manage from "../../routes/manage";
+import Privacy from "../../routes/privacy";
+import Submit from "../../routes/submit";
+import Terms from "../../routes/terms";
 
 function App() {
   return (
@@ -51,7 +43,6 @@ function App() {
                 <Route exact path="/wallet" component={Wallet} />
                 <Route exact path="/submit" component={Submit} />
                 <Route path="/category/:name" component={Category} />
-
                 <Route component={Home} />
               </Switch>
             </Col>

@@ -1,51 +1,36 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import {
-  Button,
-  Spinner,
-} from 'reactstrap';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Button, Spinner } from "reactstrap";
 
-function SignatureButton(props) {
-  const {
-    text,
-    initialAction,
-    callbackAction,
-    finalAction,
-  } = props;
-
-  const [status, setStatus] = useState('');
+function SignatureButton({ text, initialAction, callbackAction, finalAction }) {
+  const [status, setStatus] = useState("");
 
   function sign() {
-    setStatus('waiting');
+    setStatus("waiting");
 
     initialAction()
       .then((signature) => {
-        setStatus('confirmed');
+        setStatus("confirmed");
         callbackAction(signature);
       })
-      .catch((err) => {
-        console.log(err);
-        setStatus('error');
-      });
+      .catch((err) => setStatus("error"));
   }
 
   function showContent() {
-    if (status === 'waiting') {
+    if (status === "waiting") {
       return (
         <div>
-          <Spinner />
-          {' '}
-          Waiting...
+          <Spinner /> Waiting...
         </div>
       );
     }
 
-    if (status === 'confirmed') {
-      return 'Confirmed';
+    if (status === "confirmed") {
+      return "Confirmed";
     }
 
-    if (status === 'error') {
-      return 'error';
+    if (status === "error") {
+      return "error";
     }
 
     return text;
@@ -54,12 +39,7 @@ function SignatureButton(props) {
   return (
     <Button
       color="primary"
-      onClick={
-        status === 'confirmed' ? (
-          () => finalAction()
-        ) : (
-          () => sign()
-        )}
+      onClick={status === "confirmed" ? () => finalAction() : () => sign()}
     >
       {showContent()}
     </Button>

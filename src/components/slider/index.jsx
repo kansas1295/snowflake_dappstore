@@ -5,10 +5,10 @@
  * TODO: Slider - Hoverstate data pull in (Title, Link Category etc..)
  */
 
-import React from 'react';
-import Slider from 'react-slick';
+import React from "react";
+import Slider from "react-slick";
 
-import slidesJson from '../../common/config/slides.json';
+import slidesJson from "../../common/config/slides.json";
 
 const settings = {
   dots: false,
@@ -20,26 +20,26 @@ const settings = {
   slidesToScroll: 1,
   adaptiveHeight: true,
   variableWidth: true,
-  className: 'slider',
+  className: "slider",
   draggable: true,
   touchThreshold: 1000,
   pauseOnHover: true,
   pauseOnFocus: true,
   pauseOnDotsHover: false,
-  cssEase: 'linear',
+  cssEase: "linear",
 };
 
 function Carousel() {
   return (
     <Slider {...settings}>
-      {slidesJson.map(slide => (
-        <div
-          className="fadeit"
-          key={slide.link}
-        >
-          <div onClick={() =>{window.open(slide.link)}}
+      {slidesJson.map((slide) => (
+        <div className="fadeit" key={slide.link}>
+          <div
+            onClick={() => window.open(slide.link)}
             className="slider__test-slide"
-            style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/img/${slide.image})` }}
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/${slide.image})`,
+            }}
           />
         </div>
       ))}

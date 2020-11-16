@@ -2,14 +2,9 @@
  * Handles a transaction and displays the result
  */
 
-import React, {
-  useState,
-} from 'react';
-import PropTypes from 'prop-types';
-import {
-  Button,
-  Spinner,
-} from 'reactstrap';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Button, Spinner } from "reactstrap";
 
 function TransactionButton(props) {
   const {
@@ -25,61 +20,57 @@ function TransactionButton(props) {
     block,
   } = props;
 
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
 
   function sendTransaction() {
-    setStatus('waiting');
+    setStatus("waiting");
 
     let timer;
 
     sendAction()
-      .on('transactionHash', () => {
-        setStatus('pending');
+      .on("transactionHash", () => {
+        setStatus("pending");
 
         timer = setTimeout(() => {
-          setStatus('confirmed');
+          setStatus("confirmed");
           onConfirmationAction();
         }, 30000);
       })
-      .on('receipt', () => {
+      .on("receipt", () => {
         clearTimeout(timer);
-        setStatus('confirmed');
+        setStatus("confirmed");
         onConfirmationAction();
       })
-      .on('error', (error) => {
+      .on("error", (error) => {
         console.log(error);
         clearTimeout(timer);
-        setStatus('error');
+        setStatus("error");
       });
   }
 
   function showButtonContent() {
-    if (status === 'waiting') {
+    if (status === "waiting") {
       return (
         <div>
-          <Spinner />
-          {' '}
-          {waitingForUserConfirmationText}
+          <Spinner /> {waitingForUserConfirmationText}
         </div>
       );
     }
 
-    if (status === 'pending') {
+    if (status === "pending") {
       return (
         <div>
-          <Spinner />
-          {' '}
-          {waitingForConfirmationText}
+          <Spinner /> {waitingForConfirmationText}
         </div>
       );
     }
 
-    if (status === 'confirmed') {
+    if (status === "confirmed") {
       return confirmedText;
     }
 
-    if (status === 'error') {
-      return 'Error...';
+    if (status === "error") {
+      return "Error...";
     }
 
     return initialText;
@@ -92,11 +83,10 @@ function TransactionButton(props) {
         className={className}
         block={block}
         onClick={
-          status === 'confirmed' ? (
-            () => afterConfirmationAction()
-          ) : (
-            () => sendTransaction()
-          )}
+          status === "confirmed"
+            ? () => afterConfirmationAction()
+            : () => sendTransaction()
+        }
       >
         {showButtonContent()}
       </Button>
@@ -118,14 +108,14 @@ TransactionButton.propTypes = {
 };
 
 TransactionButton.defaultProps = {
-  initialText: 'Send',
-  waitingForUserConfirmationText: 'Check MetaMask...',
-  waitingForConfirmationText: 'Loading...',
-  confirmedText: 'Confirmed!',
-  afterConfirmationAction: () => console.log(''),
-  onConfirmationAction: () => console.log('Transaction confirmed!'),
-  className: '',
-  color: 'primary',
+  initialText: "Send",
+  waitingForUserConfirmationText: "Check MetaMask...",
+  waitingForConfirmationText: "Loading...",
+  confirmedText: "Confirmed!",
+  afterConfirmationAction: () => console.log(""),
+  onConfirmationAction: () => console.log("Transaction confirmed!"),
+  className: "",
+  color: "primary",
   block: false,
 };
 
