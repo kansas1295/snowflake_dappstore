@@ -53,65 +53,36 @@ function Transactions() {
     fetchTransactions();
   }, [web3.active, web3.account, web3.library]);
 
-  const getBody = () => {
+  const getBody = (activeTab) => {
+    const getCorrectArray = (tabName) => {
+      if (tabName === "All") {
+        return [...deposits, ...withdrawals, ...purchasedDapps];
+      }
+      if (tabName === "Deposits") {
+        return deposits;
+      }
+      if (tabName === "Withdrawals") {
+        return withdrawals;
+      }
+      return purchasedDapps;
+    };
+
+    const arr = getCorrectArray(activeTab);
+    const tabID = activeTab;
+
     return (
-      <>
-        <TabPane tabId="All">
-          {[...deposits, ...withdrawals].length > 0 &&
-            [...deposits, ...withdrawals].map((ele) => (
-              <Transaction
-                key={ele.txHash}
-                blocknumber={ele.blocknumber}
-                type={ele.event}
-                amount={ele.amount}
-              />
-            ))}
-          {purchasedDapps.length > 0 &&
-            purchasedDapps.map((purchase) => (
-              <Transaction
-                key={purchase.txHash}
-                blocknumber={purchase.blocknumber}
-                type={purchase.event}
-                amount={purchase.amount}
-                resolver={purchase.resolver}
-              />
-            ))}
-        </TabPane>
-        <TabPane tabId="Deposits">
-          {deposits.length > 0 &&
-            deposits.map((deposit) => (
-              <Transaction
-                key={deposit.txHash}
-                blocknumber={deposit.blocknumber}
-                type={deposit.event}
-                amount={deposit.amount}
-              />
-            ))}
-        </TabPane>
-        <TabPane tabId="Withdrawals">
-          {withdrawals.length > 0 &&
-            withdrawals.map((withdrawal) => (
-              <Transaction
-                blocknumber={withdrawal.blocknumber}
-                key={withdrawal.txHash}
-                type={withdrawal.event}
-                amount={withdrawal.amount}
-              />
-            ))}
-        </TabPane>
-        <TabPane tabId="Purchased dApps">
-          {purchasedDapps.length > 0 &&
-            purchasedDapps.map((purchase) => (
-              <Transaction
-                key={purchase.txHash}
-                blocknumber={purchase.blocknumber}
-                type={purchase.event}
-                amount={purchase.amount}
-                resolver={purchase.resolver}
-              />
-            ))}
-        </TabPane>
-      </>
+      <TabPane tabId={tabID}>
+        {arr.length > 0 &&
+          arr.map((ele) => (
+            <Transaction
+              key={ele.txHash}
+              blocknumber={ele.blocknumber}
+              type={ele.event}
+              amount={ele.amount}
+              resolver={ele?.resolver}
+            />
+          ))}
+      </TabPane>
     );
   };
 
@@ -134,7 +105,7 @@ function Transactions() {
           ))}
         </Nav>
         <TabContent activeTab={tab} className="fadeit">
-          {getBody()}
+          {getBody(tab)}
         </TabContent>
       </Col>
     </Row>
