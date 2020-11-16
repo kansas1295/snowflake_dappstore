@@ -15,7 +15,7 @@ function HelpButton({ content }) {
 
   return (
     <div className="help-button" ref={iconRef}>
-      <IoIosHelpCircleOutline />
+      <IoIosHelpCircleOutline onMouseOver={() => setIsTooltipOpen(true)} />
       {iconRef.current && (
         <Tooltip
           target={iconRef}
