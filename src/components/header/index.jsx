@@ -1,5 +1,4 @@
 /**
- * TODO: Header - Make version dynamic and pull in settings file
  * FIXME: The event listeners may cause a memory leak
  * FIXME: Scrolling up / down is triggering an update
  */
@@ -16,7 +15,7 @@ import {
 } from "reactstrap";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { IoMdHelpCircle } from "react-icons/io";
-
+import { CURRENT_VERSION } from "../../settings";
 import HeaderAccount from "./components/headerAccount";
 import headerLogo from "../../common/img/hydro_dapp_store_logo.png";
 
@@ -52,7 +51,7 @@ class Header extends React.Component {
                 className="header__logo"
               />
             </h2>
-            <p className="header__version">v0.1.0 BETA</p>
+            <p className="header__version">{CURRENT_VERSION}</p>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
