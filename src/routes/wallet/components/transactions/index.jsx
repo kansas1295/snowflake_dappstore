@@ -1,6 +1,5 @@
 /**
  * Displays the transactions linked to the current account
- * TODO: Wallet - The "all" tab should mix all the tx
  * TODO: Wallet - Pagination on this page would be nice
  */
 
@@ -31,152 +30,114 @@ function Transactions() {
   const [purchasedDapps, setPurchasedDapps] = useState([]);
 
   const web3 = useWeb3Context();
+  const itemList = ["All", "Deposits", "Withdrawals", "Purchased dApps"];
 
   useEffect(() => {
     async function fetchTransactions() {
-      if (web3.active) {
-        getPastDeposits(web3.library, web3.account)
-          .then((res) => {
-            setDeposits(res);
-
-            return getPastWithdrawals(web3.library, web3.account);
-          })
-          .then((res) => {
-            setWithdrawals(res);
-
-            return getPastPurchasedDapps(web3.library, web3.account);
-          })
-          .then((res) => {
-            setPurchasedDapps(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+      if (!web3.active) {
+        return;
       }
+      getPastDeposits(web3.library, web3.account)
+        .then((res) => {
+          setDeposits(res);
+          return getPastWithdrawals(web3.library, web3.account);
+        })
+        .then((res) => {
+          setWithdrawals(res);
+          return getPastPurchasedDapps(web3.library, web3.account);
+        })
+        .then(setPurchasedDapps)
+        .catch(console.log);
     }
 
     fetchTransactions();
   }, [web3.active, web3.account, web3.library]);
 
+  const getBody = () => {
+    return (
+      <>
+        <TabPane tabId="All">
+          {[...deposits, ...withdrawals].length > 0 &&
+            [...deposits, ...withdrawals].map((ele) => (
+              <Transaction
+                key={ele.txHash}
+                blocknumber={ele.blocknumber}
+                type={ele.event}
+                amount={ele.amount}
+              />
+            ))}
+          {purchasedDapps.length > 0 &&
+            purchasedDapps.map((purchase) => (
+              <Transaction
+                key={purchase.txHash}
+                blocknumber={purchase.blocknumber}
+                type={purchase.event}
+                amount={purchase.amount}
+                resolver={purchase.resolver}
+              />
+            ))}
+        </TabPane>
+        <TabPane tabId="Deposits">
+          {deposits.length > 0 &&
+            deposits.map((deposit) => (
+              <Transaction
+                key={deposit.txHash}
+                blocknumber={deposit.blocknumber}
+                type={deposit.event}
+                amount={deposit.amount}
+              />
+            ))}
+        </TabPane>
+        <TabPane tabId="Withdrawals">
+          {withdrawals.length > 0 &&
+            withdrawals.map((withdrawal) => (
+              <Transaction
+                blocknumber={withdrawal.blocknumber}
+                key={withdrawal.txHash}
+                type={withdrawal.event}
+                amount={withdrawal.amount}
+              />
+            ))}
+        </TabPane>
+        <TabPane tabId="Purchased dApps">
+          {purchasedDapps.length > 0 &&
+            purchasedDapps.map((purchase) => (
+              <Transaction
+                key={purchase.txHash}
+                blocknumber={purchase.blocknumber}
+                type={purchase.event}
+                amount={purchase.amount}
+                resolver={purchase.resolver}
+              />
+            ))}
+        </TabPane>
+      </>
+    );
+  };
+
   return (
-    <div>
-      <Row className="py-5">
-        <Col>
-          <Nav className="filters fadeit">
+    <Row className="py-5">
+      <Col>
+        <Nav className="filters fadeit">
+          {itemList.map((ele) => (
             <NavItem className="filters__nav-item">
               <NavLink
-                onClick={() => setTab("all")}
+                onClick={() => setTab(ele)}
                 className={
-                  tab === "all" ? "filters__link--active" : "filters__link"
+                  tab === ele ? "filters__link--active" : "filters__link"
                 }
+                key={ele}
               >
-                All
+                {ele}
               </NavLink>
             </NavItem>
-            <NavItem className="filters__nav-item">
-              <NavLink
-                onClick={() => setTab("deposits")}
-                className={
-                  tab === "deposits" ? "filters__link--active" : "filters__link"
-                }
-              >
-                Deposits
-              </NavLink>
-            </NavItem>
-            <NavItem className="filters__nav-item">
-              <NavLink
-                onClick={() => setTab("withdraws")}
-                className={
-                  tab === "withdraws"
-                    ? "filters__link--active"
-                    : "filters__link"
-                }
-              >
-                Withdrawals
-              </NavLink>
-            </NavItem>
-            <NavItem className="filters__nav-item">
-              <NavLink
-                onClick={() => setTab("purchasedDapps")}
-                className={
-                  tab === "purchasedDapps"
-                    ? "filters__link--active"
-                    : "filters__link"
-                }
-              >
-                Purchased dApps
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <TabContent activeTab={tab} className="fadeit">
-            <TabPane tabId="all">
-              {deposits.length > 0 &&
-                deposits.map((deposit) => (
-                  <Transaction
-                    key={deposit.txHash}
-                    blocknumber={deposit.blocknumber}
-                    type={deposit.event}
-                    amount={deposit.amount}
-                  />
-                ))}
-              {withdrawals.length > 0 &&
-                withdrawals.map((withdrawal) => (
-                  <Transaction
-                    blocknumber={withdrawal.blocknumber}
-                    key={withdrawal.txHash}
-                    type={withdrawal.event}
-                    amount={withdrawal.amount}
-                  />
-                ))}
-              {purchasedDapps.length > 0 &&
-                purchasedDapps.map((purchase) => (
-                  <Transaction
-                    key={purchase.txHash}
-                    blocknumber={purchase.blocknumber}
-                    type={purchase.event}
-                    amount={purchase.amount}
-                    resolver={purchase.resolver}
-                  />
-                ))}
-            </TabPane>
-            <TabPane tabId="deposits">
-              {deposits.length > 0 &&
-                deposits.map((deposit) => (
-                  <Transaction
-                    key={deposit.txHash}
-                    blocknumber={deposit.blocknumber}
-                    type={deposit.event}
-                    amount={deposit.amount}
-                  />
-                ))}
-            </TabPane>
-            <TabPane tabId="withdraws">
-              {withdrawals.length > 0 &&
-                withdrawals.map((withdrawal) => (
-                  <Transaction
-                    blocknumber={withdrawal.blocknumber}
-                    key={withdrawal.txHash}
-                    type={withdrawal.event}
-                    amount={withdrawal.amount}
-                  />
-                ))}
-            </TabPane>
-            <TabPane tabId="purchasedDapps">
-              {purchasedDapps.length > 0 &&
-                purchasedDapps.map((purchase) => (
-                  <Transaction
-                    key={purchase.txHash}
-                    blocknumber={purchase.blocknumber}
-                    type={purchase.event}
-                    amount={purchase.amount}
-                    resolver={purchase.resolver}
-                  />
-                ))}
-            </TabPane>
-          </TabContent>
-        </Col>
-      </Row>
-    </div>
+          ))}
+        </Nav>
+        <TabContent activeTab={tab} className="fadeit">
+          {getBody()}
+        </TabContent>
+      </Col>
+    </Row>
   );
 }
 
