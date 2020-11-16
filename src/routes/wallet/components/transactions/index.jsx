@@ -110,62 +110,68 @@ function Transactions() {
           </Nav>
           <TabContent activeTab={tab} className="fadeit">
             <TabPane tabId="all">
-              {deposits.map((deposit) => (
-                <Transaction
-                  key={deposit.txHash}
-                  blocknumber={deposit.blocknumber}
-                  type={deposit.event}
-                  amount={deposit.amount}
-                />
-              ))}
-              {withdrawals.map((withdrawal) => (
-                <Transaction
-                  blocknumber={withdrawal.blocknumber}
-                  key={withdrawal.txHash}
-                  type={withdrawal.event}
-                  amount={withdrawal.amount}
-                />
-              ))}
-              {purchasedDapps.map((purchase) => (
-                <Transaction
-                  key={purchase.txHash}
-                  blocknumber={purchase.blocknumber}
-                  type={purchase.event}
-                  amount={purchase.amount}
-                  resolver={purchase.resolver}
-                />
-              ))}
+              {deposits.length > 0 &&
+                deposits.map((deposit) => (
+                  <Transaction
+                    key={deposit.txHash}
+                    blocknumber={deposit.blocknumber}
+                    type={deposit.event}
+                    amount={deposit.amount}
+                  />
+                ))}
+              {withdrawals.length > 0 &&
+                withdrawals.map((withdrawal) => (
+                  <Transaction
+                    blocknumber={withdrawal.blocknumber}
+                    key={withdrawal.txHash}
+                    type={withdrawal.event}
+                    amount={withdrawal.amount}
+                  />
+                ))}
+              {purchasedDapps.length > 0 &&
+                purchasedDapps.map((purchase) => (
+                  <Transaction
+                    key={purchase.txHash}
+                    blocknumber={purchase.blocknumber}
+                    type={purchase.event}
+                    amount={purchase.amount}
+                    resolver={purchase.resolver}
+                  />
+                ))}
             </TabPane>
             <TabPane tabId="deposits">
-              {deposits.map((deposit) => (
-                <Transaction
-                  key={deposit.txHash}
-                  blocknumber={deposit.blocknumber}
-                  type={deposit.event}
-                  amount={deposit.amount}
-                />
-              ))}
+              {deposits.length > 0 &&
+                deposits.map((deposit) => (
+                  <Transaction
+                    key={deposit.txHash}
+                    blocknumber={deposit.blocknumber}
+                    type={deposit.event}
+                    amount={deposit.amount}
+                  />
+                ))}
             </TabPane>
             <TabPane tabId="withdraws">
-              {withdrawals.map((withdrawal) => (
-                <Transaction
-                  blocknumber={withdrawal.blocknumber}
-                  key={withdrawal.txHash}
-                  type={withdrawal.event}
-                  amount={withdrawal.amount}
-                />
-              ))}
+              {withdrawals.length > 0 &&
+                withdrawals.map((withdrawal) => (
+                  <Transaction
+                    blocknumber={withdrawal.blocknumber}
+                    key={withdrawal.txHash}
+                    type={withdrawal.event}
+                    amount={withdrawal.amount}
+                  />
+                ))}
             </TabPane>
             <TabPane tabId="purchasedDapps">
-              {purchasedDapps.map((purchase) => (
-                <Transaction
-                  key={purchase.txHash}
-                  blocknumber={purchase.blocknumber}
-                  type={purchase.event}
-                  amount={purchase.amount}
-                  resolver={purchase.resolver}
-                />
-              ))}
+              {purchasedDapps.length > 0 &&
+                purchasedDapps.map((purchase) => (
+                  <Transaction
+                    key={purchase.txHash}
+                    blocknumber={purchase.blocknumber}
+                    type={purchase.event}
+                    amount={purchase.amount}
+                    resolver={purchase.resolver}
+                  />
+                ))}
             </TabPane>
           </TabContent>
         </Col>
