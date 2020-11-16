@@ -54,15 +54,14 @@ function getAccountEin(lib, address) {
     .getEIN(address)
     .call()
     .then((ein) => {
-      if (
-        ein ===
-        "3963877391197344453575983046348115674221700746820753546331534351508065746944"
-      ) {
-        /* TODO: Utility - Return an error if no ein is found */
-        // throw new Error('No ein');
+      if (ein === "") {
+        throw new Error("No EIN");
+      }
+      const Default_EIN =
+        "3963877391197344453575983046348115674221700746820753546331534351508065746944";
+      if (ein === Default_EIN) {
         return "";
       }
-
       return ein;
     })
     .catch((err) => err);
