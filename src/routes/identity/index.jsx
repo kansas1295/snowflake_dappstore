@@ -1,8 +1,3 @@
-/**
- * Displays tools to manage the identity of the current user
- * TODO: Identity - Fix the col width and center the elements
- */
-
 import React, { useContext } from "react";
 import { Row, Col, Card } from "reactstrap";
 import { IoMdLink } from "react-icons/io";
@@ -20,7 +15,6 @@ import StatusWidget from "./components/statusWidget";
 
 const Identity = () => {
   const user = useContext(SnowflakeContext);
-
   const { ein, hydroId, associatedAddresses } = user;
 
   return (
@@ -51,8 +45,10 @@ const Identity = () => {
                 </p>
               </Col>
               <Col xs="6">
-                <p className="identity__hydro-id">Hydro ID: {hydroId}</p>
-                <p className="identity__ein">EIN: {ein}</p>
+                <p className="identity__hydro-id">Hydro ID: {hydroId || ""}</p>
+                <p className="identity__ein">
+                  EIN: {typeof ein === "string" ? ein : ""}
+                </p>
                 <p className="identity__linked-wallets">
                   {`Linked Wallet(s): ${associatedAddresses.length}`}
                 </p>
