@@ -1,6 +1,5 @@
 /**
  * Displays a slider
- * TODO: Slider - Hoverstate class
  * TODO: Slider - Hoverstate data pull in (Title, Link Category etc..)
  */
 

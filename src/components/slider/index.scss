@@ -13,16 +13,19 @@
   min-height: 150px;
   width: 320px;
   height: 230px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 2px;
-  padding-right: 2px;
   border-radius: 10px;
   vertical-align: middle;
   text-align: center;
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   cursor: pointer;
   margin-right: 22px;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.slider__test-slide:hover {
+  transform: scale(1.2);
+  z-index: 10 !important;
 }
 
 .slick-next {
