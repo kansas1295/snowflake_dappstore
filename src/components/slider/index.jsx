@@ -1,6 +1,5 @@
 /**
  * Displays a slider
- * TODO: Slider - The images should be imported from the src folder not the public one
  * TODO: Slider - Hoverstate class
  * TODO: Slider - Hoverstate data pull in (Title, Link Category etc..)
  */
@@ -34,12 +33,10 @@ function Carousel() {
     <Slider {...settings}>
       {slidesJson.map((slide) => (
         <div className="fadeit" key={slide.link}>
-          <div
-            onClick={() => window.open(slide.link)}
+          <img
+            src={require("../../common/img/" + slide.image).default}
+            alt="SlideImage"
             className="slider__test-slide"
-            style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/${slide.image})`,
-            }}
           />
         </div>
       ))}
