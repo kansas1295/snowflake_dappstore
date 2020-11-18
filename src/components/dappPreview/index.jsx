@@ -14,6 +14,7 @@ import SnowflakeContext from "../../contexts/snowflakeContext";
 import Purchase from "../purchase";
 import Remove from "../remove";
 import LegacyDapp from "../legacyDapp";
+import UnderDev from "../under_dev";
 
 import imgPlaceholder from "../../common/img/placeholders/dapp.gif";
 import resolversJson from "../../legacy/resolvers.json";
@@ -25,6 +26,7 @@ function DappPreview(props) {
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
   const [isRemoveModalOpen, setIsRemoveModalOpen] = useState(false);
   const [isDappModalOpen, setIsDappModalOpen] = useState(false);
+  const [isUnderDevModalOpen, setIsUnderDevModalOpen] = useState(false);
 
   const details = {
     title: "Title",
@@ -41,7 +43,7 @@ function DappPreview(props) {
   }
 
   function displayButton() {
-    if (!hasIdentity) {
+    if (!hasIdentity || details.category === "Under Development") {
       return <></>;
     }
 
@@ -79,7 +81,9 @@ function DappPreview(props) {
 
   function handleTap() {
     if (networkId === 4 && ein !== "") {
-      if (isAdded) {
+      if (details.category === "Under Development") {
+        setIsUnderDevModalOpen(true);
+      } else if (isAdded) {
         setIsDappModalOpen(true);
       } else {
         setIsPurchaseModalOpen(true);
@@ -107,6 +111,12 @@ function DappPreview(props) {
         title={details.title}
         isOpen={isRemoveModalOpen}
         toggle={() => setIsRemoveModalOpen(false)}
+      />
+      <UnderDev
+        id={id}
+        title={details.title}
+        isOpen={isUnderDevModalOpen}
+        toggle={() => setIsUnderDevModalOpen(false)}
       />
       <Card className="dapp-preview">
         <div
