@@ -1,16 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  Row,
-  Col,
-  CardDeck,
-} from 'reactstrap';
-import DappPreview from '../../components/dappPreview';
-import resolversJson from '../../legacy/resolvers.json';
+import React from "react";
+import PropTypes from "prop-types";
+import { Row, Col, CardDeck } from "reactstrap";
+import DappPreview from "../../components/dappPreview";
+import resolversJson from "../../legacy/resolvers.json";
 
-function Category({
-  match,
-}) {
+function Category({ match }) {
   const { name } = match.params;
   const dappsToDisplay = [];
 
@@ -30,7 +24,7 @@ function Category({
           id={dappsToDisplay[i]}
           legacy
           added={false}
-        />,
+        />
       );
     }
 
@@ -41,18 +35,14 @@ function Category({
     <div>
       <Row>
         <Col>
-          <h1 className="title">
-            {`${name} dApps`}
-          </h1>
+          <h1 className="title">{`${name} dApps`}</h1>
         </Col>
       </Row>
 
       {dappsToDisplay.length > 0 ? (
         <Row className="py-3">
           <Col>
-            <CardDeck>
-              {displayDapps()}
-            </CardDeck>
+            <CardDeck>{displayDapps()}</CardDeck>
           </Col>
         </Row>
       ) : (
@@ -61,7 +51,9 @@ function Category({
             <Row className="additional-help align-items-center">
               <Col>
                 <h4 className="additional-help__title">Be The First</h4>
-                <p className="additional-help__subtitle">Submit your dApp to this category and earn a Hydro bounty!</p>
+                <p className="additional-help__subtitle">
+                  Submit your dApp to this category and earn a Hydro bounty!
+                </p>
               </Col>
               <Col sm="4" className="text-right">
                 <a

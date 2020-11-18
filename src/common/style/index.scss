@@ -2,76 +2,98 @@
  * Our main stylesheet
  */
 
-@import './variables.scss';
-@import '~bootstrap/scss/bootstrap';
-@import '~slick-carousel/slick/slick.css';
-@import '~slick-carousel/slick/slick-theme.css';
-@import './fonts.scss';
-@import './filters.scss';
+@import "./variables.scss";
+@import "~bootstrap/scss/bootstrap";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import "./fonts.scss";
+@import "./filters.scss";
 
 // Common components
-@import '../../components/app/index.scss';
-@import '../../components/callToAction/index.scss';
-@import '../../components/dappPreview/index.scss';
-@import '../../components/footer/index.scss';
-@import '../../components/header/index.scss';
-@import '../../components/header/components/headerAccount/index.scss';
-@import '../../components/header/components/headerDropdown/index.scss';
-@import '../../components/onboarding/index.scss';
-@import '../../components/purchase/index.scss';
-@import '../../components/qa/index.scss';
-@import '../../components/remove/index.scss';
-@import '../../components/sidebar/index.scss';
-@import '../../components/sidebar/components/categoriesMenu/index.scss';
-@import '../../components/slider/index.scss';
-@import '../../components/tooltip/index.scss';
-@import '../../components/transactionButton/index.scss';
-@import '../../components/helpButton/index.scss';
-@import '../../components/additionalHelp/index.scss';
+@import "../../components/app/index.scss";
+@import "../../components/callToAction/index.scss";
+@import "../../components/dappPreview/index.scss";
+@import "../../components/footer/index.scss";
+@import "../../components/header/index.scss";
+@import "../../components/header/components/headerAccount/index.scss";
+@import "../../components/header/components/headerDropdown/index.scss";
+@import "../../components/onboarding/index.scss";
+@import "../../components/modal/purchase/index.scss";
+@import "../../components/modal/under_dev/index.scss";
+@import "../../components/modal/remove/index.scss";
+@import "../../components/qa/index.scss";
+@import "../../components/sidebar/index.scss";
+@import "../../components/sidebar/components/categoriesMenu/index.scss";
+@import "../../components/slider/index.scss";
+@import "../../components/tooltip/index.scss";
+@import "../../components/transactionButton/index.scss";
+@import "../../components/helpButton/index.scss";
+@import "../../components/additionalHelp/index.scss";
 
 // Routes (and their components)
-@import '../../routes/faq/index.scss';
-@import '../../routes/identity/index.scss';
-@import '../../routes/identity/components/statusWidget/index.scss';
-@import '../../routes/identity/components/linkedAddress/index.scss';
-@import '../../routes/identity/components/linkAddressCard/index.scss';
-@import '../../routes/submit/index.scss';
-@import '../../routes/wallet/index.scss';
-@import '../../routes/wallet/components/buy/index.scss';
-@import '../../routes/wallet/components/buyWithUniswap/index.scss';
-@import '../../routes/wallet/components/deposit/index.scss';
-@import '../../routes/wallet/components/transaction/index.scss';
-@import '../../routes/wallet/components/depositWithdraw/index.scss';
-@import '../../routes/wallet/components/withdraw/index.scss';
+@import "../../routes/faq/index.scss";
+@import "../../routes/identity/index.scss";
+@import "../../routes/identity/components/statusWidget/index.scss";
+@import "../../routes/identity/components/linkedAddress/index.scss";
+@import "../../routes/identity/components/linkAddressCard/index.scss";
+@import "../../routes/submit/index.scss";
+@import "../../routes/wallet/index.scss";
+@import "../../routes/wallet/components/buy/index.scss";
+@import "../../routes/wallet/components/buyWithUniswap/index.scss";
+@import "../../routes/wallet/components/deposit/index.scss";
+@import "../../routes/wallet/components/transaction/index.scss";
+@import "../../routes/wallet/components/transactions/index.scss";
+@import "../../routes/wallet/components/depositWithdraw/index.scss";
+@import "../../routes/wallet/components/withdraw/index.scss";
 
 // Fade In/Out Animations
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .fadeit {
@@ -83,12 +105,12 @@
 }
 
 body {
-  font-family: 'Open Sans';
-  background: rgb(7, 34, 59)!important;
+  font-family: "Open Sans";
+  background: rgb(7, 34, 59) !important;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -96,25 +118,25 @@ input[type=number]::-webkit-outer-spin-button {
 h1 {
   font-size: 24px;
   margin-bottom: 30px;
-  color: white!important;
+  color: white !important;
 }
 
 h2 {
   font-size: 20px;
   margin-bottom: 15px;
-  color: white!important;
+  color: white !important;
 }
 
 h3 {
   font-size: 16px;
   margin-bottom: 15px;
-  color: white!important;
+  color: white !important;
 }
 
 h4 {
   font-size: 12px;
   margin-bottom: 15px;
-  color: white!important;
+  color: white !important;
 }
 
 .navbar {
@@ -142,8 +164,8 @@ h4 {
 }
 
 .form-control:focus {
-    outline: 0;
-    box-shadow: none;
+  outline: 0;
+  box-shadow: none;
 }
 
 /**
@@ -156,10 +178,6 @@ h4 {
 /**
  * Modals
  */
-.modal-dialog {
-
-}
-
 .modal-content {
   border: none;
 }
@@ -187,7 +205,7 @@ h4 {
 }
 
 .modal-footer__link:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .modal-content h1 {
@@ -225,7 +243,8 @@ h4 {
   color: #fff !important;
 }
 
-.modal-content .input__hydro-id::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.modal-content .input__hydro-id::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
   opacity: 1; /* Firefox */
 }
@@ -248,9 +267,11 @@ h4 {
   color: #fff;
 }
 
-@media (min-width: 992px) {}
-.modal-lg, .modal-xl {
-    max-width: 1200px;
+@media (min-width: 992px) {
+}
+.modal-lg,
+.modal-xl {
+  max-width: 1200px;
 }
 
 /**
@@ -259,7 +280,8 @@ h4 {
 
 .btn {
   box-shadow: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .btn-white {
@@ -272,8 +294,9 @@ h4 {
   background-color: #ec4141;
 }
 
-.btn-danger:focus, .btn-danger.focus {
-    box-shadow: none;
+.btn-danger:focus,
+.btn-danger.focus {
+  box-shadow: none;
 }
 
 .btn-outlined {
@@ -289,7 +312,11 @@ h4 {
   // border-color: #133069;
 }
 
-.btn-outlined:focus, .btn-primary:focus, .btn-danger:focus, .btn-success:focus, .btn-secondary:focus {
+.btn-outlined:focus,
+.btn-primary:focus,
+.btn-danger:focus,
+.btn-success:focus,
+.btn-secondary:focus {
   box-shadow: none;
 }
 
@@ -344,8 +371,6 @@ h4 {
 .container {
   max-width: 100%;
 }
-
-
 
 .accordion {
   margin-bottom: 30px;
@@ -434,7 +459,6 @@ h4 {
   }
 }
 
-
 @include media-breakpoint-between(xs, lg) {
   .filters__nav-item {
     padding-left: 0px;
@@ -462,51 +486,51 @@ h4 {
   }
 
   .nopadding {
-   padding: 0 !important;
- }
+    padding: 0 !important;
+  }
 
- .app__content {
-   padding: 30px;
-   min-height: auto;
-   margin: 0 auto;
- }
+  .app__content {
+    padding: 30px;
+    min-height: auto;
+    margin: 0 auto;
+  }
 
- .footer__powered-by {
-   text-align: center;
- }
+  .footer__powered-by {
+    text-align: center;
+  }
 
- .footer__built-on {
-   text-align: center;
-   margin-bottom: 30px;
-   margin-top: 30px;
- }
+  .footer__built-on {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
 
- .footer__built-on img {
-   margin-left: 0px;
- }
+  .footer__built-on img {
+    margin-left: 0px;
+  }
 
- .footer__powered {
-   margin-top: 30px;
-   margin-bottom: 30px;
- }
+  .footer__powered {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 
- .footer__powered-by svg {
-   margin-right: 0px;
- }
+  .footer__powered-by svg {
+    margin-right: 0px;
+  }
 
- .filters {
-   display: none;
- }
+  .filters {
+    display: none;
+  }
 
- .wallet {
-   height: auto;
- }
+  .wallet {
+    height: auto;
+  }
 
- .buy {
-   height: auto;
- }
+  .buy {
+    height: auto;
+  }
 
- .container-fluid {
+  .container-fluid {
     padding-right: 0px;
     padding-left: 0px;
   }

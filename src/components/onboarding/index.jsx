@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 import {
   Modal,
   ModalHeader,
@@ -9,28 +9,20 @@ import {
   NavItem,
   NavLink,
   Button,
-} from 'reactstrap';
-import {
-  NavLink as RouterNavLink,
-} from 'react-router-dom';
-import { IoIosCloseCircle } from 'react-icons/io';
+} from "reactstrap";
+import { NavLink as RouterNavLink } from "react-router-dom";
+import { IoIosCloseCircle } from "react-icons/io";
 
-import ProviderStep from './providerStep';
-import WelcomeStep from './welcomeStep';
-import HydroIdStep from './hydroIdStep';
-import PermissionStep from './permissionStep';
-import ClaimStep from './claimStep';
+import ProviderStep from "./providerStep";
+import WelcomeStep from "./welcomeStep";
+import HydroIdStep from "./hydroIdStep";
+import PermissionStep from "./permissionStep";
+import ClaimStep from "./claimStep";
 
-function Onboarding(props) {
-  const {
-    isOpen,
-    toggle,
-    hasProvider,
-  } = props;
-
+function Onboarding({ isOpen, toggle, hasProvider }) {
   const [currentStep, setCurrentStep] = useState(1);
-  const [signature, setSignature] = useState('');
-  const [hydroId, setHydroId] = useState('');
+  const [signature, setSignature] = useState("");
+  const [hydroId, setHydroId] = useState("");
   const [timestamp] = useState(Math.round(new Date() / 1000) - 120);
 
   function displayStep() {
@@ -42,7 +34,7 @@ function Onboarding(props) {
       return (
         <HydroIdStep
           setNextStep={() => setCurrentStep(3)}
-          setHydroId={newHydroId => setHydroId(newHydroId)}
+          setHydroId={(newHydroId) => setHydroId(newHydroId)}
         />
       );
     }
@@ -52,7 +44,7 @@ function Onboarding(props) {
         <PermissionStep
           setNextStep={() => setCurrentStep(4)}
           timestamp={timestamp}
-          setSignature={newSignature => setSignature(newSignature)}
+          setSignature={(newSignature) => setSignature(newSignature)}
         />
       );
     }
@@ -68,11 +60,7 @@ function Onboarding(props) {
       );
     }
 
-    return (
-      <WelcomeStep
-        setNextStep={() => setCurrentStep(2)}
-      />
-    );
+    return <WelcomeStep setNextStep={() => setCurrentStep(2)} />;
   }
 
   function setPreviousStep() {
@@ -85,7 +73,12 @@ function Onboarding(props) {
     <div>
       <Modal isOpen={isOpen} size="lg" toggle={toggle}>
         <ModalHeader
-          close={<IoIosCloseCircle className="modal__close-button " onClick={toggle} />}
+          close={
+            <IoIosCloseCircle
+              className="modal__close-button "
+              onClick={toggle}
+            />
+          }
           className="onboarding__modal"
         >
           {currentStep > 1 && (
@@ -100,17 +93,32 @@ function Onboarding(props) {
         <ModalFooter className="onboarding__modal">
           <Nav className="footer__menu">
             <NavItem>
-              <NavLink tag={RouterNavLink} exact to="/privacy" className="modal-footer__link">
+              <NavLink
+                tag={RouterNavLink}
+                exact
+                to="/privacy"
+                className="modal-footer__link"
+              >
                 Privacy Terms
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RouterNavLink} exact to="/terms" className="modal-footer__link">
+              <NavLink
+                tag={RouterNavLink}
+                exact
+                to="/terms"
+                className="modal-footer__link"
+              >
                 Terms of Use
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RouterNavLink} exact to="/faq" className="modal-footer__link">
+              <NavLink
+                tag={RouterNavLink}
+                exact
+                to="/faq"
+                className="modal-footer__link"
+              >
                 FAQs
               </NavLink>
             </NavItem>

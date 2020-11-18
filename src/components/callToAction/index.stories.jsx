@@ -1,8 +1,6 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { storiesOf } from "@storybook/react";
 
-import CallToAction from '.';
+import CallToAction from ".";
 
-storiesOf('CallToAction', module)
-  .add('standard', () => <CallToAction />);
+storiesOf("CallToAction", module).add("standard", () => <CallToAction />);

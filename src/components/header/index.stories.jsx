@@ -1,8 +1,5 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import Header from ".";
 
-import Header from '.';
-
-storiesOf('Header', module)
-  .add('Standard', () => <Header />);
+storiesOf("Header", module).add("Standard", () => <Header />);

@@ -1,15 +1,8 @@
-import React from 'react';
-import {
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap';
-import {
-  NavLink as RouterNavLink,
-} from 'react-router-dom';
+import React from "react";
+import { Nav, NavItem, NavLink } from "reactstrap";
+import { NavLink as RouterNavLink } from "react-router-dom";
 
 import {
-  IoIosFolder,
   IoIosFilm,
   IoMdCard,
   IoIosGlobe,
@@ -17,10 +10,10 @@ import {
   IoIosPeople,
   IoIosCalculator,
   IoIosCog,
-  IoMdBuild
-} from 'react-icons/io';
+  IoMdBuild,
+} from "react-icons/io";
 
-import categoriesJson from '../../../../common/config/categories.json';
+import categoriesJson from "../../../../common/config/categories.json";
 
 function CategoriesMenu() {
   const Components = {
@@ -36,18 +29,20 @@ function CategoriesMenu() {
 
   return (
     <div className="categories-menu">
-      <h2 className="categories-menu__title">
-        Categories
-      </h2>
+      <h2 className="categories-menu__title">Categories</h2>
       <Nav vertical>
-
-        {categoriesJson.map(Categorie => (
+        {categoriesJson.map((Categorie) => (
           <NavItem key={Categorie.name}>
-            <NavLink tag={RouterNavLink} exact to={`/category/${Categorie.name}`} className="sidebar__link" activeClassName="sidebar__link--active">
+            <NavLink
+              tag={RouterNavLink}
+              exact
+              to={`/category/${Categorie.name}`}
+              className="sidebar__link"
+              activeClassName="sidebar__link--active"
+            >
               {React.createElement(Components[Categorie.icon], {
-                className: 'sidebar__icon',
-              })}
-              {' '}
+                className: "sidebar__icon",
+              })}{" "}
               {Categorie.name}
             </NavLink>
           </NavItem>

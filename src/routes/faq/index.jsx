@@ -3,16 +3,13 @@
  * QA are taken from the faq.json file located in the config folder
  */
 
-import React from 'react';
-import {
-  Row,
-  Col,
-} from 'reactstrap';
+import React from "react";
+import { Row, Col } from "reactstrap";
 
-import QA from '../../components/qa';
-import AdditionalHelp from '../../components/additionalHelp';
+import QA from "../../components/qa";
+import AdditionalHelp from "../../components/additionalHelp";
 
-import faqJson from '../../common/config/faq.json';
+import faqJson from "../../common/config/faq.json";
 
 const Faq = () => (
   <div>
@@ -24,13 +21,10 @@ const Faq = () => (
     <Row>
       <Col>
         <div className="accordion">
-          {faqJson.map(qa => (
-            <QA
-              key={qa.question}
-              question={qa.question}
-              answer={qa.answer}
-            />
-          ))}
+          {faqJson &&
+            faqJson.map((qa) => (
+              <QA key={qa.question} question={qa.question} answer={qa.answer} />
+            ))}
         </div>
       </Col>
     </Row>

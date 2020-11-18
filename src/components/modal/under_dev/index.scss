@@ -1,0 +1,40 @@
+/* @define Under Development */
+
+.under_dev__body {
+  padding: 1.75rem 2.25rem 2.25rem 2.25rem;
+}
+
+.under_dev__header {
+  padding: 1.75rem 2.25rem 0 2.25rem;
+}
+
+.under_dev__warning__icon {
+  color: #626262;
+  font-size: 3.2rem;
+  margin-right: 15px;
+}
+
+.under_dev__title {
+  font-family: "Nunito-Bold", sans-serif;
+  color: #626262;
+  font-size: 17px;
+}
+
+.under_dev__close-icon {
+  color: #1e4eff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.under_dev__preview {
+  background-color: #f2f4ff;
+  border-color: #d4dbff;
+  color: #333;
+  padding: 0.25rem;
+}
+
+.modal-content .under_dev__body p {
+  font-family: "Nunito-Regular", sans-serif;
+  color: #636363;
+  font-size: 15px;
+}

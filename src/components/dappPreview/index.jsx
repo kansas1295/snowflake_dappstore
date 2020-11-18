@@ -3,62 +3,28 @@
  * This component can be used for any situation: buy / open / remove.
  * In Legacy, this component fetches the data from an imported JSON file,
  * but in V2, it will fetch data from an external API.
- * TODO: dApp Preview - When you click on the thumbnail image it should prompt you to open/get dApp
  */
 
-import React, {
-  useState,
-  useContext,
-} from 'react';
-import PropTypes from 'prop-types';
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  Button,
-} from 'reactstrap';
-import {
-  useWeb3Context,
-} from 'web3-react';
-import SnowflakeContext from '../../contexts/snowflakeContext';
+import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
+import { Row, Col, Card, CardBody, Button } from "reactstrap";
+import SnowflakeContext from "../../contexts/snowflakeContext";
 
-import Purchase from '../purchase';
-import Remove from '../remove';
-import LegacyDapp from '../legacyDapp';
+import Modal from "../modal";
 
-import {
-  isResolverFor,
-} from '../../services/utilities';
-
-import imgPlaceholder from '../../common/img/placeholders/dapp.gif';
-import resolversJson from '../../legacy/resolvers.json';
+import imgPlaceholder from "../../common/img/placeholders/dapp.gif";
+import resolversJson from "../../legacy/resolvers.json";
 
 function DappPreview(props) {
-  const {
-    id,
-    hasIdentity,
-    legacy,
-    isAdded,
-  } = props;
-
+  const { id, hasIdentity, legacy, isAdded } = props;
   const snowflakeContext = useContext(SnowflakeContext);
-
-  const {
-    networkId,
-    ein,
-  } = snowflakeContext;
-
-  const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
-  const [isRemoveModalOpen, setIsRemoveModalOpen] = useState(false);
-  const [isDappModalOpen, setIsDappModalOpen] = useState(false);
-
-  const web3 = useWeb3Context();
+  const { networkId, ein } = snowflakeContext;
+  const [modalType, setModalType] = useState("");
 
   const details = {
-    title: 'Title',
-    category: 'Category',
-    price: '0',
+    title: "Title",
+    category: "Category",
+    price: "0",
     logo: imgPlaceholder,
   };
 
@@ -67,17 +33,20 @@ function DappPreview(props) {
     details.category = resolversJson[id].category;
     details.price = resolversJson[id].price;
     details.logo = `${process.env.PUBLIC_URL}/legacy/${id}/logo.png`;
-    
   }
 
   function displayButton() {
-    if (!hasIdentity) {
-      return (<></>);
+    if (!hasIdentity || details.category === "Under Development") {
+      return <></>;
     }
 
     if (!isAdded) {
       return (
-        <Button color="outlined" size="sm" onClick={() => setIsPurchaseModalOpen(true)}>
+        <Button
+          color="outlined"
+          size="sm"
+          onClick={() => setModalType("Purchase")}
+        >
           Explore
         </Button>
       );
@@ -85,10 +54,14 @@ function DappPreview(props) {
 
     return (
       <>
-        <Button color="success" size="sm" onClick={() => setIsDappModalOpen(true)}>
+        <Button
+          color="success"
+          size="sm"
+          onClick={() => setModalType("LegacyDapp")}
+        >
           Open
         </Button>
-        <Button color="danger" size="sm" onClick={() => setIsRemoveModalOpen(true)}>
+        <Button color="danger" size="sm" onClick={() => setModalType("Remove")}>
           Remove
         </Button>
       </>
@@ -96,40 +69,31 @@ function DappPreview(props) {
   }
 
   function handleTap() {
-    if (networkId === 4 && ein !== '') {
-      if (isAdded) {
-        setIsDappModalOpen(true);
+    if (networkId === 4 && ein !== "") {
+      if (details.category === "Under Development") {
+        setModalType("UnderDev");
+      } else if (isAdded) {
+        setModalType("LegacyDapp");
       } else {
-        setIsPurchaseModalOpen(true);
+        setModalType("Purchase");
       }
     }
   }
 
   return (
     <div>
-      <LegacyDapp
+      <Modal
         id={id}
         title={details.title}
-        isOpen={isDappModalOpen}
-        toggle={() => setIsDappModalOpen(false)}
-      />
-      <Purchase
-        id={id}
-        title={details.title}
-        price={details.price}
-        isOpen={isPurchaseModalOpen}
-        toggle={() => setIsPurchaseModalOpen(false)}
-      />
-      <Remove
-        id={id}
-        title={details.title}
-        isOpen={isRemoveModalOpen}
-        toggle={() => setIsRemoveModalOpen(false)}
+        price={details.price || 0}
+        isOpen={modalType !== ""}
+        toggle={() => setModalType("")}
+        modalType={modalType}
       />
       <Card className="dapp-preview">
         <div
           className="dapp-preview__image"
-          style={{ backgroundImage: 'url(' + details.logo + ')' }}
+          style={{ backgroundImage: "url(" + details.logo + ")" }}
           onClick={() => handleTap()}
         >
           <div className="dapp-preview__overlay-wrapper none">
@@ -137,16 +101,10 @@ function DappPreview(props) {
           </div>
         </div>
         <CardBody className="dapp-preview__body">
-          <h4 className="dapp-preview__title">
-            {details.title}
-          </h4>
-          <h5 className="dapp-preview__category">
-            {details.category}
-          </h5>
+          <h4 className="dapp-preview__title">{details.title}</h4>
+          <h5 className="dapp-preview__category">{details.category}</h5>
           <Row className="justify-content-center align-items-center">
-            <Col>
-              {displayButton()}
-            </Col>
+            <Col>{displayButton()}</Col>
           </Row>
         </CardBody>
       </Card>

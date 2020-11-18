@@ -1,4 +1,4 @@
-import Web3 from 'web3';
+import Web3 from "web3";
 
 function toWei(amount) {
   return Web3.utils.toWei(amount);
@@ -14,7 +14,7 @@ function toBN(amount) {
 
 function formatAmount(amount) {
   if (amount) {
-    const split = amount.split('.');
+    const split = amount.split(".");
 
     if (split.length === 1) {
       return split[0];
@@ -27,12 +27,7 @@ function formatAmount(amount) {
     return `${split[0]}.${split[1].substring(0, 3)}`;
   }
 
-  return '0';
+  return "0";
 }
 
-export {
-  toWei,
-  fromWei,
-  toBN,
-  formatAmount,
-};
+export { toWei, fromWei, toBN, formatAmount };
