@@ -8,9 +8,9 @@ import PropTypes from "prop-types";
 import { Row, Col, Alert, Modal, ModalHeader, ModalBody } from "reactstrap";
 import { useWeb3Context } from "web3-react";
 import { IoIosCloseCircle, IoIosClose } from "react-icons/io";
-import SnowflakeContext from "../../contexts/snowflakeContext";
-import { removeResolver } from "../../services/utilities";
-import TransactionButton from "../transactionButton";
+import SnowflakeContext from "../../../contexts/snowflakeContext";
+import { removeResolver } from "../../../services/utilities";
+import TransactionButton from "../../transactionButton";
 
 function Remove({ id, isOpen, title, toggle }) {
   const web3 = useWeb3Context();

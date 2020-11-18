@@ -8,12 +8,12 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
-import SnowflakeContext from "../../contexts/snowflakeContext";
+import SnowflakeContext from "../../../contexts/snowflakeContext";
 
-import { Status } from "../../legacy/Rinkeby/0x16fD6e2E1C4afB9C4e7B901141706596317e4ceB/index";
-import { PetOwnerView } from "../../legacy/Rinkeby/0x26098F10E1539a6b75998AfB1DA552B8fD0AE404/index";
-import { Oxide } from "../../legacy/Rinkeby/0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f/index";
-import { ElectionFactory } from "../../legacy/Rinkeby/0x351dCAbdfCae2360682a69Fe7296687E13d6a460/index";
+import { Status } from "../../../legacy/Rinkeby/0x16fD6e2E1C4afB9C4e7B901141706596317e4ceB/index";
+import { PetOwnerView } from "../../../legacy/Rinkeby/0x26098F10E1539a6b75998AfB1DA552B8fD0AE404/index";
+import { Oxide } from "../../../legacy/Rinkeby/0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f/index";
+import { ElectionFactory } from "../../../legacy/Rinkeby/0x351dCAbdfCae2360682a69Fe7296687E13d6a460/index";
 
 function LegacyDapp({ id, title, isOpen, toggle }) {
   const user = useContext(SnowflakeContext);

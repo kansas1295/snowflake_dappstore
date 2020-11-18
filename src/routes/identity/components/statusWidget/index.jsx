@@ -5,12 +5,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useWeb3Context } from "web3-react";
 import { Row, Col, Button } from "reactstrap";
-
 import SnowflakeContext from "../../../../contexts/snowflakeContext";
-
-import Purchase from "../../../../components/purchase";
-import LegacyDapp from "../../../../components/legacyDapp";
-
+import Modal from "../../../../components/modal";
 import { getStatus } from "../../../../services/utilities";
 
 function StatusWidget() {
@@ -19,8 +15,7 @@ function StatusWidget() {
   const statusAddress = "0x16fD6e2E1C4afB9C4e7B901141706596317e4ceB";
   const web3 = useWeb3Context();
   const [status, setStatus] = useState("");
-  const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
-  const [isDappModalOpen, setIsDappModalOpen] = useState(false);
+  const [modalType, setModalType] = useState("");
 
   useEffect(() => {
     async function getCurrentStatus() {
@@ -35,17 +30,11 @@ function StatusWidget() {
 
   return (
     <div>
-      <LegacyDapp
+      <Modal
         id={statusAddress}
         title="Status"
-        isOpen={isDappModalOpen}
-        toggle={() => setIsDappModalOpen(false)}
-      />
-      <Purchase
-        id={statusAddress}
-        title="Status"
-        isOpen={isPurchaseModalOpen}
-        toggle={() => setIsPurchaseModalOpen(false)}
+        isOpen={modalType !== ""}
+        toggle={() => setModalType("")}
       />
       <Row className="mb-4 no-gutters status">
         <Col>
@@ -57,14 +46,14 @@ function StatusWidget() {
               {dapps.includes(statusAddress) ? (
                 <Button
                   className="status__edit"
-                  onClick={() => setIsDappModalOpen(true)}
+                  onClick={() => setModalType("LegacyDapp")}
                 >
                   Edit
                 </Button>
               ) : (
                 <Button
                   className="status__edit"
-                  onClick={() => setIsPurchaseModalOpen(true)}
+                  onClick={() => setModalType("Purchase")}
                 >
                   Get
                 </Button>

@@ -3,7 +3,6 @@
  * This component can be used for any situation: buy / open / remove.
  * In Legacy, this component fetches the data from an imported JSON file,
  * but in V2, it will fetch data from an external API.
- * TODO: dApp Preview - When you click on the thumbnail image it should prompt you to open/get dApp
  */
 
 import React, { useState, useContext } from "react";
@@ -11,10 +10,7 @@ import PropTypes from "prop-types";
 import { Row, Col, Card, CardBody, Button } from "reactstrap";
 import SnowflakeContext from "../../contexts/snowflakeContext";
 
-import Purchase from "../purchase";
-import Remove from "../remove";
-import LegacyDapp from "../legacyDapp";
-import UnderDev from "../under_dev";
+import Modal from "../modal";
 
 import imgPlaceholder from "../../common/img/placeholders/dapp.gif";
 import resolversJson from "../../legacy/resolvers.json";
@@ -23,10 +19,7 @@ function DappPreview(props) {
   const { id, hasIdentity, legacy, isAdded } = props;
   const snowflakeContext = useContext(SnowflakeContext);
   const { networkId, ein } = snowflakeContext;
-  const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
-  const [isRemoveModalOpen, setIsRemoveModalOpen] = useState(false);
-  const [isDappModalOpen, setIsDappModalOpen] = useState(false);
-  const [isUnderDevModalOpen, setIsUnderDevModalOpen] = useState(false);
+  const [modalType, setModalType] = useState("");
 
   const details = {
     title: "Title",
@@ -52,7 +45,7 @@ function DappPreview(props) {
         <Button
           color="outlined"
           size="sm"
-          onClick={() => setIsPurchaseModalOpen(true)}
+          onClick={() => setModalType("Purchase")}
         >
           Explore
         </Button>
@@ -64,15 +57,11 @@ function DappPreview(props) {
         <Button
           color="success"
           size="sm"
-          onClick={() => setIsDappModalOpen(true)}
+          onClick={() => setModalType("LegacyDapp")}
         >
           Open
         </Button>
-        <Button
-          color="danger"
-          size="sm"
-          onClick={() => setIsRemoveModalOpen(true)}
-        >
+        <Button color="danger" size="sm" onClick={() => setModalType("Remove")}>
           Remove
         </Button>
       </>
@@ -82,41 +71,24 @@ function DappPreview(props) {
   function handleTap() {
     if (networkId === 4 && ein !== "") {
       if (details.category === "Under Development") {
-        setIsUnderDevModalOpen(true);
+        setModalType("UnderDev");
       } else if (isAdded) {
-        setIsDappModalOpen(true);
+        setModalType("LegacyDapp");
       } else {
-        setIsPurchaseModalOpen(true);
+        setModalType("Purchase");
       }
     }
   }
 
   return (
     <div>
-      <LegacyDapp
+      <Modal
         id={id}
         title={details.title}
-        isOpen={isDappModalOpen}
-        toggle={() => setIsDappModalOpen(false)}
-      />
-      <Purchase
-        id={id}
-        title={details.title}
-        price={details.price}
-        isOpen={isPurchaseModalOpen}
-        toggle={() => setIsPurchaseModalOpen(false)}
-      />
-      <Remove
-        id={id}
-        title={details.title}
-        isOpen={isRemoveModalOpen}
-        toggle={() => setIsRemoveModalOpen(false)}
-      />
-      <UnderDev
-        id={id}
-        title={details.title}
-        isOpen={isUnderDevModalOpen}
-        toggle={() => setIsUnderDevModalOpen(false)}
+        price={details.price || 0}
+        isOpen={modalType !== ""}
+        toggle={() => setModalType("")}
+        modalType={modalType}
       />
       <Card className="dapp-preview">
         <div

@@ -9,12 +9,12 @@ import { Row, Col, Alert, Modal, ModalHeader, ModalBody } from "reactstrap";
 import { useWeb3Context } from "web3-react";
 import { IoIosCart, IoIosClose } from "react-icons/io";
 
-import { addResolver } from "../../services/utilities";
+import { addResolver } from "../../../services/utilities";
 
-import TransactionButton from "../transactionButton";
-import hydroIcon from "../../common/img/hydro_blue_drop.png";
+import TransactionButton from "../../transactionButton";
+import hydroIcon from "../../../common/img/hydro_blue_drop.png";
 
-import SnowflakeContext from "../../contexts/snowflakeContext";
+import SnowflakeContext from "../../../contexts/snowflakeContext";
 
 function Purchase({ id, isOpen, title, price, toggle }) {
   const web3 = useWeb3Context();
