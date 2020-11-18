@@ -1,28 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  Row,
-  Col,
-  Alert,
-} from 'reactstrap';
-import {
-  IoIosCheckmarkCircleOutline,
-} from 'react-icons/io';
-import {
-  useWeb3Context,
-} from 'web3-react';
+import React from "react";
+import PropTypes from "prop-types";
+import { Row, Col, Alert } from "reactstrap";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { useWeb3Context } from "web3-react";
 
-import {
-  removeLinkedAddress,
-} from '../../../../services/utilities';
+import { removeLinkedAddress } from "../../../../services/utilities";
 
-import TransactionButton from '../../../../components/transactionButton';
+import TransactionButton from "../../../../components/transactionButton";
 
 const LinkedAddress = (props) => {
-  const {
-    address,
-    removable,
-  } = props;
+  const { address, removable } = props;
 
   const web3 = useWeb3Context();
 
@@ -32,21 +19,19 @@ const LinkedAddress = (props) => {
     <Alert className="linked-address">
       <Row className="align-items-center">
         <Col sm="1">
-          <IoIosCheckmarkCircleOutline
-            className="linked-address__icon"
-          />
+          <IoIosCheckmarkCircleOutline className="linked-address__icon" />
         </Col>
         <Col>
           <p className="mb-0 linked-address__linked-wallet-address">
             {address}
           </p>
           <p className="linked-address__date">
-            {formattedDate.toLocaleString('en-US', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-              hour: 'numeric',
-              minute: '2-digit',
+            {formattedDate.toLocaleString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+              hour: "numeric",
+              minute: "2-digit",
             })}
           </p>
         </Col>

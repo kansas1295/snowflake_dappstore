@@ -1,40 +1,27 @@
-import React, {
-  useState,
-  useRef,
-  useContext,
-} from 'react';
-import {
-  Button,
-  Col,
-  Row,
-} from 'reactstrap';
-
-import Onboarding from '../../../onboarding';
-
-import Identicon from '../../../identicon';
-import HeaderDropdown from '../headerDropdown';
-
-import SnowflakeContext from '../../../../contexts/snowflakeContext';
-
-import {
-  network,
-} from '../../../../common/config/network.json';
+import React, { useState, useRef, useContext } from "react";
+import { Button, Col, Row } from "reactstrap";
+import Onboarding from "../../../onboarding";
+import Identicon from "../../../identicon";
+import HeaderDropdown from "../headerDropdown";
+import SnowflakeContext from "../../../../contexts/snowflakeContext";
+import { network } from "../../../../common/config/network.json";
 
 function HeaderAccount() {
   const snowflakeContext = useContext(SnowflakeContext);
-
-  const {
-    hasProvider,
-    ein,
-    hydroId,
-    networkId,
-  } = snowflakeContext;
-
+  const { hasProvider, ein, hydroId, networkId } = snowflakeContext;
   const [isModalOpen, toggleModal] = useState(false);
   const [isHeaderDropdownOpen, toggleHeaderDropdown] = useState(false);
   const identiconRef = useRef();
 
-  if (ein) {
+  if (hasProvider && networkId !== network) {
+    return (
+      <div className="onboardingButton">
+        <Button color="warning">Wrong network</Button>
+      </div>
+    );
+  }
+
+  if (ein && typeof ein === "string") {
     return (
       <Row className="justify-content-center align-items-center no-gutters">
         <Col className="col-md-auto">
@@ -43,9 +30,7 @@ function HeaderAccount() {
               {`Welcome, ${hydroId}`}
             </span>
             <br />
-            <span className="header-account__ein">
-              {`Ein: ${ein}`}
-            </span>
+            <span className="header-account__ein">{`Ein: ${ein}`}</span>
           </div>
         </Col>
         <Col>
@@ -66,16 +51,6 @@ function HeaderAccount() {
     );
   }
 
-  if (hasProvider && networkId !== network) {
-    return (
-      <div className="onboardingButton">
-        <Button color="warning">
-          Wrong network
-        </Button>
-      </div>
-    );
-  }
-
   return (
     <div className="onboardingButton">
       <Onboarding
@@ -90,6 +65,5 @@ function HeaderAccount() {
     </div>
   );
 }
-
 
 export default HeaderAccount;

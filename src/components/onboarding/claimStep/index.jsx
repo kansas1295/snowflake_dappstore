@@ -1,29 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  Row,
-  Col,
-} from 'reactstrap';
-import {
-  useWeb3Context,
-} from 'web3-react';
+import React from "react";
+import PropTypes from "prop-types";
+import { Row, Col } from "reactstrap";
+import { useWeb3Context } from "web3-react";
+import TransactionButton from "../../transactionButton";
+import { createIdentity } from "../../../services/utilities";
+import claimImg from "../../../common/img/steps/claim.png";
 
-import TransactionButton from '../../transactionButton';
-
-import {
-  createIdentity,
-} from '../../../services/utilities';
-
-import claimImg from '../../../common/img/steps/claim.png';
-
-function ClaimStep(props) {
-  const {
-    hydroId,
-    signature,
-    timestamp,
-    toggle,
-  } = props;
-
+function ClaimStep({ hydroId, signature, timestamp, toggle }) {
   const web3 = useWeb3Context();
 
   return (
@@ -35,15 +18,15 @@ function ClaimStep(props) {
       </Row>
       <Row className="justify-content-center">
         <Col xs="12" sm="6" className="text-center">
-          <h1 className="text-white">
-            Claim Your Snowflake
-          </h1>
+          <h1 className="text-white">Claim Your Snowflake</h1>
         </Col>
       </Row>
       <Row className="justify-content-center py-3">
         <Col xs="12" sm="8" className="text-center">
           <p className="text-white">
-            Almost there, just click below to claim your new on-chain Snowflake identity (EIN)! Be sure to check MetaMask for the prompt and confirm.
+            Almost there, just click below to claim your new on-chain Snowflake
+            identity (EIN)! Be sure to check MetaMask for the prompt and
+            confirm.
           </p>
         </Col>
       </Row>
@@ -51,7 +34,9 @@ function ClaimStep(props) {
         <Col xs="12" sm="10" className="text-center">
           <TransactionButton
             initialText="Claim"
-            sendAction={() => createIdentity(web3.library, hydroId, timestamp, signature)}
+            sendAction={() =>
+              createIdentity(web3.library, hydroId, timestamp, signature)
+            }
             onConfirmationAction={toggle}
           />
         </Col>

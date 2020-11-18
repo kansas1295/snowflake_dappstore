@@ -2,38 +2,28 @@
  * Displays a transaction
  */
 
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import {
-  Row,
-  Col,
-  Alert,
-} from 'reactstrap';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Row, Col, Alert } from "reactstrap";
 import {
   IoIosAdd,
   IoIosArrowRoundBack,
   IoIosArrowRoundForward,
-} from 'react-icons/io';
-import {
-  useWeb3Context,
-} from 'web3-react';
+} from "react-icons/io";
+import { useWeb3Context } from "web3-react";
 
-import resolvers from '../../../../legacy/resolvers.json';
+import resolvers from "../../../../legacy/resolvers.json";
 
 function Transaction(props) {
-  const {
-    resolver,
-    type,
-    amount,
-    blocknumber,
-  } = props;
+  const { resolver, type, amount, blocknumber } = props;
 
   const [date, setDate] = useState(0);
   const web3 = useWeb3Context();
   const displayedAmount = web3.library.utils.fromWei(amount);
 
   if (web3.active && date === 0) {
-    web3.library.eth.getBlock(blocknumber)
+    web3.library.eth
+      .getBlock(blocknumber)
       .then((block) => {
         setDate(block.timestamp * 1000);
       })
@@ -43,40 +33,32 @@ function Transaction(props) {
   }
 
   function displayTransactionType() {
-    if (type === 'deposit') {
+    if (type === "deposit") {
       return (
         <div className="transaction__header">
-          <IoIosArrowRoundForward
-            className="transaction__icon"
-          />
-          <p className="transaction__type">
-            Deposited Hydro
-          </p>
+          <IoIosArrowRoundForward className="transaction__icon" />
+          <p className="transaction__type">Deposited Hydro</p>
         </div>
       );
     }
 
-    if (type === 'withdrawal') {
+    if (type === "withdrawal") {
       return (
         <div className="transaction__header">
-          <IoIosArrowRoundBack
-            className="transaction__icon"
-          />
-          <p className="transaction__type">
-            Withdrew Hydro
-          </p>
+          <IoIosArrowRoundBack className="transaction__icon" />
+          <p className="transaction__type">Withdrew Hydro</p>
         </div>
       );
     }
 
     return (
       <div className="transaction__header">
-        <IoIosAdd
-          className="transaction__icon"
-        />
-        {resolvers[resolver] !== undefined && <p className="transaction__type">
-          {`Purchased ${resolvers[resolver].title}`}
-        </p>}
+        <IoIosAdd className="transaction__icon" />
+        {resolvers[resolver] !== undefined && (
+          <p className="transaction__type">
+            {`Purchased ${resolvers[resolver].title}`}
+          </p>
+        )}
       </div>
     );
   }
@@ -87,26 +69,25 @@ function Transaction(props) {
         <Col>
           {displayTransactionType()}
           <p className="transaction__date">
-            {new Date(date).toLocaleString('en-US', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-              hour: 'numeric',
-              minute: '2-digit',
+            {new Date(date).toLocaleString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+              hour: "numeric",
+              minute: "2-digit",
             })}
           </p>
         </Col>
         <Col>
-          <p className={
-              type === 'withdrawal' || type === 'purchase' ? 'transaction__amount transaction__amount--withdrawal' : 'transaction__amount'}
+          <p
+            className={
+              type === "withdrawal" || type === "purchase"
+                ? "transaction__amount transaction__amount--withdrawal"
+                : "transaction__amount"
+            }
           >
-            {type === 'withdrawal' || type === 'purchase' ? ('-') : ('+')}
-            {' '}
-            {parseInt(displayedAmount, 10) > 1 ? (
-              displayedAmount
-            ) : (
-              '< 1'
-            )}
+            {type === "withdrawal" || type === "purchase" ? "-" : "+"}{" "}
+            {parseInt(displayedAmount, 10) > 1 ? displayedAmount : "< 1"}
           </p>
         </Col>
       </Row>
@@ -122,7 +103,7 @@ Transaction.propTypes = {
 };
 
 Transaction.defaultProps = {
-  resolver: 'Default',
+  resolver: "Default",
 };
 
 export default Transaction;

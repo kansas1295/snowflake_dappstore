@@ -12,12 +12,16 @@
 }
 
 .app__content h1 {
-  font-family: 'Nunito-Regular', sans-serif;
+  font-family: "Nunito-Regular", sans-serif;
   font-size: 27.12px;
 }
 
 .app__content h2 {
   font-weight: 600;
+}
+
+.app__content p {
+  color: #88b0de;
 }
 
 .app__content .container {
