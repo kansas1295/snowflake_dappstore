@@ -9,27 +9,27 @@
 }
 
 .purchase__icon {
-  color: #626262;
+  color: #88b0de!important;
   font-size: 3.2rem;
   margin-right: 15px;
 }
 
 .purchase__title {
   font-family: "Nunito-Bold", sans-serif;
-  color: #626262;
+  color: #88b0de!important;
   font-size: 17px;
 }
 
 .purchase__close-icon {
-  color: #1e4eff;
+  color: #88b0de!important;
   font-size: 2rem;
   cursor: pointer;
 }
 
 .purchase__preview {
-  background-color: #f2f4ff;
-  border-color: #d4dbff;
-  color: #333;
+  background-color:hsl(209, 54%, 16%)!important;
+  border-color: transparent;
+  color:  #88b0de!important;
   padding: 0.25rem;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .purchase__price {
-  color: #1e4eff;
+  color: #88b0de!important;
   margin: 0;
   font-size: 600;
 }
@@ -52,7 +52,7 @@
 
 .modal-content .purchase__body p {
   font-family: "Nunito-Regular", sans-serif;
-  color: #636363;
+  color: #88b0de!important;
   font-size: 15px;
 }
 
@@ -60,4 +60,10 @@
   opacity: 0.7;
   font-size: 10px;
   margin-bottom: 0;
+}
+
+.btn-primary {
+  background-color: #11385c !important;
+  color: #88b0de;
+  border-color: transparent;
 }
