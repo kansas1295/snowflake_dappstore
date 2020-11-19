@@ -408,6 +408,10 @@ label{
   box-shadow: none;
 }
 
+.btn-primary.disabled, .btn-primary:disabled {
+   border-color: transparent;
+}
+
 /**
  * Footer
  */
@@ -422,6 +426,27 @@ label{
 /**
  * Common
  */
+
+ .sidebar__link,.header-account__welcome, .header-account__ein, .identity__link, .linked-address__icon, .header__version, .header__icon  {
+  color: #88b0de!important;
+}
+
+.sidebar__link:hover {
+  color: #fff!important;
+}
+
+.sidebar__link--active {
+  color: #fff!important;
+}
+
+
+.categories-menu__title {
+  font-family: "Nunito-SemiBold", sans-serif;
+  font-size: 16px;
+  color: #88b0de!important;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
 
  .deposit__input {
   background-color: #07223b !important;
