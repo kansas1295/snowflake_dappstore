@@ -118,25 +118,25 @@ input[type="number"]::-webkit-outer-spin-button {
 h1 {
   font-size: 24px;
   margin-bottom: 30px;
-  color: white !important;
+  color: #88b0de !important;
 }
 
 h2 {
   font-size: 20px;
   margin-bottom: 15px;
-  color: white !important;
+  color: #88b0de !important;
 }
 
 h3 {
   font-size: 16px;
   margin-bottom: 15px;
-  color: white !important;
+  color: #88b0de !important;
 }
 
 h4 {
   font-size: 12px;
   margin-bottom: 15px;
-  color: white !important;
+  color: #88b0de !important;
 }
 
 .navbar {
@@ -179,6 +179,8 @@ h4 {
  * Modals
  */
 .modal-content {
+  background-color: hsl(209, 54%, 16%) !important;
+  
   border: none;
 }
 
@@ -220,15 +222,67 @@ h4 {
 
 .modal-content p a {
   text-decoration: underline;
-  color: #fff;
+  color:#88b0de;
 }
 
 .modal-content p a:hover {
   color: #fff;
 }
 
+.modal-title{
+  color:#88b0de!important;
+}
+
+.modal-title, .close{
+  color: #88b0de !important;
+}
+
+.MuiFormHelperText-root {
+  color: #88b0de!important;
+}
+
+.MuiInputBase-input {
+  color:#88b0de !important;
+}
+
+label{
+  color:#88b0de !important;
+}
+
+.modal-content .under_dev__body p {
+
+  color: #88b0de!important;
+
+}
+
+.under_dev__warning__icon {
+  color: #88b0de!important;
+}
+
+.modal-content .remove__body p {
+  color: #88b0de!important;
+}
+
+.buy-uniswap__amount {
+  background: #07223b !important;
+  color: #88b0de!important;
+}
+
+.buy-uniswap__amount::placeholder{
+  color: #88b0de !important;
+}
+
+
+
+
+.MuiInput-formControl {
+    margin-top: 16px;
+    
+}
+
 .modal-title .btn-secondary {
   background-color: #3c85fc;
+  
   border: none;
 }
 
@@ -284,10 +338,44 @@ h4 {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.btn-white {
-  color: #395fff;
-  background-color: $snow-white;
-  border-color: none;
+.btn-white { 
+  background-color: #07223b !important;
+  color: #88b0de;
+  border-color: transparent;
+}
+
+.btn-success { 
+  background-color: #07223b !important;
+  color: #88b0de;
+  border-color: transparent;
+}
+
+.btn-primary {
+  background-color: #07223b!important;
+  color: #88b0de;
+  border-color: transparent;
+}
+
+.btn-secondary {
+  background-color: #07223b !important;
+  color: #88b0de;
+  border-color: transparent;
+}
+
+.btn-white:hover{
+  border-color: transparent;
+}
+
+.btn-success:hover{
+  border-color: transparent;
+}
+
+.btn-primary:hover{
+  border-color: transparent;
+}
+
+.btn-secondary:hover{
+  border-color: transparent;
 }
 
 .btn-danger {
@@ -320,6 +408,10 @@ h4 {
   box-shadow: none;
 }
 
+.btn-primary.disabled, .btn-primary:disabled {
+   border-color: transparent;
+}
+
 /**
  * Footer
  */
@@ -334,6 +426,72 @@ h4 {
 /**
  * Common
  */
+
+ .sidebar__link,.header-account__welcome, .header-account__ein, .identity__link, .linked-address__icon, .header__version, .header__icon  {
+  color: #88b0de!important;
+}
+
+.sidebar__link:hover {
+  color: #fff!important;
+}
+
+.sidebar__link--active {
+  color: #fff!important;
+}
+
+.card-header {
+  color: #88b0de!important;
+  background: transparent!important;
+  border: 1px solid transparent !important;
+}
+
+button.qa__question {
+  color: #88b0de!important;
+}
+
+
+.categories-menu__title {
+  font-family: "Nunito-SemiBold", sans-serif;
+  font-size: 16px;
+  color: #88b0de!important;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
+ .deposit__input {
+  background-color: #07223b !important;
+  padding-left: 0.2rem;
+}
+
+.withdraw__input {
+  background-color: #07223b !important;
+  padding-left: 0.2rem;
+}
+
+.deposit__from {
+  border-color: transparent!important;
+}
+
+.withdraw__from {
+  border-color: transparent!important;
+}
+
+.deposit__to {
+  background-color: #07223b !important;
+}
+
+.withdraw__to {
+  background-color: #07223b !important;
+}
+
+.filters__link--active {
+  background-color: #0b3257 !important;
+}
+
+.filters__link:hover{
+  background-color: #0b3257 !important;
+}
+
 .blue-card {
   background-color: #395fff;
   border: none;

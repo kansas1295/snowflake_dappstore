@@ -44,46 +44,45 @@
 }
 
 .dapp-preview__body .btn-success {
-  background-color: $success;
-  border: 1px solid $success;
+  background-color: #0b3257!important;
+  border: 1px solid transparent;
   color: #fff;
 }
 
 .dapp-preview__body .btn-danger {
-  border: 1px solid $danger;
-  background-color: $danger;
+  border: 1px solid transparent;
+  background-color: #784083!important;
   color: #fff;
 }
 
 .dapp-preview__body .btn-success:hover {
-  background-color: #17812e;
-  border: 1px solid #17812e;
+  border: 1px solid transparent;
   color: #fff;
 }
 
 .dapp-preview__body .btn-danger:hover {
-  background-color: #ad2532;
-  border: 1px solid #ad2532;
+  background-color: hsl(290, 34%, 23%)!important;
+  border: 1px solid transparent;
   color: #fff;
 }
 
 .dapp-preview .btn-outlined {
-  background: #051a2b;
+  background: hsl(207, 78%, 18%);
   padding: 5px;
   border: none;
-  color: #547d8a;
+  color: hsl(194, 38%, 63%);
 }
 
 .dapp-preview .btn-outlined:hover {
   border: none;
-  background-color: #031838 !important;
+  background-color: #0b2750 !important;
   color: #7cefff;
 }
 
 .dapp-preview__body button:hover {
   border: none;
   background-color: #031838 !important;
-  color: #7cefff;
+  color: #7cf0ff80;
 }
 
 .dapp-preview__overlay-wrapper {

@@ -46,6 +46,7 @@ return (
       <TextField
         label="New Status"
         helperText="This will be public."
+        color="textPrimary"
         margin="normal"
         value={newStatus}
         onChange={e => setNewStatus(e.target.value)}

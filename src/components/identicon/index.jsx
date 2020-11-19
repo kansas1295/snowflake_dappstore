@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import hydroIdenticon from "../../services/flakeGenerator.min";
+import HydroIdenticon from "../../services/flakeGenerator.min";
 
 function Identicon({ seed, size }) {
   const iconRef = useRef();
-  const icon = hydroIdenticon.create({
+  const icon = HydroIdenticon.create({
     seed,
     size,
   });
