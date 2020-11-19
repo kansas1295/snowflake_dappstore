@@ -1,10 +1,10 @@
 .customButton{
-   height:18px;
+   height: 24px;
    border-radius:6px!important;
    font-size:13px!important;
-   color:#0971f5!important;
-   background:white!important;
-   border:2px solid rgb(197, 197, 197)!important;
+   color:#88b0de!important;
+   background:hsl(214, 78%, 18%)!important;
+   border:2px solid transparent!important;
    position:absolute !important;
    right:0!important;
    margin-right:30px!important;
@@ -27,7 +27,7 @@
     font-size:13px!important;
     color:#0971f5!important;
     background:white!important;
-    border:1px solid rgb(197, 197, 197)!important;
+    border:1px solid transparent!important;
     position:absolute !important;
     right:0!important;
     margin-right:30px!important;
@@ -86,11 +86,12 @@
 
 
   .voteButton{
-   color:#fff!important;
-   background:#083e85!important;
+   color:#88b0de!important;
+   background:hsl(214, 78%, 18%)!important;
    height:34px!important;
+   width: 250px!important;
    border-radius: 5px!important;
-   border:1px solid white!important;
+   border:1px solid transparent!important;
    overflow:hidden!important;
    font-size: 0.875rem!important;
    min-width: 64px!important;
@@ -103,9 +104,9 @@
  
 
  .voteButton:hover{
-   background:#083e85!important;
+   background:hsl(214, 41%, 23%)!important;
    color:rgb(217, 235, 229)!important;
-   border:1px solid rgb(245, 191, 76)!important;
+   border:1px solid transparent;
 }
 
 .voteButton-pending{

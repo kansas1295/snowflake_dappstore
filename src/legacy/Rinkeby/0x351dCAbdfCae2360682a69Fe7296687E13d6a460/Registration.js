@@ -26,7 +26,7 @@ export default function Registration({ ein,electionABI, electionAddress,account}
       <p>Disclaimer</p>
       <p>In order to vote or run as a candidate, you must first register as a participant. Once registered you will be able to cast your vote.
       </p>
-      <div className="registrationImage"><img src={require('./Images/Votingregistration.png')} alt="snow" className="registrationImg"/></div>
+      {/* <div className="registrationImage"><img src={require('./Images/Votingregistration.png')} alt="snow" className="registrationImg"/></div> */}
       
       <TransactionButton
          readyText='Register As Participant' 
@@ -40,7 +40,7 @@ export default function Registration({ ein,electionABI, electionAddress,account}
 <p>Disclaimer</p>
 <p>Registered participants could run as a candidate if you think you are qualified to lead or take a position for an organization.
 </p>
-<div className="registrationImage"><img src={require('./Images/candidatesImage.png')} alt="snow" className="registrationImg"/></div>
+{/* <div className="registrationImage"><img src={require('./Images/candidatesImage.png')} alt="snow" className="registrationImg"/></div> */}
 
 <TransactionButton 
       readyText='Register As Candidate' 

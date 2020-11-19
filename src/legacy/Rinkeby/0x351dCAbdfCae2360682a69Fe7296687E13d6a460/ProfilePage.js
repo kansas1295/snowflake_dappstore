@@ -57,8 +57,8 @@ export default function ProfilePage({electionABI,electionAddress,ein,goToVoting,
         <div className="profileWrapper">   
         <div className ="verifiedProfile" style ={{textAlign:"center"}}>
 
-        <h2 className="profile-title">USER PROFILE</h2>
-        <p className="userName mt-1" >"{userName}"</p>
+        <h2 className="profile-title">PROFILE</h2>
+        <p className="userName mt-1" >{userName}</p>
 
 
         <div className="profileBox" >
