@@ -356,6 +356,12 @@ label{
   border-color: transparent;
 }
 
+.btn-secondary {
+  background-color: #07223b !important;
+  color: #88b0de;
+  border-color: transparent;
+}
+
 .btn-white:hover{
   border-color: transparent;
 }
@@ -365,6 +371,10 @@ label{
 }
 
 .btn-primary:hover{
+  border-color: transparent;
+}
+
+.btn-secondary:hover{
   border-color: transparent;
 }
 
@@ -412,6 +422,33 @@ label{
 /**
  * Common
  */
+
+ .deposit__input {
+  background-color: #07223b !important;
+  padding-left: 0.2rem;
+}
+
+.withdraw__input {
+  background-color: #07223b !important;
+  padding-left: 0.2rem;
+}
+
+.deposit__from {
+  border-color: transparent!important;
+}
+
+.withdraw__from {
+  border-color: transparent!important;
+}
+
+.deposit__to {
+  background-color: #07223b !important;
+}
+
+.withdraw__to {
+  background-color: #07223b !important;
+}
+
 .blue-card {
   background-color: #395fff;
   border: none;
