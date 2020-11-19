@@ -338,10 +338,34 @@ label{
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.btn-white {
-  color: #395fff;
-  background-color: $snow-white;
-  border-color: none;
+.btn-white { 
+  background-color: #07223b !important;
+  color: #88b0de;
+  border-color: transparent;
+}
+
+.btn-success { 
+  background-color: #07223b !important;
+  color: #88b0de;
+  border-color: transparent;
+}
+
+.btn-primary {
+  background-color: #07223b !important;
+  color: #88b0de;
+  border-color: transparent;
+}
+
+.btn-white:hover{
+  border-color: transparent;
+}
+
+.btn-success:hover{
+  border-color: transparent;
+}
+
+.btn-primary:hover{
+  border-color: transparent;
 }
 
 .btn-danger {
