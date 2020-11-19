@@ -3,24 +3,31 @@
 .popover {
   z-index: 100003;
   margin-left: 2rem !important;
+  border-radius: 1rem;
+  
 }
 
-.popover-inner {
+.popover-body {
+  color: #88b0de !important;
 }
 
 .header-dropdown__header {
   background-color: rgb(12, 57, 99) !important;
-  color: #2ac0d5;
+  // color: #2ac0d5;
 }
+
+ .arrow {
+   display: none!important;
+ }
 
 .header-dropdown__body {
   background-color: rgb(11, 50, 87) !important;
-  color: #2ac0d5;
+  // color: #2ac0d5;
 }
 
 .header-dropdown__footer {
   background-color: rgb(12, 57, 99) !important;
-  color: #2ac0d5;
+  // color: #2ac0d5;
   padding: 18px;
 }
 
@@ -29,9 +36,9 @@
 }
 
 .header-dropdown__address-prefix {
-  color: #2ac0d5;
+  // color: #2ac0d5;
 }
 
 .header-dropdown__address {
-  color: #2ac0d5;
+  // color: #2ac0d5;
 }
