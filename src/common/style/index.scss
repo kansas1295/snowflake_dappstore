@@ -118,25 +118,25 @@ input[type="number"]::-webkit-outer-spin-button {
 h1 {
   font-size: 24px;
   margin-bottom: 30px;
-  color: white !important;
+  color: #88b0de !important;
 }
 
 h2 {
   font-size: 20px;
   margin-bottom: 15px;
-  color: white !important;
+  color: #88b0de !important;
 }
 
 h3 {
   font-size: 16px;
   margin-bottom: 15px;
-  color: white !important;
+  color: #88b0de !important;
 }
 
 h4 {
   font-size: 12px;
   margin-bottom: 15px;
-  color: white !important;
+  color: #88b0de !important;
 }
 
 .navbar {
@@ -179,6 +179,8 @@ h4 {
  * Modals
  */
 .modal-content {
+  background-color: #07223b !important;
+  
   border: none;
 }
 
@@ -220,15 +222,67 @@ h4 {
 
 .modal-content p a {
   text-decoration: underline;
-  color: #fff;
+  color:#88b0de;
 }
 
 .modal-content p a:hover {
   color: #fff;
 }
 
+.modal-title{
+  color:#88b0de!important;
+}
+
+.modal-title, .close{
+  color: #88b0de !important;
+}
+
+.MuiFormHelperText-root {
+  color: #88b0de!important;
+}
+
+.MuiInputBase-input {
+  color:#88b0de !important;
+}
+
+label{
+  color:#88b0de !important;
+}
+
+.modal-content .under_dev__body p {
+
+  color: #88b0de!important;
+
+}
+
+.under_dev__warning__icon {
+  color: #88b0de!important;
+}
+
+.modal-content .remove__body p {
+  color: #88b0de!important;
+}
+
+.buy-uniswap__amount {
+  background: #07223b !important;
+  color: #88b0de!important;
+}
+
+.buy-uniswap__amount::placeholder{
+  color: #88b0de !important;
+}
+
+
+
+
+.MuiInput-formControl {
+    margin-top: 16px;
+    
+}
+
 .modal-title .btn-secondary {
   background-color: #3c85fc;
+  
   border: none;
 }
 
