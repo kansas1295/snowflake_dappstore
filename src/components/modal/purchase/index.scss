@@ -26,6 +26,15 @@
   cursor: pointer;
 }
 
+.page-link {
+  border: 1px solid transparent !important;
+}
+
+
+.page-number:active{
+  color: blue;
+}
+
 .purchase__preview {
   background-color:hsl(209, 54%, 16%)!important;
   border-color: transparent;

@@ -13,18 +13,18 @@ import JwPagination from 'jw-react-pagination';
 //Style of Pagination
 const customStyles = {
     ul: {
-        border:'rgb(10, 53, 88)',
-        background:'rgb(10, 53, 88)',
+        border:'rgba(19, 42, 63, 0)',
+        background:'rgba(19, 42, 63, 0)',
         
     },
     li: {
-        border:'rgb(10, 53, 88)',
-        background:'rgb(10, 53, 88)'
+        border:'rgba(19, 42, 63, 0)',
+        background:'rgba(19, 42, 63, 0)'
        
     },
     a: {
         color: 'rgb(214, 217, 219)',
-        background:'linear-gradient(to bottom,#083863,rgb(0, 0, 5))',
+        background:'rgba(19, 42, 63, 0)',
 		
 	},
 	

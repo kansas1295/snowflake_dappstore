@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
 .background {
-  color: white !important;
+  color: #88b0de!important;
   background: #061b2f;
   font-size: 1.2rem;
   border-radius: 5px !important;
@@ -32,9 +32,13 @@
   margin-top: -5px;
 }
 
+strong{
+  color: #88b0de!important;
+}
+
 .electionCard {
-  color: rgb(245, 242, 237);
-  border: 1px solid rgba(202, 202, 202, 0.993);
+  color: #88b0de!important;
+  border: 1px solid transparent;
   border-radius: 5px;
   font-size: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
@@ -45,7 +49,7 @@
   height: 175px !important;
   max-height: 175px !important;
   cursor: pointer;
-  background: linear-gradient(to bottom, #083863, rgb(0, 0, 5));
+  background: hsl(209, 54%, 16%)!important;
 }
 
 .card-header {
@@ -76,7 +80,7 @@
 
 .list-group-item-close {
   background: transparent;
-  color: #d8a84f;
+  color: #02071f;
   transition: all 0.36s ease-in-out;
   font-size: 14px;
   position: relative;
@@ -84,8 +88,13 @@
   padding: 0.75rem 1.25rem;
 }
 
+
+.page-link:active {
+  color: blue!important;
+}
+
 .verificationWrapper {
-  color: white !important;
+  color: #88b0de!important;
   background: #061b2f;
   font-size: 1.2rem;
   border-radius: 5px !important;
@@ -97,7 +106,7 @@
 }
 
 .einStatus {
-  border: 2px solid white;
+  border: 2px solid #88b0de!important;
   border-top: none;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -124,14 +133,14 @@
   height: 60px;
   width: 80px;
   background: rgb(193, 230, 240);
-  border: 1px solid white;
+  border: 1px solid #88b0de!important;
 }
 
 .linksButton {
   height: 60px;
   width: 80px;
   background: rgb(193, 230, 240);
-  border: 1px solid white;
+  border: 1px solid #88b0de!important;
 }
 
 .registrationWrapper {
@@ -140,9 +149,9 @@
 }
 
 .registerAsVoter {
-  border: 1px solid white;
-  background: white;
-  color: blue;
+  border: 1px solid transparent;
+  background: hsl(209, 54%, 16%)!important;
+  color: #88b0de!important;
   margin: 20px;
   border-radius: 7px;
   width: 50%;
@@ -152,11 +161,13 @@
   font-size: 16px !important;
   overflow: hidden;
 }
-
+.voteButton{
+  background-color: black!important;
+}
 .verifyAsVoter {
-  border: 1px solid white;
-  background: #ffffff;
-  color: rgb(253, 253, 253);
+  border: 1px solid transparent;
+  background: hsl(209, 54%, 16%)!important;
+  color: #88b0de!important;
   margin: 20px;
   border-radius: 7px;
   width: 50%;
@@ -239,25 +250,26 @@
 .pollInfo {
   float: left;
   position: absolute;
-  color: white;
+  color: #88b0de!important;
   font-size: 15px !important;
 }
 
 .deadlineInfo {
   float: left;
   position: absolute;
-  color: white;
+  color: #88b0de!important;
   font-size: 12px !important;
 }
 
 .selectOptions {
   font-size: 20px;
-
-  color: rgb(94, 94, 94);
+  color:#88b0de!important;
+   background:hsl(214, 78%, 18%)!important;
+   border: 1px solid transparent;
   border-radius: 7px;
   height: 35px !important;
   margin-right: 20px;
-  margin-top: 30px;
+  margin-bottom: 3px;
 }
 
 .daysOptions {
@@ -273,8 +285,9 @@
 
 .voting-navbar {
   display: inline-block;
+  background-color: hsl(208, 89%, 7%);
   list-style-type: none;
-  border-bottom: 1px solid white;
+  border-bottom: transparent;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   width: 100%;
@@ -286,7 +299,7 @@
 
 .voting-navbar li {
   display: inline-block;
-  color: white;
+  color: #88b0de!important;
   cursor: pointer;
   text-align: center;
 }
@@ -300,11 +313,20 @@
 }
 
 .divButtons {
-  display: inline-block;
+  display: flex!important;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   list-style-type: none;
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
+}
+
+.MuiButton-contained {
+  color:#88b0de!important;
+   background:hsl(214, 78%, 18%)!important;
 }
 
 .registrationButton:hover {
@@ -323,7 +345,7 @@
   border-radius: 60%;
   -webkit-animation: spinner-border 0.75s linear infinite;
   animation: spinner-border 0.75s linear infinite;
-  color: white;
+  color: #88b0de!important;
   margin-top: 140px;
   margin-bottom: 140px;
 }
@@ -368,7 +390,7 @@
   min-height: 114px;
   text-transform: capitalize !important;
   background: #061b2f;
-  border: 1px solid rgba(209, 209, 209, 0.301);
+  border: 1px solid transparent;
   -webkit-text-stroke: 0.00001px #3433;
   text-shadow: 2px 2px 0 black, 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000,
     2px 1px 0 #000;
@@ -407,12 +429,12 @@
 
 .verification-title {
   font-weight: 700;
-  color: #0b3257 !important;
+  color:#88b0de!important;
 }
 
 .newElectionLabel {
   font-weight: 700;
-  color: #0b3257 !important;
+  color:#88b0de!important;
 }
 
 .verifyLabel {
@@ -422,15 +444,14 @@
 
 .newElectionLabel {
   font-weight: 700;
-  color: #d8a84f !important;
+  color: hsl(189, 31%, 41%) !important;
 }
 
 .verifiedProfile {
-  border: 1px solid white;
-  background: linear-gradient(40deg, rgb(16, 25, 54), #b6c6d4);
-  background: linear-gradient(40deg, #0b4980, rgb(150, 47, 141));
+  border: 1px solid transparent;
+  background: hsl(209, 54%, 16%)!important;
   color: rgb(253, 253, 253);
-  margin: 20px;
+  margin: 10px;
   border-radius: 7px;
   width: 60%;
   justify-content: center !important;
@@ -511,7 +532,7 @@
 .userName {
   font-size: 40px !important;
   font-family: "Anonymous Pro", monospace !important;
-  color: #f5c263;
+  color:  #88b0de!important;
   -webkit-text-stroke: 0.00001px #3433;
   text-shadow: 2px 2px 0 black, 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000,
     2px 1px 0 #000;
