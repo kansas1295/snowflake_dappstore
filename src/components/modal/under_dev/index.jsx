@@ -23,7 +23,7 @@ const UnderDevelopment = ({ id, isOpen, title, toggle }) => (
             <Row className="align-items-center">
               <Col>
                 <img
-                  src={`${process.env.PUBLIC_URL}/legacy/${id}/logo.png`}
+                  src={`${process.env.PUBLIC_URL}/legacy/${id}/logo.jpg`}
                   alt="logo"
                   className="remove__logo"
                 />
