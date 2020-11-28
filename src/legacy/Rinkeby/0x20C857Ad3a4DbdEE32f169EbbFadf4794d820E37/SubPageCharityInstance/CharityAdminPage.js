@@ -21,7 +21,7 @@ export default function CharityAdminPage({account, Address,subPageMenu}) {
   const context = useWeb3Context();
 
   const resolverContract = useGenericContract(Address, CharityContractABI);
-  const charityFactory = useGenericContract('0xf80Cd09e8851366dB17Ad7f14C7b573D8EcbCCDd', CharityFactoryABI);
+  const charityFactory = useGenericContract('0x0d96af51ec52e74056ce68ac820a4e3896068381', CharityFactoryABI);
 
   /*Sets the data from charity*/
   const [title, charityTitle]  = useState('');
@@ -65,7 +65,7 @@ export default function CharityAdminPage({account, Address,subPageMenu}) {
   else{
     charityState = 'Approved';
   }
-  
+
   return (
     <div style ={{textAlign:"center"}}>
       
