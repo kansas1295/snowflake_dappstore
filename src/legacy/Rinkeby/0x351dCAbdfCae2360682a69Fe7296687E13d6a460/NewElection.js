@@ -4,7 +4,7 @@ import React, { useState} from 'react';
 import './style.css';
 import { useGenericContract} from '../../common/hooks';
 import { useWeb3Context } from 'web3-react';
-import FactoryAbi from './FactoryAbi';
+import FactoryAbi from './ABI/FactoryAbi';
 import VoteButton from './customButton/VoteButton';
 
 

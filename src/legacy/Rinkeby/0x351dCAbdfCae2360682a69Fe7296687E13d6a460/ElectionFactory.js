@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Web3 from 'web3';
 import './style.css';
 import clientRaindrop from '../../../services/contracts/clientRaindrop';
-import FactoryAbi from './FactoryAbi';
+import FactoryAbi from './ABI/FactoryAbi';
 import ElectionInstance from './ElectionInstance';
 import NewElection from './NewElection';
 import ElectionCards from './ElectionCards';
@@ -62,18 +62,8 @@ export default class ElectionFactory extends Component {
 
     async loadBlockchain(){
         
-    
-        const ApiKey='ZPRBBU2E6Z4QMEXPI7BWMCMVK7I6XZ6ZXE';
+
         const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://rinkeby.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  
-        var version = web3.version.api;
-        fetch('https://api-rinkeby.etherscan.io/api?module=contract&action=getsourcecode&address=0x351dCAbdfCae2360682a69Fe7296687E13d6a460&apikey='+ApiKey)
-        .then(res =>res.json())
-        .then((data)=>{
-            console.log()
-        })
-
-
-
 
         const network = await web3.eth.net.getNetworkType();
         const accounts = await web3.eth.getAccounts();
@@ -120,7 +110,7 @@ export default class ElectionFactory extends Component {
     onChangePage(pageOfItems) {
         this.setState({loading:false})
         this.setState({ pageOfItems,loading:true});
-        setTimeout(()=>this.setState({loading:false}),1000)
+        setTimeout(()=>this.setState({loading:false}),400)
 	}
     
 

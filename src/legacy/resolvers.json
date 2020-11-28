@@ -21,13 +21,13 @@
 	},
 	"0x351dCAbdfCae2360682a69Fe7296687E13d6a460": {
 		"title": "Voteum",
-		"category": "Tools",
+		"category": "Community",
 		"price": "2000"
 	},
-	"donation-dapp": {
+	"0x20C857Ad3a4DbdEE32f169EbbFadf4794d820E37": {
 		"title": "Donations dApp",
-		"category": "Under Development",
-		"price": "0"
+		"category": "Community",
+		"price": "2000"
 	},
 	"lottery-dapp": {
 		"title": "Lotteryx",
