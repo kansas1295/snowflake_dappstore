@@ -2,11 +2,11 @@
 const config = {
   general: {
     //******** General Store Settings ********//
-    dappStoreName: "SNOWFLAKE",
+    dappStoreName: "Snowflake Store",
     dappStoreMetaKeywords:
       "dapps, dapp store, app store, decentralized applications, decentralized apps, snowflake, hydro dapp store",
     dappStoreMetaDescription:
-      "Snowflake dApptore store featuring decentralized applications powered by Snowflake.",
+      "Snowflake Store store featuring decentralized applications powered by Snowflake.",
     dappSearchPlaceholderText: "Search the dApp Store...",
     googleAnalyticsTag: "UA-XXXXXXXXX",
     dappSearchActive: true, // Is the header dApp search bar visible? true/false

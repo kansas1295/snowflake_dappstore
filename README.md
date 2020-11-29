@@ -1,4 +1,6 @@
-# Snowflake dAppstore
+# Snowflake Store
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/492afca6-0ab3-4373-b711-512f96824f32/deploy-status)](https://app.netlify.com/sites/snowflake-dappstore/deploys)
 
 ## Introduction
 
