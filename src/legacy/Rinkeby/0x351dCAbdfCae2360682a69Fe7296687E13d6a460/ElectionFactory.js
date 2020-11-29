@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Web3 from 'web3';
 import './style.css';
 import clientRaindrop from '../../../services/contracts/clientRaindrop';
-import {electionFactoryAddress,electionFactoryAbi} from './ABI/FactoryAbi';
+import FactoryAbi from './FactoryAbi';
 import ElectionInstance from './ElectionInstance';
 import NewElection from './NewElection';
 import ElectionCards from './ElectionCards';
@@ -62,8 +62,18 @@ export default class ElectionFactory extends Component {
 
     async loadBlockchain(){
         
+    
+        const ApiKey='ZPRBBU2E6Z4QMEXPI7BWMCMVK7I6XZ6ZXE';
+        const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://rinkeby.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  
+        var version = web3.version.api;
+        fetch('https://api-rinkeby.etherscan.io/api?module=contract&action=getsourcecode&address=0x351dCAbdfCae2360682a69Fe7296687E13d6a460&apikey='+ApiKey)
+        .then(res =>res.json())
+        .then((data)=>{
+            console.log()
+        })
 
-        const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://mainnet.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  
+
+
 
         const network = await web3.eth.net.getNetworkType();
         const accounts = await web3.eth.getAccounts();
@@ -78,7 +88,7 @@ export default class ElectionFactory extends Component {
         if (this._isMounted){
             this.setState({raindrop:raindrop});
         }
-        const electionFactory = new web3.eth.Contract(electionFactoryAbi,electionFactoryAddress);
+        const electionFactory = new web3.eth.Contract(FactoryAbi,'0x313Dc90c151BBE031f77D561366904be35139277');
         if (this._isMounted){
             this.setState({electionFactory:electionFactory});
         }
@@ -86,7 +96,6 @@ export default class ElectionFactory extends Component {
         
         electionFactory.getPastEvents("newElectionCreated",{fromBlock: 0, toBlock:this.state.blockNumber})
         .then(events=>{
-          
             var newest = events;
             var newsort= newest.concat().sort((a,b)=> b.blockNumber- a.blockNumber);
  
@@ -111,7 +120,7 @@ export default class ElectionFactory extends Component {
     onChangePage(pageOfItems) {
         this.setState({loading:false})
         this.setState({ pageOfItems,loading:true});
-        setTimeout(()=>this.setState({loading:false}),400)
+        setTimeout(()=>this.setState({loading:false}),1000)
 	}
     
 
@@ -210,7 +219,7 @@ export default class ElectionFactory extends Component {
 
                 {this.state.page === 1 && this.state.subPage === 2 && <NewElection/>}
                       
-                {this.state.page === 2 &&<div><ElectionInstance  Address = {this.state.address} ID={this.state.id} ein={this.state.ein} subPage={this.state.subPage} goToVoting={this.subPageVoting} goToRegistration={this.subPageRegistration}/></div>}
+                {this.state.page === 2 &&<div><ElectionInstance  Address = {this.state.address} ID={this.state.id} ein={this.state.ein} subPage={this.state.subPage}/></div>}
                
                 <div className={custom}>  <JwPagination items={this.state.electionContracts} onChangePage={this.onChangePage} maxPages={5} pageSize={4} styles={customStyles} /></div>
               

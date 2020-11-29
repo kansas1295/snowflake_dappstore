@@ -4,8 +4,6 @@ import React, { Component } from 'react';
 import Web3 from 'web3';
 import './style.css';
 import Deadline from './Deadline';
-import ElectionInstanceABI from './ABI/ElectionInstanceABI'
-
 
 export default class ElectionCards extends Component {
 
@@ -28,14 +26,24 @@ export default class ElectionCards extends Component {
 
 	componentDidMount(){
       this._isMounted = true;
+      this.getABI()
       this.loadBlockchain();
     }
 
-    
+    //Gets Smart Contract ABI Dynamically from etherscan
+    async getABI(){
+        const ApiKey='ZPRBBU2E6Z4QMEXPI7BWMCMVK7I6XZ6ZXE';
+            fetch('https://api-rinkeby.etherscan.io/api?module=contract&action=getsourcecode&address='+this.props.Address+'&apikey='+ApiKey)
+            .then(res =>res.json())
+            .then((data)=> {               
+                    this.setState({electionABI:JSON.parse(data.result[0].ABI)})
+                }).catch(console.log)
+    }
+
     //Loads Blockain Data
     async loadBlockchain(){
     
-            const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://mainnet.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  
+            const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://rinkeby.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  
             const network = await web3.eth.net.getNetworkType();
 
             const accounts = await web3.eth.getAccounts();
@@ -44,7 +52,7 @@ export default class ElectionCards extends Component {
             this.setState({account: accounts[0]}); 
              }
 
-            const electionContract = new web3.eth.Contract(ElectionInstanceABI,this.props.Address);
+            const electionContract = new web3.eth.Contract(this.state.electionABI,this.props.Address);
             if (this._isMounted){
                 this.setState({electionContract:electionContract},()=>console.log());
             }
@@ -60,6 +68,9 @@ export default class ElectionCards extends Component {
             }
 
         }
+
+       
+
 
   render() {
     
