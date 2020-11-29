@@ -19,7 +19,7 @@ import {
 import numeral from 'numeral';
 
 
-export default function CharityProfilePage({Address,ein,subPageMenu}) {
+export default function CharityProfilePage({Address,ein,subPageMenu,subPageRegistration,subPageContribute}) {
  
   const context = useWeb3Context();
 
@@ -35,7 +35,7 @@ export default function CharityProfilePage({Address,ein,subPageMenu}) {
   /* Sets the data from client Raindrop & charity contract */
   const [userName, einUser]  = useState('')
   const [linkedAddress, EthUser]  = useState('  ')
-  const [voter, voterRegistration]  = useState('')
+  const [contributor, registeredContributor]  = useState('')
   const [contributions, totalContributions]  = useState('')
   
   
@@ -48,7 +48,7 @@ export default function CharityProfilePage({Address,ein,subPageMenu}) {
   useAccountEffect(() => {
     
     raindropContract.methods.getDetails(ein).call().then(user => {einUser(user[1]), EthUser(user[0])});
-    resolverContract.methods.aParticipant(ein).call().then(result =>{ result === true? voterRegistration(true):voterRegistration(false)});
+    resolverContract.methods.aParticipant(ein).call().then(result =>{ result === true? registeredContributor(true):registeredContributor(false)});
     resolverContract.methods.contributions(ein).call().then(result =>{ totalContributions(formatAmount(fromWei(result).toString()))})
     
   })
@@ -72,12 +72,12 @@ export default function CharityProfilePage({Address,ein,subPageMenu}) {
         <div className="profileInfo">
         <li className="profileNumber">Ethereum Identity No.: <NavLink className ="customNav" style={{color:"white"}} title="Manage Identity" tag={RouterNavLink} exact to="/identity"> {ein}</NavLink  ></li>
            
-        <li className="profileNumber">Registration: 
-        {voter? <li style={{color:"white"}} title="Unregistered">Registered</li> : <li style={{color:"white"}} title="Unregistered">Unregistered</li>} 
+        <li className="profileNumber">Contributor: 
+        {contributor? <li style={{color:"white"}} title="Unregistered" onClick={subPageContribute}>Registered</li> : <li style={{color:"white"}} title="Unregistered" onClick={subPageRegistration}>Unregistered</li>} 
         </li>
         <li className="profileNumber"> Total Contributions: <li style={{color:"white"}} title="Total Hydro Contribution"> {numeralContributions}<img src={hydro} className="hydroImage"/></li></li>
         <li className="profileNumber"> Dapp-Store Balance: <li style={{color:"white"}} title="Hydro Balance"> {numeralSnowflakeBalance}<img src={hydro} className="hydroImage"/></li></li>
-        <li className="profileNumber">Linked Address: <a href={"https://rinkeby.etherscan.io/address/"+ linkedAddress} target="blank" style={{color:"white"}} title={linkedAddress}> {linkedAddress.slice(0,5)+"..."}</a></li>
+        <li className="profileNumber">Linked Address: <a href={"https://etherscan.io/address/"+ linkedAddress} target="blank" style={{color:"white"}} title={linkedAddress}> {linkedAddress.slice(0,5)+"..."}</a></li>
 
         </div>
      

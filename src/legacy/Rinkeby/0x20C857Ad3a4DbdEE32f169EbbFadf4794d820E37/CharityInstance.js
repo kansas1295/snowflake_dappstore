@@ -68,7 +68,7 @@ export default class CharityInstance extends Component {
         }
 
         else if(this.props.subPage === 4){
-        body = <CharityProfilePage subPageMenu = {this.props.subPageMenu} Address = {this.props.Address} ein = {this.props.ein} subPageRegistration={this.props.subPageRegistration}/>
+        body = <CharityProfilePage subPageMenu = {this.props.subPageMenu} Address = {this.props.Address} ein = {this.props.ein} subPageRegistration={this.props.subPageRegistration} subPageContribute={this.props.subPageContribute}/>
         }
        
         else if(this.props.subPage === 5){

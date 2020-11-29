@@ -4,7 +4,7 @@ import React, { useState} from 'react';
 import './style.css';
 import { useGenericContract} from '../../common/hooks';
 import { useWeb3Context } from 'web3-react';
-import FactoryAbi from './ABI/FactoryAbi';
+import {electionFactoryAddress,electionFactoryAbi} from './ABI/FactoryAbi';
 import VoteButton from './customButton/VoteButton';
 
 
@@ -12,7 +12,7 @@ export default function NewElection({}) {
 
   const context = useWeb3Context();
 
-  const resolverContract = useGenericContract('0x313Dc90c151BBE031f77D561366904be35139277',FactoryAbi);
+  const resolverContract = useGenericContract(electionFactoryAddress,electionFactoryAbi);
 
   const [title, electionTitle]  = useState('');
   const [description, electionDescription]  = useState('  ');

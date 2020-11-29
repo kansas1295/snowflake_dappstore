@@ -32,7 +32,7 @@ export default class ElectionFactory extends Component {
 
     async loadBlockchain(){
      
-            const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://rinkeby.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  
+            const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://mainnet.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  
             const network = await web3.eth.net.getNetworkType();
 
             const accounts = await web3.eth.getAccounts();
@@ -71,7 +71,7 @@ export default class ElectionFactory extends Component {
         }
 
         else if(this.props.subPage === 4 && this.state.title !== null){
-            subBody = <ProfilePage electionABI={ElectionInstanceABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account} goToVoting={this.subPageVoting}/>
+            subBody = <ProfilePage electionABI={ElectionInstanceABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account} goToVoting={this.props.goToVoting} goToRegistration = {this.props.goToRegistration}/>
         }
     }
 
