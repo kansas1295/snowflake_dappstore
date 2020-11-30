@@ -52,8 +52,8 @@ export default function TransactionRow({ein,transactions,count}) {
 				<td ><Identicon seed={EIN} size={27} className="list-img ml-2 mt-5 mb-5"/></td>   
         <td>{userName.slice(0,20)} ({EIN}) </td>     
       	<td><img src={hydro} className="hydro-logo mb-1 mr-1" border={1} alt="Hydro logo" width={20}/>{numeralAmount} </td>
-        <td title={transactions.transactionHash}><a href={'https://rinkeby.etherscan.io/tx/'+ transactions.transactionHash} target='blank'>{transactions.transactionHash.slice(15) + '...'}</a></td>
-        <td title={transactions.blockNumber}><a href={'https://rinkeby.etherscan.io/block/'+ transactions.blockNumber} target='blank'>{transactions.blockNumber}</a></td>
+        <td title={transactions.transactionHash}><a href={'https://etherscan.io/tx/'+ transactions.transactionHash} target='blank'>{transactions.transactionHash.slice(15) + '...'}</a></td>
+        <td title={transactions.blockNumber}><a href={'https://etherscan.io/block/'+ transactions.blockNumber} target='blank'>{transactions.blockNumber}</a></td>
 			</tr>               
      
     </React.Fragment>

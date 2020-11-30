@@ -84,7 +84,7 @@ export default function CharityAdminPage({account, Address,subPageMenu}) {
       <div className="registrationImage"><div className="registerIcon" ><i class="fas fa-user-astronaut"/></div></div>
       <p className="mt-2">The administrator is entrusted by the community with the power to Approve & Disable charity contracts, therefore making him/her responsible in maintaining the Charity-Dapp.</p>
       
-
+      <span className="input-group-charity">Charity Admin: {admin.slice(0,30) + '...'}</span>
      
         {account === admin && <div className="form-group row">
         <div className="group mt-2">
@@ -95,7 +95,7 @@ export default function CharityAdminPage({account, Address,subPageMenu}) {
         </div>
         </div>}
 
-      {account === admin && <div className="mt-1">  <ContributeButton
+      {account === admin && <div className="mt-4">  <ContributeButton
       readyText='Transfer Rights' 
       method={() => charityFactory.methods.transferOverlordAuthority(ethAddress)}/>
       <label className="newCharityLabel mt-2" style={{fontSize: '12px'}}>Tranfer your admin rights to another Ethereum address.</label>
