@@ -10,6 +10,7 @@ import Hydrosmall from './Images/Hydrosmall.png';
 import SnowflakeContext from '../../../contexts/snowflakeContext';
 import { NavLink } from 'reactstrap';
 import { NavLink as RouterNavLink} from 'react-router-dom';
+import clientRaindrop from '../../../services/contracts/clientRaindrop';
 
 
 import {
@@ -18,14 +19,15 @@ import {
 } from '../../../services/format';
 import numeral from 'numeral';
 
-export default function ProfilePage({electionABI,electionAddress,ein,goToVoting,}) {
+export default function ProfilePage({electionABI,electionAddress,ein,goToVoting,goToRegistration}) {
 
   
   const context = useWeb3Context();
 
-  const clientRaindropContract = useNamedContract('clientRaindrop')
+
   const snowflakeContext = useContext(SnowflakeContext);
   const resolverContract = useGenericContract(electionAddress, electionABI);
+  const clientRaindropContract = useGenericContract(clientRaindrop.address,clientRaindrop.abi)
 
   
 
@@ -73,7 +75,7 @@ export default function ProfilePage({electionABI,electionAddress,ein,goToVoting,
 
          
         {!voter && <li className="profileNumber">Registration Type: 
-            <li style={{color:"white"}} title="Unregistered">Unregistered</li> 
+            <li style={{color:"white"}}  onClick={goToRegistration} title="Unregistered">Unregistered</li> 
          </li>}
 
          {voter && <li className="profileNumber">Registration Type: 
@@ -81,7 +83,7 @@ export default function ProfilePage({electionABI,electionAddress,ein,goToVoting,
          </li>}
 
         <li className="profileNumber"> Dapp-Store Balance: <li style={{color:"white"}} title="Hydro Balance"> {numeralSnowflakeBalance}<img src={Hydrosmall} className="hydroImage"/></li></li>
-        <li className="profileNumber">Linked Address: <a href={"https://rinkeby.etherscan.io/address/"+ linkedAddress} target="blank" style={{color:"white"}} title={linkedAddress}> {linkedAddress.slice(0,5)+"..."}</a></li>
+        <li className="profileNumber">Linked Address: <a href={"https://etherscan.io/address/"+ linkedAddress} target="blank" style={{color:"white"}} title={linkedAddress}> {linkedAddress.slice(0,5)+"..."}</a></li>
 
         </div>
   
