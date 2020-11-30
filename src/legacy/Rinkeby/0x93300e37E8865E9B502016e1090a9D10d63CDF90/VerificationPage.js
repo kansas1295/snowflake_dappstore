@@ -15,7 +15,6 @@ export default function VerificationPage({electionABI,electionAddress}) {
 
   const context = useWeb3Context();
 
-  const clientRaindropContract = useNamedContract('clientRaindrop')
   const resolverContract = useGenericContract(electionAddress,electionABI);
 
 

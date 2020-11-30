@@ -19,14 +19,14 @@
 		"category": "Under Development",
 		"price": "0"
 	},
-	"0x351dCAbdfCae2360682a69Fe7296687E13d6a460": {
+	"0x93300e37E8865E9B502016e1090a9D10d63CDF90": {
 		"title": "Voteum",
-		"category": "Tools",
-		"price": "2000"
+		"category": "Community",
+		"price": "100000000000000000000"
 	},
-	"donation-dapp": {
+	"0x20C857Ad3a4DbdEE32f169EbbFadf4794d820E37": {
 		"title": "Donations dApp",
-		"category": "Under Development",
+		"category": "Community",
 		"price": "0"
 	},
 	"lottery-dapp": {
