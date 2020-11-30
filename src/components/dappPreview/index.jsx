@@ -32,7 +32,7 @@ function DappPreview(props) {
     details.title = resolversJson[id].title;
     details.category = resolversJson[id].category;
     details.price = resolversJson[id].price;
-    details.logo = `${process.env.PUBLIC_URL}/legacy/${id}/logo.png`;
+    details.logo = `${process.env.PUBLIC_URL}/legacy/${id}/logo.jpg`;
   }
 
   function displayButton() {
