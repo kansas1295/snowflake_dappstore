@@ -8,6 +8,7 @@ import Registration from './Registration';
 import VerificationPage from './VerificationPage';
 import ChartPage from './ChartPage';
 import ProfilePage from './ProfilePage';
+import ElectionInstanceABI from './ABI/ElectionInstanceABI'
 
 export default class ElectionFactory extends Component {
 
@@ -28,19 +29,10 @@ export default class ElectionFactory extends Component {
       this.loadBlockchain();
 	}
 
-    //Dynamically loads the Smart Contract ABI using etherscan & loads the blockchain data.
+
     async loadBlockchain(){
-    
-        const ApiKey='ZPRBBU2E6Z4QMEXPI7BWMCMVK7I6XZ6ZXE';
-            fetch('https://api-rinkeby.etherscan.io/api?module=contract&action=getsourcecode&address='+this.props.Address+'&apikey='+ApiKey)
-            .then(res =>res.json())
-            .then((data)=> { 
-               
-                    this.setState({electionABI:JSON.parse(data.result[0].ABI)},()=> console.log())
-                }).catch(console.log)
-            
-            
-            const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://rinkeby.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  
+     
+            const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://mainnet.infura.io/ws/v3/72e114745bbf4822b987489c119f858b'));  
             const network = await web3.eth.net.getNetworkType();
 
             const accounts = await web3.eth.getAccounts();
@@ -49,7 +41,7 @@ export default class ElectionFactory extends Component {
             this.setState({account: accounts[0]}); 
              }
 
-            const electionContract = new web3.eth.Contract(this.state.electionABI,this.props.Address);
+            const electionContract = new web3.eth.Contract(ElectionInstanceABI,this.props.Address);
             if (this._isMounted){
                 this.setState({electionContract:electionContract},()=>console.log());
             }
@@ -57,8 +49,6 @@ export default class ElectionFactory extends Component {
             if (this._isMounted){
                 this.setState({title:title});
             }
-           
-
 
         }
  
@@ -70,18 +60,18 @@ export default class ElectionFactory extends Component {
         if(this.state.title !== null){
            
         if(this.props.subPage === 1 && this.state.title !== null){
-            subBody = <Registration electionABI={this.state.electionABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account}/>
+            subBody = <Registration electionABI={ElectionInstanceABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account}/>
         }
         else if(this.props.subPage === 2 && this.state.title !== null){
-            subBody = <VerificationPage electionABI={this.state.electionABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account}/>
+            subBody = <VerificationPage electionABI={ElectionInstanceABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account}/>
         }
 
         else if(this.props.subPage === 3 && this.state.title !== null){
-            subBody = <ChartPage electionABI={this.state.electionABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account}/>
+            subBody = <ChartPage electionABI={ElectionInstanceABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account}/>
         }
 
         else if(this.props.subPage === 4 && this.state.title !== null){
-            subBody = <ProfilePage electionABI={this.state.electionABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account} goToVoting={this.subPageVoting}/>
+            subBody = <ProfilePage electionABI={ElectionInstanceABI} electionAddress={this.props.Address} ein={this.props.ein} account={this.state.account} goToVoting={this.props.goToVoting} goToRegistration = {this.props.goToRegistration}/>
         }
     }
 
