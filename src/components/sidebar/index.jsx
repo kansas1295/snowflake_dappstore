@@ -50,7 +50,7 @@ function Sidebar() {
               className="sidebar__link"
               activeClassName="sidebar__link--active"
             >
-              Snowflake dAppstore
+              Snowflake Store
             </NavLink>
           </NavItem>
           <NavItem>
