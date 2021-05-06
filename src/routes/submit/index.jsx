@@ -19,218 +19,167 @@ import QA from "../../components/qa";
 import faqJson from "../../common/config/submit/faq.json";
 
 const Submit = () => (
-  <div>
-    <Row className="submitDapp">
-      <Col>
-        <h1 className="title">Submit A dApp</h1>
-        <p>
-          Looking to submit a dApp? Use the resources below to get started on
-          bringing you idea to life.
-        </p>
+  <div className="container-fluid">
+    <div className="row">
 
-        <h3>3rd Party Partners</h3>
+      <div className="col-lg-12">
+        <div className="title">Submit A dApp</div>
+        <p>Looking to submit a dApp? Use the resources below to get started on bringing you idea to life.</p>
+      </div>
+      <hr style={{ width: '100%', background: '#726262' }}></hr>
+
+
+      <div className="col-lg-12">
+        <div className="submit_drop_title">3rd Party Partners</div>
         <p>The following resources are from our partners.</p>
-
-        {partnersJson.map((Partner) => (
-          <Card className="submit_card" key={Partner.title}>
-            <CardHeader>{Partner.title}</CardHeader>
-            <CardBody>
-              <CardText>
-                {Partner.description}
-                <br />
-                <br />
-                <img
-                  src={Partner.icon}
-                  alt={Partner.title}
-                  className="submit__partner-logo"
-                  width={Partner.imageWidth}
-                />
-              </CardText>
-            </CardBody>
-            <CardFooter>
-              <Button
-                className="partner"
-                onClick={() => {
-                  window.open(Partner.link);
-                }}
-              >
-                View Partner
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-
-        <Card className="submit_card" key="Become a Partner">
-          <CardHeader>Become A Partner</CardHeader>
-          <CardBody>
-            <CardText>
-              Want to see your buttoned up dApp developer tools listed here?
-              Join our growing curated list today!
-              <br />
-              <br />
-              <img
-                src="../../img/settings_icon.png"
-                alt="Become A Partner"
-                className="submit__partner-logo"
-                width="100"
-              />
-            </CardText>
-          </CardBody>
-          <CardFooter>
+      </div>
+      {partnersJson.map((Partner) => (
+        <div className="col-lg-3">
+          <div className="submit_drop_main">
+            <div className="title">{Partner.title}</div>
+            <div className="description">{Partner.description}
+              <br /><br />
+              <img src={Partner.icon}
+                alt={Partner.title} alt="3Box" width="80" />
+            </div>
             <Button
-              className="become_partner"
+              className="button"
               onClick={() => {
-                window.open("mailto:da@projecthydro.org");
+                window.open(Partner.link);
               }}
             >
-              Become A Partner
+              View Partner
+              </Button>
+          </div>
+        </div>
+      ))}
+
+      <div className="col-lg-3">
+        <div className="submit_drop_main">
+          <div className="title">Become A Partner</div>
+          <div className="description">Want to see your buttoned up dApp developer tools listed here?
+          Join our growing curated list today!
+            <br /><br />
+            <img src="../../img/settings_icon.png"
+              alt="Become A Partner" alt="3Box" width="80" />
+          </div>
+          <Button
+            className="button"
+            onClick={() => {
+              window.open("mailto:da@projecthydro.org");
+            }}
+          >
+            Become A Partner
             </Button>
-          </CardFooter>
-        </Card>
+        </div>
+      </div>
 
-        <h3>Resources & Tutorials</h3>
+      <div className="col-lg-12">
+        <div className="submit_drop_title">Resources & Tutorials</div>
         <p>Use the resources below to learn about best practices.</p>
-
-        {resourcesJson.map((Resource) => (
-          <Card className="submit_card" key={Resource.title}>
-            <CardHeader>{Resource.title}</CardHeader>
-            <CardBody>
-              <CardText>
-                {Resource.description}
-                <br />
-                <br />
-                <img
-                  src={Resource.icon}
-                  alt={Resource.title}
-                  className="submit__partner-logo"
-                  width={100}
-                />
-              </CardText>
-            </CardBody>
-            <CardFooter>
-              <Button
-                className="resource"
-                onClick={() => {
-                  window.open(Resource.link);
-                }}
-              >
-                View Resource
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-
-        <h3>Code Snippets</h3>
-        <p>Below are some code snippets to get you started.</p>
-
-        {snippetsJson.map((Snippet) => (
-          <Card className="submit_card" key={Snippet.title}>
-            <CardHeader>{Snippet.title}</CardHeader>
-            <CardBody>
-              <CardText>
-                {Snippet.description}
-                <br />
-                <br />
-                <img
-                  src={Snippet.icon}
-                  alt={Snippet.title}
-                  className="submit__partner-logo"
-                  width={100}
-                />
-              </CardText>
-            </CardBody>
-            <CardFooter>
-              <Button
-                className="snippet"
-                onClick={() => {
-                  window.open(Snippet.link);
-                }}
-              >
-                View Code Snippet
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-
-        <h3>Hydro Smart Contracts</h3>
-        <p>
-          The smart contracts below can speed up your dApp development time.
-        </p>
-
-        {contractsJson.map((Contract) => (
-          <Card className="submit_card" key={Contract.title}>
-            <CardHeader>{Contract.title}</CardHeader>
-            <CardBody>
-              <CardText>
-                {Contract.description}
-                <br />
-                <br />
-                <img
-                  src={Contract.icon}
-                  alt={Contract.title}
-                  className="submit__partner-logo"
-                  width={100}
-                />
-              </CardText>
-            </CardBody>
-            <CardFooter>
-              <Button
-                className="smart_contract"
-                onClick={() => {
-                  window.open(Contract.link);
-                }}
-              >
-                View Contract
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-
-        <h3>FAQ</h3>
-        <p>
-          Have a question about dApp development or submitting to the store,
-          read below
-        </p>
-
-        <Row>
-          <Col className="nopadding">
-            <div className="accordion">
-              {faqJson.map((qa) => (
-                <QA
-                  key={qa.question}
-                  question={qa.question}
-                  answer={qa.answer}
-                />
-              ))}
+      </div>
+      {resourcesJson.map((Resource) => (
+        <div className="col-lg-3">
+          <div className="submit_drop_main">
+            <div className="title">{Resource.title}</div>
+            <div className="description">{Resource.description}
+              <br /><br />
+              <img src={Resource.icon}
+                alt={Resource.title} alt="3Box" width="80" />
             </div>
-          </Col>
-        </Row>
-        <Row className="mt-5">
-          <Col className="nopadding">
-            <Row className="additional-help align-items-center">
-              <Col sm="12" md="12" lg="8">
-                <h4 className="additional-help__title">
-                  Need Additional Help?
-                </h4>
-                <p className="additional-help__subtitle">
-                  Send us a message via Telegram
-                </p>
-              </Col>
-              <Col sm="12" md="12" lg="4" className="text-right">
-                <Button
-                  className="btn-outlined"
-                  onClick={() => {
-                    window.open("https://t.me/projecthydro");
-                  }}
-                >
-                  Get Assistance
-                </Button>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Col>
-    </Row>
+            <Button
+              className="button"
+              onClick={() => {
+                window.open(Resource.link);
+              }}
+            >
+              View Resource
+              </Button>
+          </div>
+        </div>
+      ))}
+
+      <div className="col-lg-12">
+        <div className="submit_drop_title">Code Snippets</div>
+        <p>Below are some code snippets to get you started.</p>
+      </div>
+      {snippetsJson.map((Snippet) => (
+        <div className="col-lg-3">
+          <div className="submit_drop_main">
+            <div className="title">{Snippet.title}</div>
+            <div className="description">{Snippet.description}
+              <br /><br />
+              <img src={Snippet.icon}
+                alt={Snippet.title} alt="3Box" width="80" />
+            </div>
+            <Button
+              className="button"
+              onClick={() => {
+                window.open(Snippet.link);
+              }}
+            >
+              View Code Snippet
+              </Button>
+          </div>
+        </div>
+      ))}
+
+      <div className="col-lg-12">
+        <div className="submit_drop_title">Hydro Smart Contracts</div>
+        <p>The smart contracts below can speed up your dApp development time.</p>
+      </div>
+      {contractsJson.map((Contract) => (
+        <div className="col-lg-3">
+          <div className="submit_drop_main">
+            <div className="title">{Contract.title}</div>
+            <div className="description">{Contract.description}
+              <br /><br />
+              <img src={Contract.icon}
+                alt={Contract.title} alt="3Box" width="80" />
+            </div>
+            <Button
+              className="button"
+              onClick={() => {
+                window.open(Contract.link);
+              }}
+            >
+              View Contract
+              </Button>
+          </div>
+        </div>
+      ))}
+
+      <div className="col-lg-12">
+        <div className="submit_drop_title">FAQ</div>
+        <p>Have a question about dApp development or submitting to the store,
+            read below</p>
+      </div>
+      <div className="col-lg-12">
+        {faqJson.map((qa) => (
+          <QA
+            key={qa.question}
+            question={qa.question}
+            answer={qa.answer}
+          />
+        ))}
+      </div>
+
+      <div className="col-lg-12">
+        <div className="additional_help_main">
+          <div className="row">
+            <div className="col-lg-10">
+              <h2>Need Additional Help?</h2>
+              <p>Send us a message via Telegram</p>
+            </div>
+
+            <div className="col-lg-2">
+              <Button type="button" onClick={() => { window.open("https://t.me/projecthydro"); }} className="button" >Get Assistance</Button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 );
 

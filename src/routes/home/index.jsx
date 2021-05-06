@@ -13,17 +13,19 @@ function Home() {
   const { dapps, ein } = snowflakeContext;
 
   return (
-    <CardDeck>
-      {Object.keys(resolversJson).map((resolver) => (
-        <DappPreview
-          key={resolver}
-          id={resolver}
-          isAdded={dapps.includes(resolver)}
-          hasIdentity={ein !== null}
-          legacy
-        />
-      ))}
-    </CardDeck>
+    <div className="container-fluid">
+      <div className="row">
+        {Object.keys(resolversJson).map((resolver) => (
+          <DappPreview
+            key={resolver}
+            id={resolver}
+            isAdded={dapps.includes(resolver)}
+            hasIdentity={ein !== null}
+            legacy
+          />
+        ))}
+      </div>
+    </div>
   );
 }
 

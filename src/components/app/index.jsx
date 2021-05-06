@@ -22,15 +22,12 @@ import Terms from "../../routes/terms";
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="sb-nav-fixed" id="main-page">
         <Header />
-        <Slider />
-        <Container fluid className="app">
-          <Row>
-            <Col xs="12" sm="12" md="4" lg="4" xl="3" className="nopadding">
-              <Sidebar />
-            </Col>
-            <Col xs="12" sm="12" md="8" lg="8" xl="9" className="app__content">
+        <div id="layoutSidenav">
+          <Sidebar />
+          <div id="layoutSidenav_content">
+            <main>
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/faq" component={Faq} />
@@ -45,10 +42,16 @@ function App() {
                 <Route path="/category/:name" component={Category} />
                 <Route component={Home} />
               </Switch>
-            </Col>
-          </Row>
-        </Container>
-        <Footer />
+            </main>
+            <footer className="py-2 footer">
+              <div className="container-fluid">
+                2021 © Hydro App - All rights reserved.
+              </div>
+            </footer>
+          </div>
+
+          {/* <Footer /> */}
+        </div>
       </div>
     </BrowserRouter>
   );

@@ -41,14 +41,13 @@ function Sidebar() {
 
     if (ein) {
       return (
-        <div>
+        <div className="nav">
           <NavItem>
             <NavLink
               tag={RouterNavLink}
               exact
               to="/"
-              className="sidebar__link"
-              activeClassName="sidebar__link--active"
+              activeClassName=" active"
             >
               Snowflake Store
             </NavLink>
@@ -58,8 +57,7 @@ function Sidebar() {
               tag={RouterNavLink}
               exact
               to="/wallet"
-              className="sidebar__link"
-              activeClassName="sidebar__link--active"
+              activeClassName=" active"
             >
               Your Wallet
               <Badge className="sidebar__badge" color="secondary" pill>
@@ -77,8 +75,7 @@ function Sidebar() {
               tag={RouterNavLink}
               exact
               to="/manage"
-              className="sidebar__link"
-              activeClassName="sidebar__link--active"
+              activeClassName=" active"
             >
               Your dApps
               <Badge className="sidebar__badge" color="secondary" pill>
@@ -91,8 +88,7 @@ function Sidebar() {
               tag={RouterNavLink}
               exact
               to="/identity"
-              className="sidebar__link"
-              activeClassName="sidebar__link--active"
+              activeClassName=" active"
             >
               Manage Your Identity (EIN)
             </NavLink>
@@ -115,27 +111,55 @@ function Sidebar() {
   }
 
   return (
-    <div className="sidebar">
-      <div className="py-4">
-        <Nav vertical>
+    // <div className="sidebar">
+    //   <div className="py-4">
+    //     <Nav vertical>
+    //       {displayButton()}
+    //       <NavItem>
+    //         <NavLink
+    //           tag={RouterNavLink}
+    //           exact
+    //           to="/submit"
+    //           className="sidebar__link"
+    //           activeClassName="sidebar__link--active"
+    //         >
+    //           Submit A dApp
+    //         </NavLink>
+    //       </NavItem>
+    //     </Nav>
+    //   </div>
+    //   <div className="py-4">
+    //     <CategoriesMenu />
+    //   </div>
+    // </div>
+    <div id="layoutSidenav_nav">
+      <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div className="sb-sidenav-menu">
+          <div className="search_main">
+            <input name="" type="text" placeholder="Search" className="searchbox" />
+          </div>
+
           {displayButton()}
-          <NavItem>
-            <NavLink
-              tag={RouterNavLink}
-              exact
-              to="/submit"
-              className="sidebar__link"
-              activeClassName="sidebar__link--active"
-            >
-              Submit A dApp
-            </NavLink>
-          </NavItem>
-        </Nav>
-      </div>
-      <div className="py-4">
-        <CategoriesMenu />
-      </div>
+
+          <CategoriesMenu />
+
+          <NavLink
+            tag={RouterNavLink}
+            exact
+            to="/submit"
+            activeClassName=" active"
+            style={{ textAlign: 'center', width: '100%', display: 'block', margin: '10px 0', textDecoration: 'none', color: '#aeaeae' }}
+          >
+            <i className="fas fa-paper-plane"></i> Submit A dApp
+          </NavLink>
+
+          <input name="" type="button" value="Create Account" className="create_account_btn" />
+
+        </div>
+
+      </nav>
     </div>
+
   );
 }
 

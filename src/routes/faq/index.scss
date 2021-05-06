@@ -11,12 +11,12 @@ button.qa__question {
 button.qa__question:hover,
 button.qa__question:focus {
   text-decoration: none;
-  color: #6b6b6b;
+  color: #cfd6dd !important;
 }
 
 .qa .card-body {
   font-family: "Nunito-Regular", sans-serif;
-  background: rgb(11, 50, 87) !important;
+  background: rgb(11, 50, 87);
   font-size: 16px;
   color: #fff;
 }

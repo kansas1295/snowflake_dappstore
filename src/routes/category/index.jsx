@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Row, Col, CardDeck } from "reactstrap";
+import { CardDeck } from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
+import { NavLink } from "react-router-dom";
 import DappPreview from "../../components/dappPreview";
 import resolversJson from "../../legacy/resolvers.json";
 
@@ -32,22 +34,21 @@ function Category({ match }) {
   }
 
   return (
-    <div>
-      <Row>
-        <Col>
-          <h1 className="title">{`${name} dApps`}</h1>
-        </Col>
-      </Row>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-lg-12">
+          <div className="title">{`${name} dApps`}</div>
+        </div>
+      </div>
+
 
       {dappsToDisplay.length > 0 ? (
-        <Row className="py-3">
-          <Col>
-            <CardDeck>{displayDapps()}</CardDeck>
-          </Col>
-        </Row>
+        <div className="row">
+          {displayDapps()}
+        </div>
       ) : (
-        <Row className="mt-5">
-          <Col>
+        <div className="row">
+          {/* <Col>
             <Row className="additional-help align-items-center">
               <Col>
                 <h4 className="additional-help__title">Be The First</h4>
@@ -65,8 +66,23 @@ function Category({ match }) {
                 </a>
               </Col>
             </Row>
-          </Col>
-        </Row>
+          </Col> */}
+          <div className="col-lg-12">
+            <div className="additional_help_main">
+              <div className="row">
+                <div className="col-lg-10">
+                  <h2>Be The First</h2>
+                  <p>Submit your dApp to this category and earn a Hydro bounty!</p>
+                </div>
+
+                <div className="col-lg-2">
+                  <Button type="button" tag={NavLink} to="/submit" className="button" >Submit dApp</Button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

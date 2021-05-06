@@ -14,6 +14,7 @@ import Modal from "../modal";
 
 import imgPlaceholder from "../../common/img/placeholders/dapp.gif";
 import resolversJson from "../../legacy/resolvers.json";
+import ratingImg from "../../common/img/rating.png";
 
 function DappPreview(props) {
   const { id, hasIdentity, legacy, isAdded } = props;
@@ -45,6 +46,7 @@ function DappPreview(props) {
         <Button
           color="outlined"
           size="sm"
+          className="custom-btn"
           onClick={() => setModalType("Purchase")}
         >
           Explore
@@ -81,7 +83,7 @@ function DappPreview(props) {
   }
 
   return (
-    <div>
+    <div className="col-lg-2 col-md-3">
       <Modal
         id={id}
         title={details.title}
@@ -90,7 +92,16 @@ function DappPreview(props) {
         toggle={() => setModalType("")}
         modalType={modalType}
       />
-      <Card className="dapp-preview">
+      <div className="app_main_box">
+        <div className="image" onClick={() => handleTap()}><img src={details.logo} /></div>
+        <div className="app_name">{details.title}</div>
+        <div className="app_category">{details.category}</div>
+        <div className="rating"><img src={ratingImg} /></div>
+
+        <div className="rating">{displayButton()}</div>
+      </div>
+
+      {/* <Card className="dapp-preview">
         <div
           className="dapp-preview__image"
           style={{ backgroundImage: "url(" + details.logo + ")" }}
@@ -107,7 +118,7 @@ function DappPreview(props) {
             <Col>{displayButton()}</Col>
           </Row>
         </CardBody>
-      </Card>
+      </Card> */}
     </div>
   );
 }
